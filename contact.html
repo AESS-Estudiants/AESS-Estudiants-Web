@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="cat">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="icon" href="images/logos/aess/Cub.svg" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+    rel="stylesheet">
+  <title>AESS Estudiants</title>
+  <meta name="description" content="Web associó AESS Estudiants">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("mLcw4VXd7GiyPflDs"); // Substitueix amb la teva clau pública d'EmailJS
+    })();
+  </script>
+
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+  <!-- Main Content -->
+  <header class="home-header">
+    <nav class="navbar">
+      <ul>
+        <li class="dropdown">
+          <a href="index.html">Inici</a>
+          <ul class="dropdown-menu">
+            <li><a href="aess-inscripcio.html">Participa</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="aessbot.html">AESSBot 2026</a>
+          <ul class="dropdown-menu">
+            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
+          </ul>
+        </li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="projectes.html">Projectes</a></li>
+        <li><a href="contact.html">Contacte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+    <header class="new-hero contact-hero">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <i class="fas fa-envelope"></i>
+          Estem aquí per ajudar-te
+        </span>
+        <h1 class="hero-title">
+          <span class="gradient-text">Contacta</span> amb nosaltres
+        </h1>
+        <p class="hero-subtitle">
+          Tens alguna pregunta, suggeriment o vols col·laborar amb nosaltres? Omple el formulari i et respondrem el més aviat possible.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact-form" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar missatge
+          </a>
+          <a href="#contact-info" class="btn btn-outline">
+            <i class="fas fa-info-circle"></i> Més informació
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-cube">
+          <img src="images/logos/aess/CubBlanc.svg" alt="Cubo AESS" class="cube">
+        </div>
+        <div class="hero-shape"></div>
+      </div>
+    </header>
+
+    <!-- Contact Section Wrapper -->
+    <div class="container-sidebar">
+      <section class="form-container">
+        <h2 id="form-title">Formulari de contacte</h2>
+        <form id="contact-form">
+          <fieldset>
+            <legend>Dades Personals</legend>
+            <div class="form-group">
+              <label for="name">Nom<sup>*</sup></label>
+              <input type="text" id="name" name="from_name" required placeholder="Escriu el teu nom">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email<sup>*</sup></label>
+              <input type="email" id="email" name="reply_to" required placeholder="Escriu el teu correu">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telèfon</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g., +34 600 123 456">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Informació del Missatge</legend>
+            <div class="form-group">
+              <label>Tema<sup>*</sup></label>
+              <div class="radio-options">
+                <label><input type="radio" name="user-type" value="AESS Estudiants" required> AESS Estudiants</label>
+                <label><input type="radio" name="user-type" value="Cursos" required> Cursos</label>
+                <label><input type="radio" name="user-type" value="Projectes" required> Projectes </label>
+                <label><input type="radio" name="user-type" value="Col·laboració" required> Col·laboració</label>
+                <label><input type="radio" name="user-type" value="AESSBot"> AESSBot 2026</label>
+                <label><input type="radio" name="user-type" value="Altres"> Altres</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Motiu<sup>*</sup></label>
+              <input type="text" id="subject" name="subject" required placeholder="Escriu el motiu del missatge">
+            </div>
+
+            <div class="form-group">
+              <label for="message">El teu missatge<sup>*</sup></label>
+              <textarea id="message" name="message" required="" placeholder="Escriu el teu missatge aquí..."
+                style="height: 183px;"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-group-terms checkbox">
+            <input type="checkbox" id="accept" name="accept" required>
+            <label for="accept">
+              Accepto <a href="documentos/Política_Privacitat.pdf" target="_blank" 
+                        rel="noopener noreferrer">
+                la política de privacitat
+              </a>
+            </label>
+          </div>
+
+          <div class="download-button">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="images/logos/aess/CubBlanc.svg" alt="AESS Logo" class="footer-logo-img">
+          <span>AESS Estudiants</span>
+        </div>
+        <p class="footer-description">
+          Associació d'estudiants de la UPC dedicada a la tecnologia, robòtica i innovació.
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aessestudiants" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram fa-fw"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/aess-upc/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in fa-fw"></i>
+          </a>
+          <a href="https://github.com/AESS-Estudiants" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github fa-fw"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-heading">Enllaços ràpids</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+          <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
+          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
+          <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contacte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-heading">Contacte</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-fw fa-map-marker-alt"></i>
+            <span>Campus Nord UPC, Barcelona</span>
+          </li>
+          <li>
+            <i class="fas fa-fw fa-envelope"></i>
+            <a href="mailto:aess.estudiants@upc.edu">aess.estudiants@upc.edu</a>
+          </li>
+          <li>
+            <i class="fas fa-fw fa-phone"></i>
+            <a href="tel:+34934137564">+34 934 13 75 64</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 AESS Estudiants. Tots els drets reservats.</p>
+        <div class="legal-links">
+          <a href="documentos/Política_Privacitat.pdf" target="_blank">Política de Privacitat</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/carousel.js" defer></script>
+  <script src="js/calendar.js" defer></script>
+  <script src="js/schedule.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+
+</body>
+
+</html>

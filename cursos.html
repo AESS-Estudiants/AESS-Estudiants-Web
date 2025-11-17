@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="cat">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/aessbot-2026.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="icon" href="images/logos/aess/Cub.svg" type="image/png">
+  <style>
+    /* Ajustes específicos para la imagen del hero en cursos.html */
+    .aessbot-hero .hero-visual {
+      max-width: 100%;
+      padding: 1rem;
+    }
+    .aessbot-hero .poster-container {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .aessbot-hero .hero-visual {
+        padding: 0;
+        max-width: 45%;
+      }
+      .aessbot-hero .poster-container {
+        max-width: 350px;
+      }
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900&display=swap"
+    rel="stylesheet">
+  <title>Cursos i Tallers - AESS Estudiants</title>
+  <meta name="description" content="Cursos i tallers d'AESS Estudiants sobre robòtica, electrònica i tecnologia">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+  <!-- Navigation Menu -->
+  <header class="home-header">
+    <nav class="navbar">
+      <ul>
+        <li class="dropdown">
+          <a href="index.html">Inici</a>
+          <ul class="dropdown-menu">
+            <li><a href="aess-inscripcio.html">Participa</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="aessbot.html">AESSBot 2026</a>
+          <ul class="dropdown-menu">
+            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
+          </ul>
+        </li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="projectes.html">Projectes</a></li>
+        <li><a href="contact.html">Contacte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <header class="new-hero aessbot-hero">
+      <div class="hero-content">
+        <div class="hero-badges">
+          <span class="hero-badge online">
+            <i class="fas fa-circle"></i>
+            <span>Formació especialitzada</span>
+          </span>
+        </div>
+        <h1 class="hero-title">
+          Cursos i <span class="gradient-text">Tallers</span>
+        </h1>
+        <p class="hero-subtitle">
+          Aprèn amb els nostres cursos pràctics en robòtica, electrònica i programació.
+          Des de iniciació fins a nivell avançat, tenim el curs perfecte per a tu.
+        </p>
+        <div class="hero-buttons">
+          <a href="#cursos-disponibles" class="btn btn-primary">
+            <i class="fas fa-list-ul"></i> Veure tots els cursos
+          </a>
+          <a href="#info-general" class="btn btn-outline">
+            <i class="fas fa-info-circle"></i> Més informació
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Cursos disponibles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2 ECTS</span>
+            <span class="stat-label">Fins a 2 crèdits ECTS</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">✓</span>
+            <span class="stat-label">Certificats</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="poster-container">
+          <img src="images/cursos/cartell-din4.png" alt="Cursos i Tallers AESS - Formació especialitzada" class="competition-poster">
+        </div>
+      </div>
+    </header>
+
+    <!-- Resta del contingut de la web -->
+    <div class="container-sidebar">
+      <!-- Introducció -->
+      <section id="intro">
+        <div class="header-section">
+          <h2>Cursos</h2>
+          <p>
+            A AESS Estudiants oferim una àmplia varietat de cursos i tallers pràctics per 
+            desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més. 
+            Tots els cursos són gratuïts per als membres de l'associació.
+          </p>
+        </div>
+      </section>
+
+      <!-- Cursos Actius -->
+      <section id="actius">
+
+
+        <div class="highlight-cards">
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs d'Arduino Introducció">
+            </div>
+            <div class="course-content">
+              <i class="fas fa-code fa-3x"></i>
+              <h3>Arduino Introducció</h3>
+              <p>
+                Introducció a la programació de microcontroladors Arduino. Control de sensors, 
+                actuadors i comunicació bàsica. Perfecte per començar en el món de l'electrònica.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Inicial</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs d'Arduino Avançat">
+            </div>
+            <div class="course-content">
+              <i class="fas fa-microchip fa-3x"></i>
+              <h3>Arduino Avançat</h3>
+              <p>
+                Aprofundeix en Arduino amb projectes complexos: comunicació I2C/SPI, interrupcions, 
+                control PID i optimització de codi.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Avançat</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Fusion 3D Design">
+            </div>
+            <div class="course-content">
+              <i class="fas fa-cube fa-3x"></i>
+              <h3>Fusion 3D Design</h3>
+              <p>
+                Aprèn a modelar peces en 3D amb Fusion 360. Des de formes bàsiques fins a 
+                dissenys complexos per impressió 3D i fabricació.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Inicial</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Raspberry Pi">
+            </div>
+            <div class="course-content">
+              <i class="fas fa-server fa-3x"></i>
+              <h3>Raspberry Pi</h3>
+              <p>
+                Descobreix les possibilitats de la Raspberry Pi: sistema operatiu Linux, 
+                programació GPIO, projectes IoT i automatització.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Inicial/Intermedi</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Programació en Python">
+            </div>
+            <div class="course-content">
+              <i class="fab fa-python fa-3x"></i>
+              <h3>Programació en Python</h3>
+              <p>
+                Aprèn Python des de zero: sintaxi bàsica, estructures de dades, funcions, 
+                i aplicacions en automatització i anàlisi de dades.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Inicial</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="course-image">
+              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Programació en C++">
+            </div>
+            <div class="course-content">
+              <i class="fas fa-terminal fa-3x"></i>
+              <h3>Programació en C++</h3>
+              <p>
+                Domina C++ per a sistemes embeguts i aplicacions de rendiment. Gestió de memòria, 
+                POO i programació eficient.
+              </p>
+              <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Nivell:</strong> Intermedi</p>
+              <div class="download-button">
+                <button onclick="window.location.href='contact.html'">Més informació</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Informació general -->
+      <section id="info-general" class="key-statistics">
+        <div class="header-section">
+          <h2>Informació General</h2>
+          <ul>
+            <li><strong>Ubicació:</strong> Campus Nord UPC, Barcelona (ubicació específica s'informarà per cada curs)</li>
+            <li><strong>Cost:</strong> 105€ (85€ per membres de la UPC)</li>
+            <li><strong>Crèdits:</strong> Tots els cursos donen 1 ECTS a estudiants UPC</li>
+            <li><strong>Requisits:</strong> Depenen del curs (es detallen en cada descripció)</li>
+            <li><strong>Material:</strong> Es proporciona tot el material necessari per als tallers</li>
+            <li><strong>Certificats:</strong> Es lliuren certificats d'assistència i aprofitament</li>
+            <li><strong>Inscripcions:</strong> S'obren amb antelació i es comuniquen per correu i xarxes socials</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Crida a l'acció -->
+      <section id="inscripcio">
+        <div class="header-section">
+          <h2>Vols apuntar-te a un curs?</h2>
+          <p>
+            Si estàs interessat en algun dels nostres cursos o vols proposar un tema nou, 
+            contacta amb nosaltres. Les inscripcions s'anunciaran properament!
+          </p>
+        </div>
+        <div class="download-button">
+          <button onclick="window.location.href='contact.html'">Contacta amb nosaltres</button>
+        </div>
+        <br><br>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+   <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="images/logos/aess/CubBlanc.svg" alt="AESS Logo" class="footer-logo-img">
+          <span>AESS Estudiants</span>
+        </div>
+        <p class="footer-description">
+          Associació d'estudiants de la UPC dedicada a la tecnologia, robòtica i innovació.
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aessestudiants" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram fa-fw"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/aess-upc/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in fa-fw"></i>
+          </a>
+          <a href="https://github.com/AESS-Estudiants" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github fa-fw"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-heading">Enllaços ràpids</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+          <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
+          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
+          <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-heading">Contacte</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-fw fa-map-marker-alt"></i>
+            <span>Campus Nord UPC, Barcelona</span>
+          </li>
+          <li>
+            <i class="fas fa-fw fa-envelope"></i>
+            <a href="mailto:aess.estudiants@upc.edu">aess.estudiants@upc.edu</a>
+          </li>
+          <li>
+            <i class="fas fa-fw fa-phone"></i>
+            <a href="tel:+34934137564">+34 934 13 75 64</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 AESS Estudiants. Tots els drets reservats.</p>
+        <div class="legal-links">
+          <a href="documentos/Política_Privacitat.pdf" target="_blank">Política de privacitat</a>
+          <span class="divider">|</span>
+          <a href="documentos/normativa_v3.pdf" target="_blank">Normativa</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/schedule.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+
+</body>
+
+</html>
