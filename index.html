@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index-hero.css">
+  <link rel="stylesheet" href="css/qui-som-carousel.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="icon" href="images/Cub.svg" type="image/png">
 
@@ -22,28 +24,40 @@
 
 <body>
   <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+  
   <!-- Navigation Menu -->
-  <header class="home-header">
-    <nav class="navbar">
-      <ul>
-        <li class="dropdown">
-          <a href="index.html" class="active">Inici</a>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logos/aess/Logo_aess_blanc.svg" alt="AESS Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Inici</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="aessbot.html" class="nav-link">AESSBot <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="aess-inscripcio.html">Participa</a></li>
+            <li><a href="aessbot-inscripcio.html">Inscripció AESSBot</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="aessbot.html">AESSBot 2026</a>
-          <ul class="dropdown-menu">
-            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
-          </ul>
+        <li class="nav-item">
+          <a href="cursos.html" class="nav-link">Cursos</a>
         </li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="projectes.html">Projectes</a></li>
-        <li><a href="contact.html">Contacte</a></li>
+        <li class="nav-item">
+          <a href="projectes.html" class="nav-link">Projectes</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contacte</a>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <main id="main-content">
     <header class="new-hero">
@@ -70,50 +84,99 @@
     <!-- Resta del contingut de la web -->
     <div class="container-sidebar">
       <!-- Secció Sobre Nosaltres -->
-      <section id="about">
-        <div class="header-section">
-          <h2>Qui som?</h2>
-          <p>
-            <strong>AESS Estudiants</strong> (Aerospace and Electronic Systems Society) és una associació sense ànim de lucre de l'ETSETB (UPC) fundada el 1999.
-          </p>
-          <br>
-          <p>
-            Formem una comunitat d'estudiants multidisciplinar (ETSETB, FIB, ETSEIB, etc.), units per la passió per la robòtica i la tecnologia. <strong>Organitzem cursos, tallers i projectes </strong>que complementen la formació acadèmica i fomenten la innovació i l'aprenentatge pràctic.
-          </p>
-        </div>
-
-        <!-- Carousel Section -->
-        <div class="carousel-container" style="margin-top: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
-          <div class="carousel">
-            <!-- Images will be loaded dynamically by carousel.js -->
+      <section id="about" class="about-section">
+        <div class="about-container">
+          <div class="header-section">
+            <h2>Qui som?</h2>
           </div>
-          <button class="carousel-button prev">&#10094;</button>
-          <button class="carousel-button next">&#10095;</button>
-          <div class="carousel-indicators"></div>
+          <div style="text-align: center; margin: 1rem 0 2rem 0;">
+            <img src="images/logos/aess/LogoAESS.svg" alt="AESS Logo" style="max-width: 250px; height: auto;">
+          </div>
+          <div class="about-content">
+            <p>
+              <strong>AESS Estudiants</strong> (Aerospace and Electronic Systems Society) és una associació sense ànim de lucre de l'ETSETB (UPC) fundada el 1999.
+            </p>
+            <p>
+              Formem una comunitat d'estudiants multidisciplinar (ETSETB, FIB, ETSEIB, etc.), units per la passió per la robòtica i la tecnologia. <strong>Organitzem cursos, tallers i projectes</strong> que complementen la formació acadèmica i fomenten la innovació i l'aprenentatge pràctic.
+            </p>
+          </div>
         </div>
       </section>
 
-
-      <!-- Què oferim -->
-      <section id="oferim" class="key-statistics">
+      <!-- Què fem -->
+      <section id="que-fem" class="key-statistics">
         <div class="header-section">
-          <h2>Què oferim?</h2>
+          <h2>Què fem?</h2>
         </div>
-        <div class="highlight-cards">
-          <div class="highlight-card">
-            <i class="fas fa-project-diagram fa-3x"></i>
-            <h3>Projectes col·laboratius</h3>
-            <p>Participa en projectes tecnològics amb companys, desenvolupant habilitats pràctiques i treballant en equip per a crear solucions innovadores.</p>
+        <div class="highlight-cards two-rows">
+          <div class="card-row">
+            <div class="highlight-card">
+              <i class="fas fa-project-diagram fa-3x"></i>
+              <h3>Projectes</h3>
+              <p>Participa en projectes de robòtica amb altres estudiants. Disposem de taller propi amb eines i equipament perquè puguis desenvolupar els teus projectes aplicant els coneixements adquirits a la universitat.</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fas fa-robot fa-3x"></i>
+              <h3>AESSBot</h3>
+              <p>La nostra competició de robots minisumo, on dissenyes i construeixes robots autònoms que s'enfronten en emocionants combats. Aprèn electrònica, programació i mecànica.</p>
+            </div>
           </div>
-          <div class="highlight-card">
-            <i class="fas fa-tools fa-3x"></i>
-            <h3>Taller</h3>
-            <p>Accés a un espai equipat amb eines i recursos per a desenvolupar els teus projectes, amb suport de tutors i companys.</p>
+          <div class="card-row">
+            <div class="highlight-card">
+              <i class="fas fa-graduation-cap fa-3x"></i>
+              <h3>Cursos</h3>
+              <p>Oferim cursos pràctics sobre programació, electrònica i disseny 3D. Aprèn i posa en pràctica els teus coneixements des del primer dia.</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fas fa-university fa-3x"></i>
+              <h3>Vida universitària</h3>
+              <p>Més enllà de les aules, organitzem activitats i sortides per compartir experiències. Perque de tant en tant, també cal desconectar.</p>
+            </div>
           </div>
-          <div class="highlight-card">
-            <i class="fas fa-trophy fa-3x"></i>
-            <h3>Competicions i cursos</h3>
-            <p>Participa en competicions com l'AESSBot i accedeix a cursos pràctics per millorar les teves habilitats en robòtica i electrònica.</p>
+        </div>
+        <!-- Carrusel de Actividades -->
+        <div class="carousel-container" style="margin: 2rem auto;">
+          <button class="carousel-nav carousel-prev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som1.jpeg" alt="Activitat AESS 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som2.jpeg" alt="Activitat AESS 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som3.jpeg" alt="Activitat AESS 3">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som5.jpeg" alt="Activitat AESS 5">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som6.png" alt="Activitat AESS 6">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som7.jpeg" alt="Activitat AESS 7">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/aess/qui-som/qui-som8.png" alt="Activitat AESS 8">
+            </div>
+          </div>
+          
+          <button class="carousel-nav carousel-next" aria-label="Següent">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          
+          <div class="carousel-indicators">
+            <button class="carousel-indicator" aria-label="Diapositiva 1"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 2"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 3"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 4"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 5"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 6"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 7"></button>
+            <button class="carousel-indicator" aria-label="Diapositiva 8"></button>
           </div>
         </div>
       </section>
@@ -121,33 +184,32 @@
       <!-- Com participar -->
       <section id="com-participar" class="key-statistics">
         <div class="header-section">
-          <h2>Com participar</h2>
+          <h2>Com fer-te membre</h2>
           <p>
-            Vols unir-te a la nostra comunitat i començar a participar en les nostres activitats? Aquí tens els passos a seguir:
+            Fer-te membre d'AESS és molt fàcil. Només has de tenir ganes d'aprendre i participar. No hi ha cap requisit d'assistència mínima setmanal.
           </p>
         </div>
         <div class="highlight-cards">
           <div class="highlight-card">
             <i class="fab fa-whatsapp fa-3x"></i>
-            <h3>1. Entra al grup de WhatsApp</h3>
-            <p>Uneix-te al nostre grup de WhatsApp per estar al corrent de totes les nostres activitats i esdeveniments.</p>
-            <a href="https://chat.whatsapp.com/CXzyvcUaoLNK9m5VdRNvnR" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 15px;">
-              <i class="fab fa-whatsapp"></i> Uneix-te al grup
-            </a>
+            <h3>1. Uneix-te al nostre grup</h3>
+            <p>Accedeix al nostre grup de WhatsApp per a noves incorporacions per estar al corrent de totes les nostres activitats i coneixer la resta de membres.</p>
+            <div class="participa-cta">
+              <a href="https://chat.whatsapp.com/CXzyvcUaoLNK9m5VdRNvnR" target="_blank" class="btn btn-whatsapp btn-large">
+                <i class="fab fa-whatsapp"></i> Uneix-te al grup de WhatsApp
+              </a>
+            </div>
           </div>
           <div class="highlight-card">
-            <i class="fas fa-user-tag fa-3x"></i>
-            <h3>2. Presenta't al grup</h3>
-            <p>Explica'ns qui ets! Indica el teu nom, quina carrera estudies i en quin any ets.</p>
+            <i class="fas fa-comment-alt fa-3x"></i>
+            <h3>2. Presenta't</h3>
+            <p>Explica'ns una mica sobre tu: el teu nom, què estudies i per què vols formar part d'AESS. Coneix-nos sense cap compromís!</p>
           </div>
           <div class="highlight-card">
-            <i class="fas fa-hands-helping fa-3x"></i>
-            <h3>3. Participa en les activitats</h3>
-            <p>Vine als nostres tallers i participa en les nostres activitats. T'esperem amb les portes obertes!</p>
+            <i class="fas fa-handshake fa-3x"></i>
+            <h3>3. Vine a conèixer-nos</h3>
+            <p>Quedem al nostre taller per a una primera trobada. Podràs conèixer l'espai, els nostres projectes i resoldre totes les teves dubtes.</p>
           </div>
-        </div>
-        <div class="text-center" style="margin-top: 2rem;">
-          <p>Segueix els passos per començar a participar en les nostres activitats!</p>
         </div>
       </section>
 
@@ -155,17 +217,12 @@
       <section id="esdeveniments" class="esdeveniments-section">
         <div class="header-section">
           <h2>Propers esdeveniments</h2>
-          <p>Descobreix les properes activitats i esdeveniments que hem preparat per a tu</p>
         </div>
         
         <div class="esdeveniments-container">
           <!-- AESSBot -->
           <div id="aessbot" class="aessbot-card-section">
             <div class="aessbot-card">
-              <div class="aessbot-status">
-                <span class="status-indicator"></span>
-                <span class="status-text">En curs</span>
-              </div>
               <div class="aessbot-card-content">
                 <div class="aessbot-card-text">
                   <div class="aessbot-card-header">
@@ -180,7 +237,7 @@
                     <div class="aessbot-detail-item">
                       <i class="fas fa-trophy"></i>
                       <div>
-                        <span class="detail-value">1000€ en premis</span>
+                        <span class="detail-value">940€ en premis</span>
                         <span class="detail-label">Per als guanyadors</span>
                       </div>
                     </div>
@@ -194,7 +251,7 @@
                     <div class="aessbot-detail-item">
                       <i class="fas fa-calendar-alt"></i>
                       <div>
-                        <span class="detail-value">Nov 25 - Mai 26</span>
+                        <span class="detail-value">Des 15 - Mai 6</span>
                         <span class="detail-label">Durada del competició</span>
                       </div>
                     </div>
@@ -226,14 +283,10 @@
           <!-- Cursos -->
           <div id="cursos" class="aessbot-card-section">
             <div class="aessbot-card">
-              <div class="aessbot-status">
-                <span class="status-indicator" style="background: #9E9E9E;"></span>
-                <span class="status-text" style="color: #9E9E9E;">Pròximament</span>
-              </div>
               <div class="aessbot-card-content">
                 <div class="aessbot-card-text">
                   <div class="aessbot-card-header">
-                    <span class="aessbot-badge" style="background: #2196F3;">Formació Pràctica</span>
+                    <span class="aessbot-badge">Cursos semestrals</span>
                     <h3 class="aessbot-title">Cursos</h3>
                   </div>
                   <p class="aessbot-description">
@@ -259,8 +312,8 @@
                     <div class="aessbot-detail-item">
                       <i class="fas fa-calendar-alt" style="color: #2196F3;"></i>
                       <div>
-                        <span class="detail-value">Oct 2025 - Maig 2026</span>
-                        <span class="detail-label">Proper inici: 15 d'Octubre</span>
+                        <span class="detail-value">Properament</span>
+                        <span class="detail-label">Properament</span>
                       </div>
                     </div>
                   </div>
@@ -297,52 +350,45 @@
       <div class="faq-accordion">
         <div class="faq-item">
           <button class="faq-question">
-            <i class="fas fa-user-plus fa-fw"></i>
-            <span>Com puc formar part de l'AESS?</span>
+            <i class="fas fa-users fa-fw"></i>
+            <span>Perquè ser membre?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>És molt senzill! Només has d'omplir el formulari d'inscripció a la nostra pàgina web. L'associació està oberta a tots els estudiants de la UPC interessats en la tecnologia, la robòtica i la innovació.</p>
+            <p>Comunitat de persones que ens agrada fer projectes de robòtica, aprenem junts i per passar l'estona. A més disposem de taller i eines per a dur a terme els teus projectes.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <i class="fas fa-star fa-fw"></i>
-            <span>Quins són els beneficis de ser soci/a?</span>
+            <i class="fas fa-user-plus fa-fw"></i>
+            <span>Com formar part d'AESS?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Com a soci/a de l'AESS podràs:</p>
-            <ul>
-              <li><i class="fas fa-check-circle"></i> Participar en tots els nostres projectes i activitats</li>
-              <li><i class="fas fa-check-circle"></i> Accedir als nostres tallers i cursos amb descomptes</li>
-              <li><i class="fas fa-check-circle"></i> Utilitzar l'espai de treball i recursos de l'associació</li>
-              <li><i class="fas fa-check-circle"></i> Formar part d'una comunitat activa</li>
-              <li><i class="fas fa-check-circle"></i> Obtindre certificats de participació</li>
-            </ul>
+            <p>Segueix els passos de la secció de dalt per unir-te a la nostra associació.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
             <i class="fas fa-graduation-cap fa-fw"></i>
-            <span>Cal tenir coneixements previs per unir-me?</span>
+            <span>Cal tenir coneixements previs?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>No és necessari tenir coneixements previs. Tenim activitats i projectes per a tots els nivells, des de principiants fins a estudiants avançats. El nostre objectiu és que tothom pugui aprendre i créixer amb nosaltres.</p>
+            <p>No! La gràcia és poder aprendre tots junts. No cal tenir coneixements previs per començar a formar part de la nostra comunitat.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
             <i class="far fa-clock fa-fw"></i>
-            <span>Quin és l'horari del despatx?</span>
+            <span>Quan estem al despatx?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>El nostre despatx al Campus Nord està obert de dilluns a divendres de 9:00 a 17:00. Et recomanem que ens contactis abans de venir per confirmar la disponibilitat.</p>
+            <p>No tenim un horari fixe ja que depenem dels horaris dels membres. Per aquest motiu el millor és entrar al grup de WhatsApp per poder saber quan pots venir. Tot i així, els divendres acostumem a estar.</p>
           </div>
         </div>
 
@@ -353,7 +399,18 @@
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Segueix-nos a les nostres xarxes socials o subscriu-te al nostre butlletí electrònic per estar informat de totes les nostres activitats i esdeveniments.</p>
+            <p>Via el grup de WhatsApp per participar i Instagram per veure què fem.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <i class="fas fa-map-marker-alt fa-fw"></i>
+            <span>On està ubicat el taller?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>El nostre taller està ubicat a l'aula S203 de l'edifici Omega al campus Nord de la UPC.</p>
           </div>
         </div>
       </div>
@@ -391,13 +448,14 @@
         </div>
       </div>
 
+      <!-- Enlaces rápidos -->
       <div class="footer-section">
         <h3 class="footer-heading">Enllaços ràpids</h3>
-        <ul class="footer-links">
-          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+        <ul class="quick-links">
           <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
-          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
           <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+          <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contacte</a></li>
         </ul>
       </div>
 
@@ -433,8 +491,12 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/carousel.js" defer></script>
-  <script src="js/faqs.js" defer></script>
-  <script src="js/navbar.js" defer></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/faqs.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/faqs.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/qui-som-carousel.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 </html>

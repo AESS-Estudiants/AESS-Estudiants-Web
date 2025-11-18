@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/aessbot-2026.css">
+  <link rel="stylesheet" href="css/poster-hero.css">
+  <link rel="stylesheet" href="css/contact-form.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="icon" href="images/logos/aess/Cub.svg" type="image/png">
 
@@ -19,65 +22,64 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
     (function () {
-      emailjs.init("mLcw4VXd7GiyPflDs"); // Substitueix amb la teva clau pública d'EmailJS
+      emailjs.init("mLcw4VXd7GiyPflDs");
     })();
   </script>
+  <script src="js/form.js"></script>
 
 </head>
 
 <body>
   <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
-  <!-- Main Content -->
-  <header class="home-header">
-    <nav class="navbar">
-      <ul>
-        <li class="dropdown">
-          <a href="index.html">Inici</a>
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logos/aess/Logo_aess_blanc.svg" alt="AESS Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inici</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="aessbot.html" class="nav-link">AESSBot <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="aess-inscripcio.html">Participa</a></li>
+            <li><a href="aessbot-inscripcio.html">Inscripció AESSBot</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="aessbot.html">AESSBot 2026</a>
-          <ul class="dropdown-menu">
-            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
-          </ul>
+        <li class="nav-item">
+          <a href="cursos.html" class="nav-link">Cursos</a>
         </li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="projectes.html">Projectes</a></li>
-        <li><a href="contact.html">Contacte</a></li>
+        <li class="nav-item">
+          <a href="projectes.html" class="nav-link">Projectes</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link active">Contacte</a>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
 
   <main id="main-content">
-    <header class="new-hero contact-hero">
+    <header class="poster-hero">
       <div class="hero-content">
-        <span class="hero-badge">
-          <i class="fas fa-envelope"></i>
-          Estem aquí per ajudar-te
-        </span>
         <h1 class="hero-title">
-          <span class="gradient-text">Contacta</span> amb nosaltres
+          <span>Contacte</span>
         </h1>
         <p class="hero-subtitle">
           Tens alguna pregunta, suggeriment o vols col·laborar amb nosaltres? Omple el formulari i et respondrem el més aviat possible.
         </p>
-        <div class="hero-buttons">
-          <a href="#contact-form" class="btn btn-primary">
-            <i class="fas fa-paper-plane"></i> Enviar missatge
-          </a>
-          <a href="#contact-info" class="btn btn-outline">
-            <i class="fas fa-info-circle"></i> Més informació
-          </a>
-        </div>
       </div>
       <div class="hero-visual">
-        <div class="floating-cube">
-          <img src="images/logos/aess/CubBlanc.svg" alt="Cubo AESS" class="cube">
+        <div class="poster-container">
+          <img src="images/logos/aess/CubBlanc.svg" alt="Contacta amb nosaltres" class="poster-image">
         </div>
-        <div class="hero-shape"></div>
       </div>
     </header>
 
@@ -85,6 +87,7 @@
     <div class="container-sidebar">
       <section class="form-container">
         <h2 id="form-title">Formulari de contacte</h2>
+        <div id="form-response" style="display: none;"></div>
         <form id="contact-form">
           <fieldset>
             <legend>Dades Personals</legend>
@@ -107,48 +110,48 @@
           <fieldset>
             <legend>Informació del Missatge</legend>
             <div class="form-group">
-              <label>Tema<sup>*</sup></label>
-              <div class="radio-options">
-                <label><input type="radio" name="user-type" value="AESS Estudiants" required> AESS Estudiants</label>
-                <label><input type="radio" name="user-type" value="Cursos" required> Cursos</label>
-                <label><input type="radio" name="user-type" value="Projectes" required> Projectes </label>
-                <label><input type="radio" name="user-type" value="Col·laboració" required> Col·laboració</label>
-                <label><input type="radio" name="user-type" value="AESSBot"> AESSBot 2026</label>
-                <label><input type="radio" name="user-type" value="Altres"> Altres</label>
-              </div>
+              <label for="tema">Tema<sup>*</sup></label>
+              <select id="tema" name="user-type" class="form-select" required>
+                <option value="" disabled selected>Selecciona un tema</option>
+                <option value="AESS Estudiants">AESS Estudiants</option>
+                <option value="AESSBot">AESSBot</option>
+                <option value="Cursos">Cursos</option>
+                <option value="Altres">Altres</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="subject">Motiu<sup>*</sup></label>
-              <input type="text" id="subject" name="subject" required placeholder="Escriu el motiu del missatge">
+              <label for="subject">Assumpte<sup>*</sup></label>
+              <input type="text" id="subject" name="subject" required placeholder="Escriu l'assumpte del missatge">
             </div>
 
             <div class="form-group">
               <label for="message">El teu missatge<sup>*</sup></label>
-              <textarea id="message" name="message" required="" placeholder="Escriu el teu missatge aquí..."
-                style="height: 183px;"></textarea>
+              <textarea id="message" name="message" required placeholder="Escriu el teu missatge aquí..." rows="6"></textarea>
             </div>
           </fieldset>
 
-          <div class="form-group-terms checkbox">
+          <div class="form-group form-group-terms">
             <input type="checkbox" id="accept" name="accept" required>
             <label for="accept">
-              Accepto <a href="documentos/Política_Privacitat.pdf" target="_blank" 
-                        rel="noopener noreferrer">
+              Accepto <a href="documents/Política_Privacitat.pdf" target="_blank" rel="noopener noreferrer">
                 la política de privacitat
               </a>
+              <sup>*</sup>
             </label>
           </div>
 
           <div class="download-button">
-            <button type="submit">Enviar</button>
+            <button type="submit" aria-label="Enviar formulari">
+              <span class="button-text">Enviar missatge</span>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
           </div>
         </form>
       </section>
     </div>
   </main>
 
-  <!-- Footer -->
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -173,13 +176,13 @@
         </div>
       </div>
 
+      <!-- Enllaços ràpids -->
       <div class="footer-section">
         <h3 class="footer-heading">Enllaços ràpids</h3>
-        <ul class="footer-links">
-          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+        <ul class="quick-links">
           <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
-          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
           <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contacte</a></li>
         </ul>
       </div>
@@ -207,7 +210,9 @@
       <div class="container">
         <p>&copy; 2025 AESS Estudiants. Tots els drets reservats.</p>
         <div class="legal-links">
-          <a href="documentos/Política_Privacitat.pdf" target="_blank">Política de Privacitat</a>
+          <a href="documentos/Política_Privacitat.pdf" target="_blank">Política de privacitat</a>
+          <span class="divider">|</span>
+          <a href="documentos/normativa_v3.pdf" target="_blank">Normativa</a>
         </div>
       </div>
     </div>

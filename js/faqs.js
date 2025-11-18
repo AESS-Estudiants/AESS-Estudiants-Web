@@ -1,8 +1,8 @@
 // Codi JavaScript per al funcionament de l'acordió de preguntes freqüents
 console.log('faqs.js carregat'); // Missatge de depuració
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM carregat'); // Missatge de depuració
+function initFAQs() {
+    console.log('Inicialitzant FAQs...'); // Missatge de depuració
     
     const faqItems = document.querySelectorAll('.faq-item');
     console.log('Preguntes trobades:', faqItems.length); // Missatge de depuració
@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (answer) {
                     answer.style.maxHeight = '0';
                     answer.style.padding = '0 1.5rem';
+                    answer.style.opacity = '0';
+                    answer.style.transform = 'translateY(-10px)';
                 }
             }
         });
@@ -37,16 +39,35 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Obrir automàticament la primera pregunta
-        if (index === 0) {
+        // Inicialitzar estats
+        if (!item.classList.contains('active')) {
+            answer.style.maxHeight = '0';
+            answer.style.padding = '0 1.5rem';
+            answer.style.opacity = '0';
+            answer.style.transform = 'translateY(-10px)';
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            answer.style.padding = '0 1.5rem 1.5rem';
+            answer.style.opacity = '1';
+            answer.style.transform = 'translateY(0)';
+        }
+        
+        // Obrir automàticament la primera pregunta si cap està oberta
+        if (index === 0 && !document.querySelector('.faq-item.active')) {
             item.classList.add('active');
             answer.style.maxHeight = answer.scrollHeight + 'px';
             answer.style.padding = '0 1.5rem 1.5rem';
+            answer.style.opacity = '1';
+            answer.style.transform = 'translateY(0)';
         }
         
-        question.addEventListener('click', function(e) {
+        // Eliminar event listeners existents per evitar duplicats
+        const newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
+        newQuestion.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Clic a la pregunta', index + 1); // Missatge de depuració
+            e.stopPropagation();
             
             // Toggle de la classe active
             const isActive = item.classList.contains('active');
@@ -56,30 +77,44 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Si està actiu, el desactivem
             if (isActive) {
-                console.log('Tancant pregunta', index + 1); // Missatge de depuració
                 item.classList.remove('active');
                 answer.style.maxHeight = '0';
                 answer.style.padding = '0 1.5rem';
+                answer.style.opacity = '0';
+                answer.style.transform = 'translateY(-10px)';
             } else {
                 // Si no està actiu, l'activem
-                console.log('Obrint pregunta', index + 1); // Missatge de depuració
                 item.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
                 answer.style.padding = '0 1.5rem 1.5rem';
+                answer.style.opacity = '1';
+                answer.style.transform = 'translateY(0)';
             }
         });
     });
     
     // Actualitzar l'alçada de la resposta quan canvia la mida de la finestra
+    let resizeTimer;
     window.addEventListener('resize', function() {
-        const activeItem = document.querySelector('.faq-item.active');
-        if (activeItem) {
-            const answer = activeItem.querySelector('.faq-answer');
-            if (answer) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        }
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            const activeItems = document.querySelectorAll('.faq-item.active');
+            activeItems.forEach(item => {
+                const answer = item.querySelector('.faq-answer');
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        }, 250);
     });
     
     console.log('Configuració de l\'acordió completada'); // Missatge de depuració
-});
+}
+
+// Inicialitzar quan el DOM estigui completament carregat
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQs);
+} else {
+    // DOMContentLoaded ja s'ha disparat, inicialitzar directament
+    initFAQs();
+}

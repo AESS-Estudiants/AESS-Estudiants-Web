@@ -6,24 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/aessbot-2026.css">
+  <link rel="stylesheet" href="css/poster-hero.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="icon" href="images/logos/aess/Cub.svg" type="image/png">
   <style>
     /* Ajustes específicos para la imagen del hero en cursos.html */
-    .aessbot-hero .hero-visual {
+    .poster-hero .hero-visual {
       max-width: 100%;
       padding: 1rem;
     }
-    .aessbot-hero .poster-container {
+    .poster-hero .poster-container {
       max-width: 300px;
       margin: 0 auto;
     }
     @media (min-width: 768px) {
-      .aessbot-hero .hero-visual {
+      .poster-hero .hero-visual {
         padding: 0;
         max-width: 45%;
       }
-      .aessbot-hero .poster-container {
+      .poster-hero .poster-container {
         max-width: 350px;
       }
     }
@@ -42,70 +43,67 @@
 <body>
   <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
   <!-- Navigation Menu -->
-  <header class="home-header">
-    <nav class="navbar">
-      <ul>
-        <li class="dropdown">
-          <a href="index.html">Inici</a>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logos/aess/Logo_aess_blanc.svg" alt="AESS Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inici</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="aessbot.html" class="nav-link">AESSBot <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="aess-inscripcio.html">Participa</a></li>
+            <li><a href="aessbot-inscripcio.html">Inscripció AESSBot</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="aessbot.html">AESSBot 2026</a>
-          <ul class="dropdown-menu">
-            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
-          </ul>
+        <li class="nav-item">
+          <a href="cursos.html" class="nav-link active">Cursos</a>
         </li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="projectes.html">Projectes</a></li>
-        <li><a href="contact.html">Contacte</a></li>
+        <li class="nav-item">
+          <a href="projectes.html" class="nav-link">Projectes</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contacte</a>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <main id="main-content">
-    <header class="new-hero aessbot-hero">
+    <header class="poster-hero">
       <div class="hero-content">
-        <div class="hero-badges">
-          <span class="hero-badge online">
-            <i class="fas fa-circle"></i>
-            <span>Formació especialitzada</span>
-          </span>
-        </div>
         <h1 class="hero-title">
-          Cursos i <span class="gradient-text">Tallers</span>
+          <span>Cursos</span>
         </h1>
         <p class="hero-subtitle">
           Aprèn amb els nostres cursos pràctics en robòtica, electrònica i programació.
           Des de iniciació fins a nivell avançat, tenim el curs perfecte per a tu.
         </p>
-        <div class="hero-buttons">
-          <a href="#cursos-disponibles" class="btn btn-primary">
-            <i class="fas fa-list-ul"></i> Veure tots els cursos
-          </a>
-          <a href="#info-general" class="btn btn-outline">
-            <i class="fas fa-info-circle"></i> Més informació
-          </a>
-        </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">10+</span>
+            <span class="stat-number">6</span>
             <span class="stat-label">Cursos disponibles</span>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">2 ECTS</span>
-            <span class="stat-label">Fins a 2 crèdits ECTS</span>
+<div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Pràctic</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">✓</span>
-            <span class="stat-label">Certificats</span>
+            <span class="stat-number">1-2 ECTS</span>
+            <span class="stat-label">Convalidable</span>
           </div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="poster-container">
-          <img src="images/cursos/cartell-din4.png" alt="Cursos i Tallers AESS - Formació especialitzada" class="competition-poster">
+          <img src="images/cursos/cartell-din4.png" alt="Cursos i Tallers AESS - Formació especialitzada" class="poster-image">
         </div>
       </div>
     </header>
@@ -131,7 +129,7 @@
         <div class="highlight-cards">
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs d'Arduino Introducció">
+              <img src="images/cursos/logos/logo_arduino_intro.png" alt="Logo Arduino Introducció">
             </div>
             <div class="course-content">
               <i class="fas fa-code fa-3x"></i>
@@ -141,16 +139,15 @@
                 actuadors i comunicació bàsica. Perfecte per començar en el món de l'electrònica.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Inicial</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
 
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs d'Arduino Avançat">
+              <img src="images/cursos/logos/logo_arduino_avanzado.svg" alt="Logo Arduino Avançat">
             </div>
             <div class="course-content">
               <i class="fas fa-microchip fa-3x"></i>
@@ -160,16 +157,15 @@
                 control PID i optimització de codi.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Avançat</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
 
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Fusion 3D Design">
+              <img src="images/cursos/logos/logo_autocad.png" alt="Logo Fusion 3D Design">
             </div>
             <div class="course-content">
               <i class="fas fa-cube fa-3x"></i>
@@ -179,16 +175,15 @@
                 dissenys complexos per impressió 3D i fabricació.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Inicial</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
 
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Raspberry Pi">
+              <img src="images/cursos/logos/logo_respbaerry_pi.svg" alt="Logo Raspberry Pi">
             </div>
             <div class="course-content">
               <i class="fas fa-server fa-3x"></i>
@@ -198,16 +193,15 @@
                 programació GPIO, projectes IoT i automatització.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Inicial/Intermedi</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
 
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Programació en Python">
+              <img src="images/cursos/logos/logo_python.png" alt="Logo Python">
             </div>
             <div class="course-content">
               <i class="fab fa-python fa-3x"></i>
@@ -217,16 +211,15 @@
                 i aplicacions en automatització i anàlisi de dades.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Inicial</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
 
           <div class="highlight-card">
             <div class="course-image">
-              <img src="images/cursos/cartell-din4.png" alt="Cartell del curs de Programació en C++">
+              <img src="images/cursos/logos/Logo_c++.png" alt="Logo C++">
             </div>
             <div class="course-content">
               <i class="fas fa-terminal fa-3x"></i>
@@ -236,10 +229,9 @@
                 POO i programació eficient.
               </p>
               <p><strong>Durada:</strong> 5 sessions (4 hores cada una)</p>
+              <p><strong>Data:</strong> Properament</p>
               <p><strong>Nivell:</strong> Intermedi</p>
-              <div class="download-button">
-                <button onclick="window.location.href='contact.html'">Més informació</button>
-              </div>
+              <a href="contact.html" class="btn btn-primary">Més informació</a>
             </div>
           </div>
         </div>
@@ -266,13 +258,13 @@
         <div class="header-section">
           <h2>Vols apuntar-te a un curs?</h2>
           <p>
-            Si estàs interessat en algun dels nostres cursos o vols proposar un tema nou, 
+            Si estàs interessat en algun dels nostres cursos, 
             contacta amb nosaltres. Les inscripcions s'anunciaran properament!
           </p>
         </div>
-        <div class="download-button">
-          <button onclick="window.location.href='contact.html'">Contacta amb nosaltres</button>
-        </div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">
+          Contacta amb nosaltres
+        </a>
         <br><br>
       </section>
 
@@ -280,7 +272,6 @@
   </main>
 
   <!-- Footer -->
-   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-section">
@@ -304,13 +295,14 @@
         </div>
       </div>
 
+      <!-- Enllaços ràpids -->
       <div class="footer-section">
         <h3 class="footer-heading">Enllaços ràpids</h3>
-        <ul class="footer-links">
-          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+        <ul class="quick-links">
           <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
-          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
           <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contacte</a></li>
         </ul>
       </div>
 

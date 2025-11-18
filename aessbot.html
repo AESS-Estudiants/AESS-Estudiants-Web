@@ -7,6 +7,7 @@
   <meta name="description" content="Participa a l'AESSBot 2026, la competició de robòtica més esperada de la UPC. Dissenya, construeix i competeix amb el teu robot sumo.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/aessbot-2026.css">
+  <link rel="stylesheet" href="css/poster-hero.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,55 +22,63 @@
   <a href="#main-content" class="skip-to-main">Anar al contingut principal</a>
   
   <!-- Navigation Menu -->
-  <header class="home-header">
-    <nav class="navbar">
-      <ul>
-        <li class="dropdown">
-          <a href="index.html">Inici</a>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logos/aess/Logo_aess_blanc.svg" alt="AESS Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inici</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="aessbot.html" class="nav-link active">AESSBot <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="aess-inscripcio.html">Participa</a></li>
+            <li><a href="aessbot-inscripcio.html">Inscripció AESSBot</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="aessbot.html" class="active">AESSBot 2026</a>
-          <ul class="dropdown-menu">
-            <li><a href="aessbot-inscripcio.html">Inscriu-te</a></li>
-          </ul>
+        <li class="nav-item">
+          <a href="cursos.html" class="nav-link">Cursos</a>
         </li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="projectes.html">Projectes</a></li>
-        <li><a href="contact.html">Contacte</a></li>
+        <li class="nav-item">
+          <a href="projectes.html" class="nav-link">Projectes</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contacte</a>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <main id="main-content">
-    <header class="new-hero aessbot-hero">
+    <header class="poster-hero">
       <div class="hero-content">
-        <div class="hero-badges">
-          <span class="hero-badge online" id="countdown-badge">
-            <i class="fas fa-circle"></i>
-            <span id="countdown-text">Inscripcions obertes</span>
-            <span id="countdown-days" style="font-weight: bold; margin-left: 5px;"></span>
-          </span>
-        </div>
         <h1 class="hero-title">
           <span class="gradient-text">AESS</span>Bot 2026
         </h1>
         <p class="hero-subtitle">
           La competició de robòtica més esperada de la UPC. Dissenya, construeix i competeix amb el teu propi robot sumo.
         </p>
-        <div class="hero-buttons">
-          <a href="aessbot-inscripcio.html" class="btn btn-primary">
+        <div class="badge-and-button-container" style="margin: 10px 0 15px;">
+          <div class="badge-wrapper">
+            <span class="hero-badge online" id="countdown-badge">
+              <i class="fas fa-circle"></i>
+              <span id="countdown-text">Inscripcions obertes</span>
+              <span id="countdown-days" style="font-weight: bold; margin-left: 5px;"></span>
+            </span>
+          </div>
+          <a href="aessbot-inscripcio.html" class="btn btn-primary btn-inline">
             <i class="fas fa-user-plus"></i> Inscriu-te ara
-          </a>
-          <a href="#overview" class="btn btn-outline">
-            <i class="fas fa-info-circle"></i> Més informació
           </a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">1000€</span>
+            <span class="stat-number">940€</span>
             <span class="stat-label">En premis</span>
           </div>
           <div class="stat-item">
@@ -88,7 +97,7 @@
       </div>
       <div class="hero-visual">
         <div class="poster-container">
-          <img src="images/aessbot/Cartell-original-DIN.png" alt="AESSBot 2026 - Cartell de la competició" class="competition-poster">
+          <img src="images/aessbot/Cartell-original-DIN.png" alt="AESSBot 2026 - Cartell de la competició" class="poster-image">
         </div>
       </div>
     </header>
@@ -279,7 +288,7 @@
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="faq-answer">
-              <p>La competició està oberta a tots els estudiants de la UPC, tant de grau com de màster. Es pot participar en equips de fins a 4 persones.</p>
+              <p>La competició està oberta a tots els estudiants de la UPC, tant de grau com de màster. Es pot participar en equips de fins a 3 persones.</p>
             </div>
           </div>
 
@@ -410,13 +419,14 @@
         </div>
       </div>
 
+      <!-- Enlaces rápidos -->
       <div class="footer-section">
         <h3 class="footer-heading">Enllaços ràpids</h3>
-        <ul class="footer-links">
-          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inici</a></li>
+        <ul class="quick-links">
           <li><a href="aessbot.html"><i class="fas fa-chevron-right"></i> AESSBot</a></li>
-          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
           <li><a href="cursos.html"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+          <li><a href="projectes.html"><i class="fas fa-chevron-right"></i> Projectes</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contacte</a></li>
         </ul>
       </div>
 
@@ -452,7 +462,56 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/faqs.js" defer></script>
-  <script src="js/navbar.js" defer></script>
+  <script src="js/script.js"></script>
+  <script src="js/faqs.js"></script>
+  <script src="js/footer.js"></script>
+  
+  <script>
+    // Countdown to February 11, 2026 23:59:59
+    function updateCountdown() {
+      const countdownDate = new Date('2026-02-11T23:59:59').getTime();
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      
+      // Calculate time units
+      const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+      const hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      const minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+      
+      // Display the result
+      const daysElement = document.getElementById('countdown-days');
+      const countdownText = document.getElementById('countdown-text');
+      
+      if (daysElement && countdownText) {
+        if (distance <= 0) {
+          countdownText.textContent = 'Inscripcions tancades';
+          daysElement.textContent = '';
+        } else {
+          countdownText.textContent = 'Inscriu-te abans de: ';
+          daysElement.textContent = `${days}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m`;
+        }
+        
+        // Update badge class based on days remaining
+        const badge = document.getElementById('countdown-badge');
+        if (badge) {
+          if (days <= 7) {
+            badge.classList.add('urgent');
+            badge.classList.remove('warning');
+          } else if (days <= 14) {
+            badge.classList.add('warning');
+            badge.classList.remove('urgent');
+          } else {
+            badge.classList.remove('warning', 'urgent');
+          }
+        }
+      }
+    }
+
+    // Update countdown immediately and then every minute
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCountdown();
+      setInterval(updateCountdown, 60000); // Update every minute
+    });
+  </script>
 </body>
 </html>
