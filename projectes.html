@@ -63,17 +63,50 @@
   <main id="main-content">
     <header class="poster-hero">
       <div class="hero-content">
+        <div class="badge-and-button-container">
+          <div class="badge-wrapper">
+            <span class="hero-badge">
+              <i class="fas fa-lightbulb"></i>
+              Innovació en marxa
+            </span>
+          </div>
+          <a href="#actius" class="btn btn-primary btn-inline">
+            <i class="fas fa-rocket"></i> Projectes en curs
+          </a>
+        </div>
         <h1 class="hero-title">
-          <span>Projectes</span>
+          <span class="gradient-text">Els nostres</span> Projectes
         </h1>
         <p class="hero-subtitle">
-          Descobreix les nostres iniciatives en robòtica, electrònica i tecnologia aeroespacial.
-          Des de competicions fins a projectes d'investigació, aquí trobaràs tot el que fem.
+          Descobreix les iniciatives en robòtica, electrònica i tecnologia aeroespacial que impulsem des del taller.
+          Traslladem l'experiència visual d'AESSBot perquè també puguis seguir l'activitat al web principal.
         </p>
+        <div class="hero-buttons">
+          <a href="#participa" class="btn btn-outline">
+            <i class="fas fa-users"></i> Uneix-te a l'equip
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Projectes actius</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Membres implicats</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Aprenentatge</span>
+          </div>
+        </div>
       </div>
       <div class="hero-visual">
         <div class="poster-container">
-          <img src="images/logos/aess/CubBlanc.svg" alt="Els nostres projectes" class="poster-image">
+          <div class="floating-cube">
+            <img src="images/logos/aess/CubBlanc.svg" alt="Cube AESS" class="cube">
+          </div>
+          <div class="hero-shape"></div>
         </div>
       </div>
     </header>
@@ -85,15 +118,112 @@
         <div class="header-section">
           <h2>Els nostres projectes</h2>
           <p>
-            A AESS Estudiants, treballem constantment en projectes innovadors relacionats amb robòtica, 
-            electrònica i sistemes aeroespacials. Per conèixer els nostres projectes actius,
-
-            vine'ns a veure al taller.
+            A AESS Estudiants treballem constantment en projectes innovadors relacionats amb robòtica, electrònica i
+            sistemes aeroespacials. Ara mateix tenim tres línies actives (Smart Ring, Delta 2.0 i Drons de Velocitat)
+            que pots conèixer amb el mateix format visual que fem servir a la nova web d'AESSBot.
           </p>
         </div>
       </section>
 
+      <!-- Projectes Actius -->
+      <section id="actius">
+        <div class="header-section">
+          <h2>Projectes en curs</h2>
+          <p>Seguim la mateixa estructura que al web d'AESSBot per mostrar quins projectes estan actius i en quin focus treballem.</p>
+        </div>
+
+        <div class="highlight-cards">
+
+          <div class="highlight-card">
+            <div class="project-status">
+              <span class="status-indicator"></span>
+              <span class="status-text">En curs</span>
+            </div>
+            <i class="fas fa-ring fa-3x"></i>
+            <h3>Smart Ring</h3>
+            <p>
+              Desenvolupament d'un anell intel·ligent amb sensors i connectivitat per monitoritzar activitat física i altres funcions innovadores.
+            </p>
+            <p><strong>Estat:</strong> En desenvolupament</p>
+          </div>
+
+          <div class="highlight-card">
+            <div class="project-status">
+              <span class="status-indicator"></span>
+              <span class="status-text">En curs</span>
+            </div>
+            <i class="fas fa-robot fa-3x"></i>
+            <h3>Delta 2.0</h3>
+            <p>
+              Robot delta de precisió per a tasques d'automatització i pick-and-place. Segona versió millorada amb millor control i velocitat.
+            </p>
+            <p><strong>Estat:</strong> En desenvolupament</p>
+          </div>
+
+          <div class="highlight-card">
+            <div class="project-status">
+              <span class="status-indicator"></span>
+              <span class="status-text">En curs</span>
+            </div>
+            <i class="fas fa-helicopter fa-3x"></i>
+            <h3>Drons de Velocitat</h3>
+            <p>
+              Projecte de disseny i construcció de drons optimitzats per a competicions de velocitat i races FPV.
+            </p>
+            <p><strong>Estat:</strong> En desenvolupament</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Experiència prèvia -->
+      <section class="project-legacy">
+        <div class="header-section">
+          <h2>Hem participat en...</h2>
+          <p>
+            A banda dels projectes actius, des d'AESS Estudiants hem competit, col·laborat i experimentat amb tota mena de robots en el passat.
+            Aquí tens un tast dels àmbits que hem treballat els darrers anys.
+          </p>
+        </div>
+
+        <div class="legacy-summary-grid">
+          <article class="legacy-summary-card">
+            <div class="legacy-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Competicions i hacks</h3>
+            <p>Hem organitzat i participat en tornejos com AESSBot, Eurobot o hackathons interns per posar a prova el nostre enginy.</p>
+            <ul class="legacy-links">
+              <li>AESSBot, el nostre torneig minisumo que suma més de 15 equips cada any.</li>
+              <li>Eurobot i altres competicions internacionals per portar prototips més enllà del taller.</li>
+              <li>Hackathons i challenges interns on testejar idees en 24 hores.</li>
+            </ul>
+          </article>
+
+          <article class="legacy-summary-card">
+            <div class="legacy-icon"><i class="fas fa-robot"></i></div>
+            <h3>Sumos i robots humanoides</h3>
+            <p>Des de sumos minisumo fins a robots humanoides i Nerf bots, explorem mecàniques noves i controlem cada detall del hardware.</p>
+            <ul class="legacy-links">
+              <li>Sumos minisumo i sumo autònom per a la festa de la FIB i esdeveniments UPC.</li>
+              <li>RoboNerf i robots humanoides per exhibicions i proves de control remot.</li>
+              <li>Projectes com Roboraptor o Cyclone per estudiar noves cinemàtiques.</li>
+            </ul>
+          </article>
+
+          <article class="legacy-summary-card">
+            <div class="legacy-icon"><i class="fas fa-handshake"></i></div>
+            <h3>Col·laboracions i impacte</h3>
+            <p>També impulsem projectes socials i formatius: tallers, cooperació internacional i suports a equips externs.</p>
+            <ul class="legacy-links">
+              <li>Projectes de cooperació amb el CCD a Ghana per instal·lar laboratoris i equips bàsics.</li>
+              <li>Cursos interns (Python, electrònica, 3D) oberts a tota la comunitat d'estudiants.</li>
+              <li>Suport tècnic a webs, tallers i prototips d'altres clubs i entitats.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <!-- Galeria de Projectes -->
+      <section id="galeria" class="project-gallery">
         <div class="carousel-container" style="margin: 2rem auto;">
           <button class="carousel-nav carousel-prev" aria-label="Anterior">
             <i class="fas fa-chevron-left"></i>
@@ -147,23 +277,24 @@
       <section id="participa" class="participa-section">
         <div class="participa-container">
           <div class="participa-content">
-<h2 class="participa-title">Vols participar en un projecte?</h2>
+            <span class="participa-badge">
+              <i class="fas fa-hands-helping"></i>
+              Vols formar part?
+            </span>
+            <h2 class="participa-title">Vols participar en un projecte?</h2>
             <p class="participa-text">
-              Tens una idea de projecte o et vols unir a algun dels nostres projectes actius? A AESS Estudiants 
-              valorem la creativitat i l'entusiasme de persones com tu. Sigues part del nostre equip i dóna vida 
-              a projectes innovadors en robòtica i tecnologia!
+              Tens una idea de projecte o et vols unir a algun dels nostres projectes actius? A AESS Estudiants valorem la creativitat
+              i l'entusiasme de persones com tu. Sigues part del nostre equip i dóna vida a projectes innovadors en robòtica i tecnologia!
             </p>
             <div class="participa-cta">
-              <a href="https://chat.whatsapp.com/TU_ENLACE_DE_GRUPO_DE_WHATSAPP" target="_blank" class="btn btn-whatsapp btn-large">
-                <i class="fab fa-whatsapp"></i> Uneix-te al grup de WhatsApp
+              <a href="contact.html" class="btn btn-primary btn-large">
+                <i class="fas fa-paper-plane"></i> Contacta amb nosaltres
               </a>
             </div>
-            <p class="whatsapp-note" style="margin-top: 1rem; font-size: 0.9rem; color: #6b7280; max-width: 600px;">
-              <i class="fas fa-info-circle"></i> Uneix-te al nostre grup de WhatsApp per estar al dia de les últimes novetats, properes trobades i oportunitats de participar en projectes. És la millor manera de començar a formar part de la comunitat AESS!
-            </p>
           </div>
           <div class="participa-visual">
-            <!-- Logo removed as requested -->
+            <div class="participa-shape"></div>
+            <img src="images/logos/aess/CubBlanc.svg" alt="Participa en projectes AESS" class="participa-image">
           </div>
         </div>
       </section>

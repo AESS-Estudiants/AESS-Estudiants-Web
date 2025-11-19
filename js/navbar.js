@@ -3,6 +3,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
   const dropdownToggles = document.querySelectorAll('.dropdown > .nav-link');
+  const dropdowns = document.querySelectorAll('.dropdown');
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+
+  if (!mobileMenuToggle || !navMenu) {
+    return;
+  }
+
+  function updateToggleIcon(toggle, expanded) {
+    const icon = toggle.querySelector('i');
+    if (!icon) return;
+    icon.classList.toggle('fa-chevron-up', expanded);
+    icon.classList.toggle('fa-chevron-down', !expanded);
+  }
+
+  function setDropdownState(dropdown, expanded) {
+    const toggle = dropdown.querySelector('.nav-link');
+    if (!toggle) return;
+    dropdown.classList.toggle('active', expanded);
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    updateToggleIcon(toggle, expanded);
+  }
+
+  function closeAllDropdowns() {
+    dropdowns.forEach(dropdown => setDropdownState(dropdown, false));
+  }
+
+  dropdownToggles.forEach(toggle => {
+    toggle.setAttribute('aria-expanded', 'false');
+  });
 
   // Toggle mobile menu
   mobileMenuToggle.addEventListener('click', function(e) {
@@ -16,28 +45,16 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function(e) {
       if (window.innerWidth <= 1024) {
-        e.preventDefault();
-        const dropdown = this.nextElementSibling;
-        const isOpen = dropdown.style.display === 'block';
-        
-        // Close all other open dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          if (menu !== dropdown) {
-            menu.style.display = 'none';
-            menu.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
-            menu.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
-          }
-        });
-        
-        // Toggle current dropdown
-        if (isOpen) {
-          dropdown.style.display = 'none';
-          this.querySelector('i').classList.remove('fa-chevron-up');
-          this.querySelector('i').classList.add('fa-chevron-down');
+        const dropdown = this.parentElement;
+        const isActive = dropdown.classList.contains('active');
+
+        if (!isActive) {
+          e.preventDefault();
+          closeAllDropdowns();
+          setDropdownState(dropdown, true);
         } else {
-          dropdown.style.display = 'block';
-          this.querySelector('i').classList.remove('fa-chevron-down');
-          this.querySelector('i').classList.add('fa-chevron-up');
+          // Close dropdown but allow navigation to proceed on second tap
+          closeAllDropdowns();
         }
       }
     });
@@ -50,8 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.classList.remove('menu-open');
+        closeAllDropdowns();
       });
     }
+  });
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      closeAllDropdowns();
+    });
   });
 
   // Close mobile menu when clicking outside
@@ -60,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileMenuToggle.classList.remove('active');
       navMenu.classList.remove('active');
       document.body.classList.remove('menu-open');
+      closeAllDropdowns();
     }
   });
 
@@ -79,9 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       navMenu.classList.remove('active');
       document.body.classList.remove('menu-open');
       // Reset dropdown menus
-      document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.style.display = '';
-      });
+      closeAllDropdowns();
     }
   }
 
