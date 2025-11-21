@@ -1,64 +1,109 @@
-<p align="center">
-  <a href="https://aess-estudiants.vercel.app/">
-    <img src="images/logos/aess/LogoAESS.svg" alt="AESS Estudiants" width="40%">
-  </a>
-</p>
+# AESS Estudiants - Web React
 
-Aquest és el repositori de la web de AESS Estudiants. Aquí es troba tota la informació necessària per l'actualització i manteniment de la web.
+Web moderna de AESS Estudiants migrada a React con un diseño completamente nuevo, estético y responsive.
 
-Aquesta web està allotjada a Vercel. Per poder accedir a ella, pots visitar el següent [enllaç](https://vercel.com/aess-estudiants-projects/aess-estudiants).
+## 🚀 Características
 
-Cada cop que s'actualitzi la branca `main`, la web s'actualitzarà automàticament.
+- ⚛️ **React 18** con Vite
+- 🎨 **Diseño moderno y estético** con gradientes y animaciones
+- 📱 **Completamente responsive** para desktop y mobile
+- 🧭 **React Router** para navegación
+- 🎯 **Componentes reutilizables** (Hero, Carousel, FAQ, etc.)
+- ✉️ **Integración con EmailJS** para formularios
+- 🎭 **Animaciones suaves** y transiciones
 
+## 📦 Instalación
 
+1. Instala las dependencias:
+```bash
+npm install
+```
 
+2. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-# 🤝 Colaboració
+3. Construye para producción:
+```bash
+npm run build
+```
 
-Per a colaborar en el projecte, cal seguir els següents passos:
+4. Previsualiza la build de producción:
+```bash
+npm run preview
+```
 
-## 🔀 Branques Git
+## 📁 Estructura del Proyecto
 
-El nostre projecte utilitza dos branques principals:
+```
+test-web/
+├── public/
+│   ├── images/          # Imágenes y assets
+│   └── documents/       # Documentos PDF
+├── src/
+│   ├── components/      # Componentes reutilizables
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Carousel.jsx
+│   │   └── FAQ.jsx
+│   ├── pages/          # Páginas principales
+│   │   ├── Home.jsx
+│   │   ├── Cursos.jsx
+│   │   ├── Projectes.jsx
+│   │   ├── Contact.jsx
+│   │   ├── AESSBot.jsx
+│   │   └── AESSBotInscripcio.jsx
+│   ├── styles/         # Estilos globales
+│   ├── App.jsx         # Componente principal
+│   └── main.jsx        # Punto de entrada
+├── package.json
+└── vite.config.js
+```
 
-- **main**: Conté codi estàbil i preparat per a la producció. Només es fusionen canvis probats i aprovats des de `develop`.
-- **develop**: La branca activa on es fan nous features i corregir errors. Totes les branques de funcions s'han de crear des de `develop` i fusionar de volta després de la revisió.
+## 🎨 Diseño
 
-> [!warning]
-> Sempre baseu el treball nou en `develop` i fusioni via pull requests.
+El nuevo diseño incluye:
 
+- **Paleta de colores moderna**: Gradientes azul-púrpura con acentos
+- **Tipografía**: Inter para una lectura clara
+- **Efectos visuales**: Backdrop blur, sombras suaves, animaciones
+- **Responsive**: Adaptado para móviles, tablets y desktop
+- **Accesibilidad**: Navegación por teclado, ARIA labels, contraste adecuado
 
+## 📄 Páginas
 
-## 📚 Pasos per col·laborar
+- **Home** (`/`): Página principal con información sobre AESS
+- **Cursos** (`/cursos`): Listado de cursos disponibles
+- **Projectes** (`/projectes`): Proyectos activos y pasados
+- **Contact** (`/contact`): Formulario de contacto
+- **AESSBot** (`/aessbot`): Información sobre la competición
+- **AESSBot Inscripció** (`/aessbot-inscripcio`): Formulario de inscripción
 
-Següents passos per col·laborar en el projecte:
+## 🔧 Tecnologías
 
-1. **Sincronitza la branca `develop` localment** per assegurar-te que estàs treballant amb les últimes canvis:
-   ```sh
-   git switch develop
-   git fetch origin
-   git pull origin develop
-   ```
-2. **Crea una nova branca** des de `develop`. El nom de la branca ha de seguir la convenció (`feature/`, `fix/`, `chore/`).
-   ```sh
-   git switch -c feature/your-feature-name
-   ```
+- React 18.2.0
+- React Router DOM 6.20.0
+- Vite 5.0.8
+- EmailJS 3.11.0
+- Font Awesome 6.6.0
 
-3. **Treballa sobre els teus canvis** i commit regularment. El missatge del commit ha de seguir les convencions (feature:, fix:, chore:). Per més detalls, consulta [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). Utilitzem `pre-commit` per assegurar la qualitat i la consistència del codi. Quan fas commits, `pre-commit` executa automàticament comprovacions com el format, el linting i la validació dels missatges del commit. Si es troben problemes, el commit serà blocat fins que no es solucionin. Això ajuda a mantenir codi net i estàndard.
-   ```sh
-   git add .
-   git commit -m "feat: Add new feature description"
-   ```
-   Si el nom de la branca o el missatge del commit no segueix la convenció, `pre-commit` blocarà el commit o el push.
-4. **Pushea la teva branca** al repositori:
-   ```sh
-   git push origin feature/your-feature-name
-   ```
-5. **Obre una petició de fusionament (MR)** a `develop`, describint els teus canvis. Recorda assignar un revisor.
-6. **Demana revisions** al revisor i resol la feedback.
-7. **Fusiona la teva MR** una vegada aprovada i passats els tests.
-8. **Elimina la teva branca** després de la fusió per mantenir el repositori net.
+## 📝 Notas
 
+- Las imágenes deben estar en `public/images/`
+- Los documentos PDF deben estar en `public/documents/`
+- El formulario de contacto usa EmailJS (configurar en `Contact.jsx`)
+- El formulario de inscripción de AESSBot usa un iframe de Google Forms
 
----
-<p align="center"><em>Fet amb 💙 per AESS Estudiants</em></p>
+## 🌐 Despliegue
+
+Para desplegar en producción:
+
+1. Ejecuta `npm run build`
+2. Los archivos estarán en la carpeta `dist/`
+3. Sube el contenido de `dist/` a tu servidor
+
+## 📧 Contacto
+
+Para más información, visita [AESS Estudiants](https://aessestudiants.upc.edu)
