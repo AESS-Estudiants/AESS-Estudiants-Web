@@ -10,5 +10,11 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
+  server: {
+    historyApiFallback: true,
+  },
+  preview: {
+    historyApiFallback: true,
+  },
 })
 
