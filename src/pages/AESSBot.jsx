@@ -30,6 +30,24 @@ const AESSBot = () => {
     return () => clearInterval(interval)
   }, [])
 
+  // Load Instagram embed script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://www.instagram.com/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    script.onload = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process()
+      }
+    }
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   const talleres = [
     { fecha: '18 Feb 2026', hora: '11:00 - 13:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.' },
     { fecha: '25 Feb 2026', hora: '11:00 - 13:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).' },
@@ -227,6 +245,10 @@ const AESSBot = () => {
                 ))}
               </tbody>
             </table>
+            <div className="talleres-disclaimer">
+              <i className="fas fa-info-circle"></i>
+              <span>Les dates i hores dels tallers poden canviar.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -241,11 +263,11 @@ const AESSBot = () => {
             </p>
             <div className="normativa-cta">
               <a 
-                href="/documents/normativa_v3.pdf" 
+                href="/documents/normativa_v4.pdf" 
                 download="AESSBot_2026_Normativa.pdf" 
                 className="btn btn-primary btn-large"
               >
-                <i className="fas fa-file-pdf"></i> Descarregar Normativa (2025, subjecte a canvis)
+                <i className="fas fa-file-pdf"></i> Descarregar Normativa 2026 (subjecte a canvis)
               </a>
             </div>
           </div>

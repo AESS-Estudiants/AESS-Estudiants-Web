@@ -107,6 +107,10 @@ const Cursos = () => {
               desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més. 
               Tots els cursos són gratuïts per als membres de l'associació. Usualment feu una tanda de cursos a finals de Gener a Principis de Febrer. I una altra a finals de Juny a Principis de Juliol.
             </p>
+            <div className="cursos-disclaimer">
+              <i className="fas fa-info-circle"></i>
+              <span>Els cursos de febrer i juliol encara no estan programats. Les dates s'anunciaran properament.</span>
+            </div>
           </div>
         </div>
       </section>
