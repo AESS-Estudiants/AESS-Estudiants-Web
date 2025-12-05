@@ -85,7 +85,7 @@ const Footer = () => {
               Política de privacitat
             </a>
             <span className="divider">|</span>
-            <a href="/documents/normativa_v3.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">
               Normativa
             </a>
           </div>
