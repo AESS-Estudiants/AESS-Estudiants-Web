@@ -65,7 +65,7 @@ const Home = () => {
             <div className="logo-sponsor-container">
               <div className="sponsor-logo-item">
                 <img 
-                  src="/images/logos/aess/LogoAESS.svg" 
+                  src="/images/logos/aess/Logo_aess_blanc.svg" 
                   alt="AESS Logo" 
                   className="sponsor-logo-img"
                 />
@@ -227,7 +227,7 @@ const Home = () => {
                 <div className="detail-item">
                   <i className="fas fa-trophy"></i>
                   <div>
-                    <span className="detail-value">940€ en premis</span>
+                    <span className="detail-value">1000€ en premis</span>
                     <span className="detail-label">Per als guanyadors</span>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ const Home = () => {
                 <div className="detail-item">
                   <i className="fas fa-robot"></i>
                   <div>
-                    <span className="detail-value">15 robots</span>
+                    <span className="detail-value">16 robots</span>
                     <span className="detail-label">3 persones per equip</span>
                   </div>
                 </div>

@@ -251,6 +251,50 @@
   max-width: 100%;
 }
 
+/* Stats after poster for poster-hero mode */
+.hero-stats-poster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero.poster-hero .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* Mobile: reorder so stats come after poster */
+@media (max-width: 1024px) {
+  .hero.poster-hero .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero.poster-hero .hero-text {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Move stats out of normal flow in mobile */
+  .hero.poster-hero .hero-stats-poster {
+    order: 3;
+    margin: 2rem auto 0;
+    justify-content: center;
+  }
+  
+  .hero.poster-hero .hero-visual {
+    order: 2;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero.poster-hero .hero-content {
     gap: 4rem;
