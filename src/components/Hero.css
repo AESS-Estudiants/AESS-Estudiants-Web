@@ -251,7 +251,7 @@
   max-width: 100%;
 }
 
-/* Stats after poster for poster-hero mode */
+/* Stats after poster for poster-hero mode - now rendered outside hero-text */
 .hero-stats-poster {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -261,13 +261,32 @@
   max-width: 600px;
 }
 
+/* Desktop: keep stats in left column area below hero-text */
 .hero.poster-hero .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-rows: auto auto;
+  gap: 4rem 4rem;
 }
 
-/* Mobile: reorder so stats come after poster */
+.hero.poster-hero .hero-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hero.poster-hero .hero-visual {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: start;
+}
+
+.hero.poster-hero .hero-stats-poster {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
+}
+
+/* Mobile: reorder so poster comes before stats */
 @media (max-width: 1024px) {
   .hero.poster-hero .hero-content {
     grid-template-columns: 1fr;
@@ -282,16 +301,16 @@
     flex-direction: column;
   }
   
-  /* Move stats out of normal flow in mobile */
+  .hero.poster-hero .hero-visual {
+    order: 2;
+    margin: 0 auto;
+  }
+  
+  /* Stats come after poster in mobile */
   .hero.poster-hero .hero-stats-poster {
     order: 3;
     margin: 2rem auto 0;
     justify-content: center;
-  }
-  
-  .hero.poster-hero .hero-visual {
-    order: 2;
-    margin: 0 auto;
   }
 }
 
