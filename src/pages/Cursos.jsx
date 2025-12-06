@@ -92,7 +92,8 @@ const Cursos = () => {
         stats={[
           { value: '6', label: 'Cursos disponibles' },
           { value: '100%', label: 'Pràctic' },
-          { value: '1-2 ECTS', label: 'Convalidable' }
+          { value: '1-2 ECTS', label: 'Convalidable' },
+          { value: 'Places', label: 'Limitades' }
         ]}
         image="/images/cursos/cartell-din4.png"
         poster={true}
@@ -103,9 +104,9 @@ const Cursos = () => {
           <div className="section-header">
             <h2 className="section-title">Cursos</h2>
             <p className="section-subtitle">
-              A AESS Estudiants oferim una àmplia varietat de cursos i tallers pràctics per 
-              desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més. 
-              Tots els cursos són gratuïts per als membres de l'associació. Usualment feu una tanda de cursos a finals de Gener a Principis de Febrer. I una altra a finals de Juny a Principis de Juliol.
+              A AESS Estudiants oferim una àmplia varietat de cursos i tallers pràctics per
+              desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més.
+              Tots els cursos són gratuïts per als membres de l'associació. Usualment oferim una tanda de cursos a finals de Gener a Principis de Febrer, i una altra a finals de Juny a Principis de Juliol.
             </p>
             <div className="cursos-disclaimer">
               <i className="fas fa-info-circle"></i>
@@ -164,7 +165,7 @@ const Cursos = () => {
           <div className="cta-content">
             <h2>Vols apuntar-te a un curs?</h2>
             <p>
-              Si estàs interessat en algun dels nostres cursos, 
+              Si estàs interessat en algun dels nostres cursos,
               contacta amb nosaltres. Les inscripcions s'anunciaran properament!
             </p>
             <Link to="/contact" className="btn btn-primary btn-large">
