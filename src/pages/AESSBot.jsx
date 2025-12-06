@@ -68,7 +68,7 @@ const AESSBot = () => {
     },
     {
       question: 'Quins tallers s\'ofereixen?',
-      answer: 'Ofereixim tallers d\'introducció, actuadors, sensors, PCB i disseny 3D. Tots els tallers són impartits per professionals del sector.',
+      answer: 'Oferim tallers d\'introducció, actuadors, sensors, PCB i disseny 3D. Tots els tallers són impartits per professionals del sector.',
       icon: 'fas fa-chalkboard-teacher'
     },
     {
@@ -78,7 +78,7 @@ const AESSBot = () => {
     },
     {
       question: 'Quan és la final de la competició?',
-      answer: 'La final de l\'AESSBot 2026 està programada per al 12 de maig de 2026.',
+      answer: 'La final de l\'AESSBot 2026 està programada per al 6 de maig de 2026.',
       icon: 'fas fa-calendar-alt'
     },
     {
@@ -129,16 +129,13 @@ const AESSBot = () => {
             </p>
           </div>
           <div className="video-container">
-            <div className="video-wrapper instagram-embed">
+            <div className="video-wrapper youtube-embed">
               <iframe
-                src="https://www.instagram.com/reel/DPvyA6NjUxa/embed"
-                width="540"
-                height="900"
-                frameBorder="0"
-                scrolling="no"
-                allowTransparency="true"
-                allowFullScreen="true"
-                title="Instagram Reel AESSBot"
+                src="https://www.youtube.com/embed/tPKSWS5g-3Y"
+                title="AESSBot Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               ></iframe>
             </div>
           </div>
@@ -188,17 +185,18 @@ const AESSBot = () => {
           <div className="section-header">
             <h2 className="section-title">Normativa</h2>
             <p className="section-subtitle">
-              Consulta i descarrega el reglament oficial de la competició AESSBot 2026. 
+              Consulta i descarrega el reglament oficial de la competició AESSBot 2026.
               Assegura't de llegir-lo atentament abans de participar a la competició.
             </p>
             <div className="normativa-cta">
-              <a 
-                href="/documents/normativa_v4.pdf" 
-                download="AESSBot_2026_Normativa.pdf" 
+              <a
+                href="/documents/normativa_v4.pdf"
+                download="AESSBot_2026_Normativa.pdf"
                 className="btn btn-primary btn-large"
               >
-                <i className="fas fa-file-pdf"></i> Descarregar Normativa 2026 (subjecte a canvis)
+                <i className="fas fa-file-pdf"></i> Descarregar Normativa 2026
               </a>
+              <p className="small-disclaimer">* Subjecte a canvis</p>
             </div>
           </div>
         </div>
