@@ -145,8 +145,8 @@ const AESSBot = () => {
       <section className="talleres-section section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Calendari de Tallers</h2>
-            <p className="section-subtitle">Descobreix els tallers preparats per a la competició AESSBot 2026</p>
+            <h2 className="section-title">Calendari</h2>
+            <p className="section-subtitle">Consulta les dates clau i tallers de la competició AESSBot 2026</p>
           </div>
           <div className="talleres-table-container">
             <table className="talleres-table">

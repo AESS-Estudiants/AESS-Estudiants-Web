@@ -10,6 +10,17 @@
   margin-top: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .hero-badge-container {
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .countdown-badge {
+    text-align: center;
+  }
+}
+
 .countdown-badge {
   display: inline-flex;
   align-items: center;
@@ -68,33 +79,34 @@
 }
 
 .inscripcio-header h2 {
-  font-size: 2.5rem;
+  font-size: var(--text-h1);
   font-weight: 800;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+  margin-bottom: var(--space-md);
+  background: var(--gradient-text-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: var(--leading-tight);
 }
 
 .lead-text {
-  font-size: 1.125rem;
+  font-size: var(--text-body-lg);
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto var(--space-xl);
 }
 
 .alert {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  gap: var(--space-md);
+  padding: 1.25rem var(--space-lg);
   background: rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   max-width: 800px;
-  margin: 1.5rem auto;
+  margin: var(--space-lg) auto;
 }
 
 .alert i {
@@ -115,11 +127,11 @@
 }
 
 .google-form-container {
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 2rem;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
   overflow: hidden;
   max-width: 900px;
   margin: 0 auto;

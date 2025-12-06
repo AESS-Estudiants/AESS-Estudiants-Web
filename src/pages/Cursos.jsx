@@ -110,7 +110,7 @@ const Cursos = () => {
             </p>
             <div className="cursos-disclaimer">
               <i className="fas fa-info-circle"></i>
-              <span>Els cursos de febrer i juliol encara no estan programats. Les dates s'anunciaran properament.</span>
+              <span>La pròxima edició de cursos encara no està disponible. Properament es sabran les dates.</span>
             </div>
           </div>
         </div>

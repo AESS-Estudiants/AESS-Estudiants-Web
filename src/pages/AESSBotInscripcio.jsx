@@ -53,27 +53,20 @@ const AESSBotInscripcio = () => {
           <div className="inscripcio-header">
             <h2>Inscriu el teu equip a l'AESSBot 2026</h2>
             <p className="lead-text">
-              Omple el formulari següent per inscriure el teu equip a l'AESSBot 2026. 
+              Omple el formulari següent per inscriure el teu equip a l'AESSBot 2026.
               Tots els membres de l'equip han de ser estudiants de la UPC.
             </p>
-            {!isClosed && (
-              <div className="alert alert-warning">
-                <i className="fas fa-exclamation-triangle"></i>
-                <div>
-                  <strong>Important:</strong> Les inscripcions tancaran aviat. Assegura't la teva plaça abans que s'acabi el termini.
-                </div>
-              </div>
-            )}
+            {/* Alert removed as per request */}
           </div>
 
           <div className="google-form-container">
             <div className="form-embed">
-              <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLScciiXmQMnUtMhncWi28Q-ktjAPgIQtR8Ay9EgmTJtKJdQCVg/viewform?embedded=true" 
-                width="100%" 
-                height="2800" 
-                frameBorder="0" 
-                marginHeight="0" 
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScciiXmQMnUtMhncWi28Q-ktjAPgIQtR8Ay9EgmTJtKJdQCVg/viewform?embedded=true"
+                width="100%"
+                height="2800"
+                frameBorder="0"
+                marginHeight="0"
                 marginWidth="0"
                 title="Formulari d'inscripció AESSBot 2026"
               >
