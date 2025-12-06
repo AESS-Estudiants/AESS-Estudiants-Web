@@ -18,6 +18,13 @@
   align-items: flex-start;
 }
 
+@media (max-width: 1024px) {
+  .hero.poster-hero .hero-content {
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
 .hero.poster-hero .hero-visual {
   max-width: 400px;
   flex-shrink: 0;
@@ -41,6 +48,24 @@
   align-items: flex-start;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-badge-container {
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .countdown-badge {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge-container {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }
 
 .countdown-badge {
@@ -140,10 +165,10 @@
 .talleres-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
@@ -216,8 +241,9 @@
 .talleres-disclaimer {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
   padding: 0;
   background: transparent;
   border: none;
@@ -225,15 +251,18 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   font-style: italic;
+  text-align: center;
 }
 
 .small-disclaimer {
   display: block;
   font-size: 0.75rem;
   color: var(--text-secondary);
-  margin-top: 0.5rem;
+  margin-top: var(--space-sm);
   font-style: italic;
   opacity: 0.8;
+  pointer-events: none;
+  text-align: center;
 }
 
 .talleres-disclaimer i {
@@ -287,15 +316,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  background: rgba(30, 41, 59, 0.6);
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   width: 200px;
   height: 150px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .sponsor-item:hover {
@@ -372,12 +401,12 @@
 
 .sponsor-cta {
   text-align: center;
-  margin-top: 3rem;
-  padding: 2rem;
-  background: rgba(30, 41, 59, 0.6);
+  margin-top: var(--space-3xl);
+  padding: var(--space-xl);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
 }
 
 .sponsor-cta p {

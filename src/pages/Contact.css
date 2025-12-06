@@ -9,31 +9,32 @@
 .form-container {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 3rem;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-3xl);
 }
 
 .form-title {
-  font-size: 2.5rem;
+  font-size: var(--text-h1);
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-xl);
   text-align: center;
-  background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+  background: var(--gradient-text-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: var(--leading-tight);
 }
 
 .form-response {
-  padding: 1.25rem 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+  padding: 1.25rem var(--space-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-xl);
   font-weight: 500;
-  font-size: 1.125rem;
-  animation: slideIn 0.3s ease;
+  font-size: var(--text-body-lg);
+  animation: slideIn var(--transition-base);
 }
 
 @keyframes slideIn {
@@ -41,6 +42,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -61,9 +63,9 @@
 
 form fieldset {
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
 }
 
 form legend {
@@ -95,11 +97,11 @@ form legend {
   padding: 0.875rem 1.25rem;
   background: rgba(15, 23, 42, 0.5);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 1rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .form-group input:focus,
@@ -155,16 +157,16 @@ form legend {
 .form-submit button {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2.5rem;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-2xl);
   background: var(--gradient-1);
   color: #fff;
   border: none;
-  border-radius: 12px;
-  font-size: 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-lg);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   box-shadow: var(--shadow-md);
 }
 
@@ -242,4 +244,3 @@ form legend {
     font-size: 1rem;
   }
 }
-
