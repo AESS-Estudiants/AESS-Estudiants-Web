@@ -96,8 +96,8 @@ const AESSBot = () => {
         title="AESSBot 2026"
         description="La competició de robòtica més esperada de la UPC. Dissenya, construeix i competeix amb el teu propi robot sumo."
         stats={[
-          { value: '940€', label: 'En premis' },
-          { value: '15', label: 'Equips' },
+          { value: '1000€', label: 'En premis' },
+          { value: '16', label: 'Equips' },
           { value: '3', label: 'Participants per equip' },
           { value: '1 ECTS', label: 'Convalidable' }
         ]}

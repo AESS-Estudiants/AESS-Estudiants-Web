@@ -27,8 +27,9 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
             <p className="hero-description">{description}</p>
           )}
           {children}
+          {/* Stats shown in hero-text for all modes - CSS handles mobile reordering */}
           {stats && (
-            <div className="hero-stats">
+            <div className={`hero-stats ${poster ? 'hero-stats-poster' : ''}`}>
               {stats.map((stat, index) => (
                 <div key={index} className="stat-item">
                   <span className="stat-number">{stat.value}</span>
