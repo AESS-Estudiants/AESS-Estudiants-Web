@@ -64,9 +64,9 @@ const Home = () => {
             <h2 className="section-title">Qui som?</h2>
             <div className="logo-sponsor-container">
               <div className="sponsor-logo-item">
-                <img 
-                  src="/images/logos/aess/Logo_aess_blanc.svg" 
-                  alt="AESS Logo" 
+                <img
+                  src="/images/logos/aess/Logo_aess_blanc.svg"
+                  alt="AESS Logo"
                   className="sponsor-logo-img"
                 />
               </div>
@@ -76,7 +76,7 @@ const Home = () => {
                 <strong>AESS Estudiants</strong> (Aerospace and Electronic Systems Society) és una associació sense ànim de lucre de l'ETSETB (UPC) fundada el 1999.
               </p>
               <p>
-                Formem una comunitat d'estudiants multidisciplinar (ETSETB, FIB, ETSEIB, etc.), units per la passió per la robòtica i la tecnologia. <strong>Organitzem cursos, tallers i projectes</strong> que complementen la formació acadèmica i fomenten la innovació i l'aprenentatge pràctic.
+                Formem una comunitat d'estudiants multidisciplinar (ETSETB, FIB, ETSEIB, etc.), units per la passió per la robòtica i la tecnologia. <strong>Organitzem competicions, cursos, tallers i projectes</strong> que complementen la formació acadèmica i fomenten la innovació i l'aprenentatge pràctic.
               </p>
             </div>
           </div>
@@ -181,9 +181,9 @@ const Home = () => {
               </div>
               <h3>Uneix-te al nostre grup</h3>
               <p>Accedeix al nostre grup de WhatsApp per a noves incorporacions per estar al corrent de totes les nostres activitats i coneixer la resta de membres.</p>
-              <a 
-                href="https://chat.whatsapp.com/CXzyvcUaoLNK9m5VdRNvnR" 
-                target="_blank" 
+              <a
+                href="https://chat.whatsapp.com/CXzyvcUaoLNK9m5VdRNvnR"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
@@ -217,89 +217,97 @@ const Home = () => {
           </div>
           <div className="events-grid">
             <div className="event-card aessbot-card">
-              <div className="event-badge">Competició Anual</div>
-              <h3>AESSBot 2026</h3>
+              <div className="event-card-content">
+                <div className="event-card-header">
+                  <div className="event-badge">Competició Anual</div>
+                  <h3>AESSBot 2026</h3>
+                  <p>La competició de robòtica més esperada de la UPC. Construeix el teu propi robot minisumo i competeix contra altres equips en una batalla d'enginyeria i estratègia.</p>
+                </div>
+                <div className="event-details">
+                  <div className="detail-item">
+                    <i className="fas fa-trophy"></i>
+                    <div>
+                      <span className="detail-value">1000€ en premis</span>
+                      <span className="detail-label">Per als guanyadors</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-certificate"></i>
+                    <div>
+                      <span className="detail-value">1 ECTS</span>
+                      <span className="detail-label">Per arribar a la final</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <div>
+                      <span className="detail-value">Feb 18 - Mai 6</span>
+                      <span className="detail-label">Durada del competició</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-robot"></i>
+                    <div>
+                      <span className="detail-value">16 robots</span>
+                      <span className="detail-label">3 persones per equip</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="event-actions">
+                  <Link to="/aessbot" className="btn btn-primary">
+                    <i className="fas fa-info-circle"></i> Més informació
+                  </Link>
+                  <Link to="/aessbot-inscripcio" className="btn btn-secondary">
+                    <i className="fas fa-user-plus"></i> Inscriu-te!
+                  </Link>
+                </div>
+              </div>
               <div className="event-image">
                 <img src="/images/aessbot/Cartell-original-DIN.png" alt="AESSBot 2026" />
-              </div>
-              <p>La competició de robòtica més esperada de la UPC. Construeix el teu propi robot minisumo i competeix contra altres equips en una batalla d'enginyeria i estratègia.</p>
-              <div className="event-details">
-                <div className="detail-item">
-                  <i className="fas fa-trophy"></i>
-                  <div>
-                    <span className="detail-value">1000€ en premis</span>
-                    <span className="detail-label">Per als guanyadors</span>
-                  </div>
-                </div>
-                <div className="detail-item">
-                  <i className="fas fa-certificate"></i>
-                  <div>
-                    <span className="detail-value">1 ECTS</span>
-                    <span className="detail-label">Per arribar a la final</span>
-                  </div>
-                </div>
-                <div className="detail-item">
-                  <i className="fas fa-calendar-alt"></i>
-                  <div>
-                    <span className="detail-value">Feb 18 - Mai 6</span>
-                    <span className="detail-label">Durada del competició</span>
-                  </div>
-                </div>
-                <div className="detail-item">
-                  <i className="fas fa-robot"></i>
-                  <div>
-                    <span className="detail-value">16 robots</span>
-                    <span className="detail-label">3 persones per equip</span>
-                  </div>
-                </div>
-              </div>
-              <div className="event-actions">
-                <Link to="/aessbot" className="btn btn-primary">
-                  <i className="fas fa-info-circle"></i> Més informació
-                </Link>
-                <Link to="/aessbot-inscripcio" className="btn btn-secondary">
-                  <i className="fas fa-user-plus"></i> Inscriu-te!
-                </Link>
               </div>
             </div>
 
             <div className="event-card cursos-card">
-              <div className="event-badge">Cursos semestrals</div>
-              <h3>Cursos</h3>
+              <div className="event-card-content">
+                <div className="event-card-header">
+                  <div className="event-badge">Cursos semestrals</div>
+                  <h3>Cursos</h3>
+                  <p>Desenvolupa habilitats pràctiques en robòtica i electrònica amb els nostres cursos intensius. Tots els cursos són impartits per experts i inclouen sessions pràctiques amb equips i materials proporcionats.</p>
+                </div>
+                <div className="event-details">
+                  <div className="detail-item">
+                    <i className="fas fa-certificate"></i>
+                    <div>
+                      <span className="detail-value">1 ECTS</span>
+                      <span className="detail-label">Per curs aprovat</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-users"></i>
+                    <div>
+                      <span className="detail-value">Places limitades</span>
+                      <span className="detail-label">Reserva la teva aviat</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <div>
+                      <span className="detail-value">Properament</span>
+                      <span className="detail-label">Properament</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="event-actions">
+                  <Link to="/cursos" className="btn btn-primary">
+                    <i className="fas fa-info-circle"></i> Més informació
+                  </Link>
+                  <button className="btn btn-secondary btn-disabled" disabled>
+                    <i className="fas fa-user-plus"></i> Inscriu-te!
+                  </button>
+                </div>
+              </div>
               <div className="event-image">
                 <img src="/images/cursos/cartell-din4.png" alt="Cursos AESS" />
-              </div>
-              <p>Desenvolupa habilitats pràctiques en robòtica i electrònica amb els nostres cursos intensius. Tots els cursos són impartits per experts i inclouen sessions pràctiques amb equips i materials proporcionats.</p>
-              <div className="event-details">
-                <div className="detail-item">
-                  <i className="fas fa-certificate"></i>
-                  <div>
-                    <span className="detail-value">1 ECTS</span>
-                    <span className="detail-label">Per curs aprovat</span>
-                  </div>
-                </div>
-                <div className="detail-item">
-                  <i className="fas fa-users"></i>
-                  <div>
-                    <span className="detail-value">Places limitades</span>
-                    <span className="detail-label">Reserva la teva aviat</span>
-                  </div>
-                </div>
-                <div className="detail-item">
-                  <i className="fas fa-calendar-alt"></i>
-                  <div>
-                    <span className="detail-value">Properament</span>
-                    <span className="detail-label">Properament</span>
-                  </div>
-                </div>
-              </div>
-              <div className="event-actions">
-                <Link to="/cursos" className="btn btn-primary">
-                  <i className="fas fa-list-ul"></i> Tots els cursos
-                </Link>
-                <Link to="/contact" className="btn btn-secondary">
-                  <i className="fas fa-info-circle"></i> Més informació
-                </Link>
               </div>
             </div>
           </div>

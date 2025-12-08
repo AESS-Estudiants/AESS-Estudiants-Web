@@ -2,12 +2,7 @@
   min-height: 100vh;
 }
 
-@font-face {
-  font-family: 'Squada One';
-  src: url('/fonts/Squada_One/SquadaOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 .aessbot-page .hero-title .gradient-text {
   font-family: 'Squada One', sans-serif;
@@ -72,29 +67,30 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.375rem 0;
   background: transparent;
   border: none;
   border-radius: 0;
   color: #22c55e;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: default;
+  opacity: 0.85;
 }
 
-.countdown-badge.warning {
+.aessbot-page .countdown-badge.warning {
   color: #f59e0b;
   background: transparent;
   border: none;
 }
 
-.countdown-badge.urgent {
+.aessbot-page .countdown-badge.urgent {
   color: #ef4444;
   background: transparent;
   border: none;
 }
 
-.countdown-badge.closed {
+.aessbot-page .countdown-badge.closed {
   color: #94a3b8;
   background: transparent;
   border: none;
@@ -112,18 +108,80 @@
   }
 }
 
-.countdown-badge i {
+.aessbot-page .countdown-badge i {
   font-size: 0.5rem;
+}
+
+/* Prominent salmon/coral button for inscription */
+.hero-badge-container .btn-primary {
+  background: linear-gradient(120deg, #e34d62 0%, #d43d64 100%);
+  border: 1px solid rgba(227, 77, 98, 0.45);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 10px 24px rgba(227, 77, 98, 0.3);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Glare effect removed */
+
+.hero-badge-container .btn-primary:hover {
+  background: linear-gradient(120deg, #f05f74 0%, #d94b6b 100%);
+  box-shadow: 0 8px 20px rgba(227, 77, 98, 0.28);
+}
+
+.hero-badge-container .btn-primary:active {
+  box-shadow: 0 6px 16px rgba(227, 77, 98, 0.25);
 }
 
 .overview-section {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
+  position: relative;
+}
+
+.overview-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.5) 50%, transparent 100%);
 }
 
 .video-container {
   margin-top: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.video-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 50px;
+  color: var(--primary-light);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.video-label i {
+  font-size: 1rem;
+}
+
+.talleres-section .section-title i {
+  color: var(--primary-light);
+  margin-right: 0.5rem;
+  font-size: 0.9em;
 }
 
 .video-wrapper {
@@ -155,6 +213,20 @@
 
 .talleres-section {
   background: rgba(30, 41, 59, 0.2);
+  position: relative;
+}
+
+.talleres-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 400px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.6) 20%, rgba(96, 165, 250, 0.6) 80%, transparent 100%);
+  border-radius: 2px;
 }
 
 .talleres-table-container {
@@ -173,15 +245,20 @@
 }
 
 .talleres-table thead {
-  background: rgba(96, 165, 250, 0.1);
+  background: rgba(96, 165, 250, 0.25);
 }
 
 .talleres-table th {
   padding: 1.25rem;
-  text-align: left;
+  text-align: center;
   font-weight: 700;
   color: var(--text-primary);
   font-size: 1.125rem;
+}
+
+.talleres-table th i {
+  margin-right: 0.5rem;
+  color: var(--primary-light);
 }
 
 .hora {
@@ -271,6 +348,19 @@
 
 .normativa-section {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  position: relative;
+}
+
+.normativa-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 500px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.5) 50%, transparent 100%);
 }
 
 .normativa-content {
@@ -281,10 +371,26 @@
 .normativa-cta {
   margin-top: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sponsors-section {
   background: rgba(30, 41, 59, 0.2);
+  position: relative;
+}
+
+.sponsors-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  max-width: 450px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.4) 30%, rgba(139, 92, 246, 0.4) 70%, transparent 100%);
 }
 
 .sponsors-container {
@@ -413,6 +519,7 @@
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
+  text-align: center;
 }
 
 .faq-section {
@@ -501,8 +608,10 @@
   .talleres-table tbody td:nth-child(3) {
     width: 100%;
     order: 2;
-    display: block;
-    /* Let title/desc stack naturally */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
     margin-bottom: 0.5rem;
   }
 
@@ -543,6 +652,13 @@
   /* Map icon for Location */
   .ubicacion::before {
     content: '\f3c5';
+  }
+
+  /* Tools icon for Taller column */
+  .talleres-table tbody td:nth-child(3)::before {
+    content: '\f7d9';
+    margin-top: 2px;
+    align-self: flex-start;
   }
 
   .sponsors-grid {

@@ -129,6 +129,10 @@ const AESSBot = () => {
             </p>
           </div>
           <div className="video-container">
+            <div className="video-label">
+              <i className="fas fa-video"></i>
+              <span>Vídeo resum AESSBot 2025</span>
+            </div>
             <div className="video-wrapper youtube-embed">
               <iframe
                 src="https://www.youtube.com/embed/tPKSWS5g-3Y"
@@ -145,17 +149,19 @@ const AESSBot = () => {
       <section className="talleres-section section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Calendari</h2>
+            <h2 className="section-title">
+              Calendari
+            </h2>
             <p className="section-subtitle">Consulta les dates clau i tallers de la competició AESSBot 2026</p>
           </div>
           <div className="talleres-table-container">
             <table className="talleres-table">
               <thead>
                 <tr>
-                  <th>Data</th>
-                  <th>Hora</th>
-                  <th>Taller</th>
-                  <th>Ubicació</th>
+                  <th><i className="fas fa-calendar-alt"></i> Data</th>
+                  <th><i className="fas fa-clock"></i> Hora</th>
+                  <th><i className="fas fa-tools"></i> Event</th>
+                  <th><i className="fas fa-map-marker-alt"></i> Ubicació</th>
                 </tr>
               </thead>
               <tbody>
