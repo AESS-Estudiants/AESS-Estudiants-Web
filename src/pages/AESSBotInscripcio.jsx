@@ -32,23 +32,9 @@ const AESSBotInscripcio = () => {
 
   return (
     <div className="inscripcio-page">
-      <Hero
-        title="Inscripció AESSBot 2026"
-        description="La competició de robòtica més esperada de la UPC. Dissenya, construeix i competeix amb el teu propi robot sumo."
-        image="/images/aessbot/Cartell-original-DIN.png"
-        poster={true}
-      >
-        <div className="hero-badge-container">
-          <div className={`countdown-badge ${isClosed ? 'closed' : countdown.days <= 7 ? 'urgent' : countdown.days <= 14 ? 'warning' : ''}`}>
-            <i className="fas fa-circle"></i>
-            <span>
-              {isClosed ? 'Inscripcions tancades' : `Inscriu-te abans de: ${countdown.days}d ${countdown.hours.toString().padStart(2, '0')}h ${countdown.minutes.toString().padStart(2, '0')}m`}
-            </span>
-          </div>
-        </div>
-      </Hero>
 
-      <section className="form-section section">
+
+      <section className="form-section section" id="formulari-inscripcio">
         <div className="container">
           <div className="inscripcio-header">
             <h2>Inscriu el teu equip a l'AESSBot 2026</h2>
@@ -64,11 +50,11 @@ const AESSBotInscripcio = () => {
               <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLScciiXmQMnUtMhncWi28Q-ktjAPgIQtR8Ay9EgmTJtKJdQCVg/viewform?embedded=true"
                 width="100%"
-                height="2800"
+                height="3800"
                 frameBorder="0"
                 marginHeight="0"
                 marginWidth="0"
-                title="Formulari d'inscripció AESSBot 2026"
+                title="Formulari d'inscripció AESSBot"
               >
                 S'està carregant el formulari...
               </iframe>

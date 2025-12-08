@@ -59,7 +59,7 @@ const Projectes = () => {
           <div className="section-header">
             <h2 className="section-title">Els nostres projectes</h2>
             <p className="section-subtitle">
-              A l'associació es fan projectes de robòtica i electrònica molt diversos que donen resposta a les inquietuds dels seus membres. 
+              A l'associació es fan projectes de robòtica i electrònica molt diversos que donen resposta a les inquietuds dels seus membres.
               Es realitzen projectes com robots delta, minisumos, velocistes, braços robot, drons, etc.
             </p>
           </div>
@@ -101,7 +101,7 @@ const Projectes = () => {
       <section className="legacy-section section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Hem participat en...</h2>
+            <h2 className="section-title">També participem en...</h2>
             <p className="section-subtitle">
               A part de fer projectes per la nostra compte, també ens agrada fer més activitats com participar en competicions i fer xerrades.
             </p>
@@ -137,8 +137,8 @@ const Projectes = () => {
               Tens una idea de projecte o et vols unir a algun dels nostres projectes actius? A AESS Estudiants valorem la creativitat
               i l'entusiasme de persones com tu. Sigues part del nostre equip i dóna vida a projectes innovadors en robòtica i tecnologia!
             </p>
-            <Link to="/contact" className="btn btn-primary btn-large">
-              <i className="fas fa-paper-plane"></i> Contacta amb nosaltres
+            <Link to="/#com-participar-section" className="btn btn-primary btn-large">
+              <i className="fas fa-paper-plane"></i> Fes-te membre
             </Link>
           </div>
         </div>

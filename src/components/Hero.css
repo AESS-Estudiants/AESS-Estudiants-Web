@@ -170,14 +170,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-md);
+  padding: 0.875rem;
   background: rgba(30, 41, 59, 0.4);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
-  min-height: 100px;
+  height: auto;
+  min-height: 0;
+  max-height: none;
   text-align: center;
+  width: 100%;
 }
 
 .stat-item:hover {
@@ -186,13 +189,14 @@
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
   background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .stat-label {
@@ -201,6 +205,13 @@
   margin-top: var(--space-xs);
   line-height: 1.3;
   font-weight: 500;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .hero-visual {
@@ -223,11 +234,11 @@
 
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-20px) rotate(5deg);
+    transform: translateY(-20px);
   }
 }
 
@@ -289,6 +300,16 @@
 .hero.poster-hero .hero-text {
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero.poster-hero .hero-description {
+  text-align: left;
+  margin-left: 0;
+  max-width: 100%;
 }
 
 .hero.poster-hero .hero-visual {
@@ -420,8 +441,15 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .stat-item {
+    min-height: 90px;
+    max-height: 90px;
+    height: 90px;
+    padding: 0.75rem;
+  }
+
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .cube {
@@ -455,15 +483,18 @@
   }
 
   .stat-item {
-    padding: 0.875rem;
+    padding: 0.75rem;
+    min-height: 85px;
+    max-height: 85px;
+    height: 85px;
   }
 
   .stat-number {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   .stat-label {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
   }
 
   .cube {
