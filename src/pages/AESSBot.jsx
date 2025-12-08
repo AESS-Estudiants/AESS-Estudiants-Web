@@ -41,50 +41,96 @@ const AESSBot = () => {
   ]
 
   const faqs = [
+    // General
     {
-      question: 'Qui pot participar a l\'AESSBot 2026?',
-      answer: 'La competició està oberta a estudiants de totes les universitats. En cas que s\'esgotin les places, se seguiran els criteris de prioritat establerts a la normativa.',
-      icon: 'fas fa-user-plus'
+      question: 'Quin és el repte?',
+      answer: 'El teu repte serà dissenyar i construir un robot autònom capaç d\'empènyer el robot oponent fora del ring de combat (Dohyo), seguint la normativa oficial de la competició.',
+      icon: 'fas fa-flag-checkered'
     },
     {
-      question: 'Hi ha algun cost d\'inscripció?',
-      answer: 'La inscripció és gratuïta, però cal dipositar una fiança de 50€, que serà retornada si l\'equip participa el dia de la final.',
-      icon: 'fas fa-euro-sign'
+      question: 'Quan és la competició?',
+      answer: 'La gran final de l\'AESSBot 2026 tindrà lloc el 6 de maig de 2026 al Campus Nord de la UPC.',
+      icon: 'fas fa-calendar-day'
     },
     {
-      question: 'Per a què serveixen els tallers?',
-      answer: 'Els tallers serveixen perquè els estudiants puguin aprendre eines noves que poden utilitzar per al seu robot i per resoldre dubtes.',
-      icon: 'fas fa-chalkboard-teacher'
+      question: 'Qui pot participar?',
+      answer: 'La competició està oberta a estudiants de grau i màster de totes les universitats.',
+      icon: 'fas fa-users'
     },
     {
-      question: 'Es pot construir el robot durant els tallers?',
-      answer: 'No. Els equips hauran de treballar fora de les hores de taller. Des de l\'AESS es facilitarà accés al taller en horari no lectiu per als equips que desitgin utilitzar eines o consultar dubtes.',
-      icon: 'fas fa-tools'
+      question: 'Les places són limitades?',
+      answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, se seguiran els criteris de prioritat estipulats a la normativa.',
+      icon: 'fas fa-sort-amount-down'
+    },
+
+    // Equips
+    {
+      question: 'Puc participar sol?',
+      answer: 'Sí. Tot i això, si s\'esgoten les places, una de les prioritats és seleccionar equips amb més membres per facilitar la participació del màxim nombre d\'estudiants.',
+      icon: 'fas fa-user'
+    },
+    {
+      question: 'No vull participar sol, però no tinc equip',
+      answer: 'No et preocupis, nosaltres te\'n busquem un! Inscriu-te tu sol i marca l\'opció que vols buscar equip al formulari.',
+      icon: 'fas fa-handshake'
+    },
+
+    // Costos
+    {
+      question: 'La participació és gratuïta?',
+      answer: 'Sí. La inscripció és gratuïta, però cal dipositar una fiança de 50€ per equip, que serà retornada al final de la competició si l\'equip hi participa.',
+      icon: 'fas fa-wallet'
+    },
+    {
+      question: 'Com funciona la subvenció del robot?',
+      answer: 'Subvencionem fins a 100€ en material per equip. Els equips compren el material necessari i, si participen a la final, es tramita el reemborsament presentant les factures. Consulteu els detalls a la normativa.',
+      icon: 'fas fa-coins'
+    },
+
+    // Construcció i Tallers
+    {
+      question: 'Com construeixo el robot?',
+      answer: 'Teniu total llibertat per construir el robot que vulgueu, sempre que compleixi la normativa. Posem a la vostra disposició tallers per aprendre noves eines i tecnologies. A més, es facilitarà accés al taller de l\'associació en horari no lectiu per utilitzar eines i rebre seguiment.',
+      icon: 'fas fa-robot'
+    },
+    {
+      question: 'Què aprendré als tallers?',
+      answer: 'Tant si tens coneixements previs com si no, aprendràs noves eines i tecnologies que podràs aplicar al teu robot (disseny 3D, electrònica, sensors...) i que et serviran pel teu futur professional.',
+      icon: 'fas fa-lightbulb'
     },
     {
       question: 'Quin material necessito per als tallers?',
-      answer: 'Cada taller pot tenir els seus propis requisits. Cal consultar el material necessari a la web abans de cada sessió.',
-      icon: 'fas fa-list-ul'
+      answer: 'Cada taller és diferent, però en general haureu de portar ordinador i material per prendre notes.',
+      icon: 'fas fa-laptop'
     },
     {
-      question: 'Hi ha premis pels guanyadors?',
+      question: 'Puc construir el robot només assistint als tallers?',
+      answer: 'No. Els tallers no estan pensats per ser una guia pas a pas de com construir un robot, sinó per donar-vos recursos. Haureu de treballar fora de les hores de taller.',
+      icon: 'fas fa-tools'
+    },
+
+    // Premis i Crèdits
+    {
+      question: 'Hi ha premis?',
       answer: 'Sí, es repartiran més de 900€ en premis entre els millors equips classificats.',
       icon: 'fas fa-trophy'
     },
     {
-      question: 'Puc obtenir crèdits ECTS?',
-      answer: 'Actualment només poden convalidar crèdits ECTS els estudiants de grau de la UPC. Estem treballant per ampliar-ho a totes les escoles. Ara mateix, està confirmat per a alumnes de grau de l\'ETSETB i la FIB. Per a la resta d\'escoles, poseu-vos en contacte amb nosaltres.',
-      icon: 'fas fa-certificate'
+      question: 'Puc convalidar crèdits ECTS?',
+      answer: 'Sí. Pels estudiants de l\'ETSETB, es reconeixerà 1 ECTS de forma automàtica. Pels estudiants d\'altres facultats de la UPC, s\'informarà a l\'escola corresponent, però serà l\'escola qui decideixi finalment si convalidar el crèdit.',
+      icon: 'fas fa-graduation-cap'
     },
     {
-      question: 'Com funciona la subvenció del robot?',
-      answer: 'Els equips compraran el material necessari. Al final de la competició, si l\'equip ha participat a la final, s\'obrirà un termini per enviar les factures. L\'equip les revisarà i es reemborsarà fins a un màxim de 100€. Per a més informació, consulteu la normativa.',
-      icon: 'fas fa-coins'
+      question: 'Què s\'ha de fer per convalidar el crèdit?',
+      answer: 'Per obtenir els crèdits és necessari: assistir a tots els tallers, preparar el robot i participar a la competició final amb un robot reglamentari.',
+      icon: 'fas fa-check-circle'
     },
+
+    // Normativa
     {
-      question: 'On puc trobar el reglament complet?',
-      answer: 'El reglament complet de la competició està disponible a la secció de normativa.',
-      icon: 'fas fa-book'
+      question: 'On puc trobar la normativa?',
+      answer: 'El reglament complet de la competició està disponible a la secció de "Normativa" d\'aquesta mateixa pàgina.',
+      icon: 'fas fa-book-open'
     }
   ]
 
@@ -190,14 +236,14 @@ const AESSBot = () => {
                 <i className="fas fa-gift"></i>
               </div>
               <h3>Inscripció gratuïta</h3>
-              <p>La inscripció a la competició és totalment gratuïta. No hi ha cap cost per participar-hi.</p>
+              <p>La inscripció a la competició és totalment gratuïta. Només cal abonar una fiança de 50€ retornable un cop hagueu participat a la final.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
                 <i className="fas fa-hand-holding-usd"></i>
               </div>
               <h3>Ajut econòmic</h3>
-              <p>Subvencionem fins a 100€ en material per robot. La fiança de 50€ es retorna en participar a la final.</p>
+              <p>Subvencionem fins a 100€ en material per equip per a que pugueu consegueir el robot definitiu.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">

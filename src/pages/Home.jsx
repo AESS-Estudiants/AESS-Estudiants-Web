@@ -48,7 +48,7 @@ const Home = () => {
     },
     {
       question: 'Hi ha algun cost per ser membre?',
-      answer: 'No! La participació a AESS és totalment gratuïta per als membres. Els cursos tenen un preu reduït per estudiants de la UPC i les activitats com l\'AESSBot tenen inscripció gratuïta amb material subvencionat.',
+      answer: 'Per ser membre de l\'associació cal pagar la quota anual de 20€. Aquests diners serveixen per a la compra de material, organització d\'activitats, etc.',
       icon: 'fas fa-euro-sign'
     },
     {
