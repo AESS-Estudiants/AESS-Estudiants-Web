@@ -9,6 +9,12 @@
   letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+  .aessbot-page .hero-title {
+    font-size: 3.5rem !important;
+  }
+}
+
 .aessbot-page .hero-badge-container {
   display: flex;
   flex-direction: row !important;
@@ -798,11 +804,7 @@
   }
 
   /* Tools icon for Taller column */
-  .talleres-table tbody td:nth-child(3)::before {
-    content: '\f7d9';
-    margin-top: 2px;
-    align-self: flex-start;
-  }
+
 
   .sponsors-grid {
     grid-template-columns: 1fr;
