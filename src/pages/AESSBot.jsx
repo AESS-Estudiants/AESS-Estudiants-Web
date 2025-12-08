@@ -31,19 +31,19 @@ const AESSBot = () => {
   }, [])
 
   const talleres = [
-    { fecha: '18 Feb 2026', hora: '11:00 - 13:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.' },
-    { fecha: '25 Feb 2026', hora: '11:00 - 13:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).' },
-    { fecha: '2 Mar 2026', hora: '11:00 - 13:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.' },
-    { fecha: '9 Mar 2026', hora: '11:00 - 13:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.' },
-    { fecha: '16 Mar 2026', hora: '11:00 - 13:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.' },
-    { fecha: '23 Mar 2026', hora: '11:00 - 13:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.' },
-    { fecha: '6 Mai 2026', hora: 'TBD', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', final: true }
+    { fecha: '18 Feb 2026', hora: '11:00 - 13:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb' },
+    { fecha: '25 Feb 2026', hora: '11:00 - 13:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog' },
+    { fecha: '2 Mar 2026', hora: '11:00 - 13:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip' },
+    { fecha: '9 Mar 2026', hora: '11:00 - 13:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory' },
+    { fecha: '16 Mar 2026', hora: '11:00 - 13:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube' },
+    { fecha: '23 Mar 2026', hora: '11:00 - 13:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks' },
+    { fecha: '6 Mai 2026', hora: 'TBD', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true }
   ]
 
   const faqs = [
     {
       question: 'Qui pot participar a l\'AESSBot 2026?',
-      answer: 'La competició està oberta a tots els estudiants de la UPC, tant de grau com de màster. Es pot participar en equips de fins a 3 persones.',
+      answer: 'La competició està oberta a tots els estudiants de qualsevol universitat. Es pot participar en equips de fins a 3 persones.',
       icon: 'fas fa-user-plus'
     },
     {
@@ -94,26 +94,56 @@ const AESSBot = () => {
     <div className="aessbot-page">
       <Hero
         title="AESSBot 2026"
-        description="La competició de robòtica més esperada de la UPC. Dissenya, construeix i competeix amb el teu propi robot sumo."
+        description="La competició de robòtica més esperada de la UPC. Apunta el teu equip avui perquè les places són limitades i es tanquen aviat."
+        image="/images/aessbot/Cartell-original-DIN.png"
+        poster={true}
         stats={[
           { value: '1000€', label: 'En premis' },
           { value: '16', label: 'Equips' },
           { value: '3', label: 'Participants per equip' },
-          { value: '1 ECTS', label: 'Convalidable' }
+          { value: '1', label: 'ECTS' }
         ]}
-        image="/images/aessbot/Cartell-original-DIN.png"
-        poster={true}
       >
         <div className="hero-badge-container">
-          <div className={`countdown-badge ${isClosed ? 'closed' : countdown.days <= 7 ? 'urgent' : countdown.days <= 14 ? 'warning' : ''}`}>
-            <i className="fas fa-circle"></i>
-            <span>
-              {isClosed ? 'Inscripcions tancades' : `Inscriu-te abans de: ${countdown.days}d ${countdown.hours.toString().padStart(2, '0')}h ${countdown.minutes.toString().padStart(2, '0')}m`}
-            </span>
-          </div>
-          <Link to="/aessbot-inscripcio" className="btn btn-primary">
-            <i className="fas fa-user-plus"></i> Inscriu-te ara
+          <Link to="/aessbot/inscripcio" className="btn btn-primary">
+            <i className="fas fa-pen-fancy"></i> Inscriu-te
           </Link>
+          {isClosed ? (
+            <div className="countdown-closed">
+              <i className="fas fa-lock"></i>
+              <span>Inscripcions tancades</span>
+            </div>
+          ) : (
+            <div className="countdown-container">
+              <span className="countdown-label">Les inscripcions tanquen en:</span>
+              <div className="countdown-units">
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.days}</span>
+                  </div>
+                  <span className="countdown-text">dies</span>
+                </div>
+                <div className="countdown-separator-wrapper">
+                  <span className="countdown-separator">:</span>
+                </div>
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.hours.toString().padStart(2, '0')}</span>
+                  </div>
+                  <span className="countdown-text">hores</span>
+                </div>
+                <div className="countdown-separator-wrapper">
+                  <span className="countdown-separator">:</span>
+                </div>
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.minutes.toString().padStart(2, '0')}</span>
+                  </div>
+                  <span className="countdown-text">min</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </Hero>
 
@@ -146,13 +176,68 @@ const AESSBot = () => {
         </div>
       </section>
 
+      <section className="info-section section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Informació important</h2>
+            <p className="section-subtitle">
+              Tot el que necessites saber sobre costos, materials i requisits per participar a l'AESSBot 2026.
+            </p>
+          </div>
+          <div className="info-grid">
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-gift"></i>
+              </div>
+              <h3>Inscripció gratuïta</h3>
+              <p>La inscripció a la competició és totalment gratuïta. No hi ha cap cost per participar-hi.</p>
+            </div>
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-tools"></i>
+              </div>
+              <h3>Materials subvencionats</h3>
+              <p>La competició subvenciona els materials per construir el robot fins a 100€. No sortirà del teu butxaca!</p>
+            </div>
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-coins"></i>
+              </div>
+              <h3>Fiança retornable</h3>
+              <p>Cal depositar una fiança de 50€ per equip, retornable al final de la competició amb la condició de participar el dia de la final.</p>
+            </div>
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-certificate"></i>
+              </div>
+              <h3>1 crèdit ECTS</h3>
+              <p>Es pot obtenir 1 crèdit ECTS convalidable. Consulta les condicions a la <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">normativa</a>.</p>
+            </div>
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-user-graduate"></i>
+              </div>
+              <h3>Obert a tots els estudiants</h3>
+              <p>La competició està oberta a tots els estudiants de qualsevol universitat.</p>
+            </div>
+            <div className="info-card">
+              <div className="info-icon">
+                <i className="fas fa-book"></i>
+              </div>
+              <h3>Més informació</h3>
+              <p>Per a més detalls sobre el reglament, límits tècnics i condicions, consulta la <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">normativa oficial</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="talleres-section section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">
               Calendari
             </h2>
-            <p className="section-subtitle">Consulta les dates clau i tallers de la competició AESSBot 2026</p>
+            <p className="section-subtitle">Consulta les dates clau de la competició.</p>
           </div>
           <div className="talleres-table-container">
             <table className="talleres-table">
@@ -170,7 +255,9 @@ const AESSBot = () => {
                     <td className="fecha" data-label="Data">{taller.fecha}</td>
                     <td className="hora" data-label="Hora">{taller.hora}</td>
                     <td data-label="Taller">
-                      <div className="taller-titulo">{taller.titulo}</div>
+                      <div className="taller-titulo">
+                        <i className={taller.icon}></i> {taller.titulo}
+                      </div>
                       <div className="taller-desc">{taller.desc}</div>
                     </td>
                     <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'per confirmar' : 'aula per determinar'}</td>
@@ -191,7 +278,7 @@ const AESSBot = () => {
           <div className="section-header">
             <h2 className="section-title">Normativa</h2>
             <p className="section-subtitle">
-              Consulta i descarrega el reglament oficial de la competició AESSBot 2026.
+              Consulta i descarrega el reglament oficial de la competició.
               Assegura't de llegir-lo atentament abans de participar a la competició.
             </p>
             <div className="normativa-cta">

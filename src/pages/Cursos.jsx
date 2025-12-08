@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
+import Carousel from '../components/Carousel'
 import './Cursos.css'
 
 const Cursos = () => {
@@ -84,6 +85,12 @@ const Cursos = () => {
     }
   ]
 
+  const cursosImages = [
+    '/images/cursos/cartell-din4.png',
+    '/images/aess/qui-som/qui-som1.jpeg',
+    '/images/aess/qui-som/qui-som2.jpeg',
+  ]
+
   return (
     <div className="cursos-page">
       <Hero
@@ -97,7 +104,12 @@ const Cursos = () => {
         ]}
         image="/images/cursos/cartell-din4.png"
         poster={true}
-      />
+      >
+        <div className="hero-note">
+          <i className="fas fa-info-circle"></i>
+          <span>Properament mes info sobre la propera edició dels cursos</span>
+        </div>
+      </Hero>
 
       <section className="intro-section section">
         <div className="container">
@@ -108,10 +120,9 @@ const Cursos = () => {
               desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més.
               Tots els cursos són gratuïts per als membres de l'associació. Usualment oferim una tanda de cursos a finals de Gener a Principis de Febrer, i una altra a finals de Juny a Principis de Juliol.
             </p>
-            <div className="cursos-disclaimer">
-              <i className="fas fa-info-circle"></i>
-              <span>La pròxima edició de cursos encara no està disponible. Properament es sabran les dates.</span>
-            </div>
+          </div>
+          <div className="carousel-wrapper">
+            <Carousel images={cursosImages} />
           </div>
         </div>
       </section>
@@ -129,48 +140,43 @@ const Cursos = () => {
                   <p>{curso.description}</p>
                   <div className="curso-details">
                     <div className="detail-row">
-                      <strong>Preu:</strong> {curso.preuUPC}€ UPC / {curso.preuNoUPC}€ No UPC
+                      <i className="fas fa-euro-sign"></i>
+                      <span><strong>Preu:</strong> {curso.preuUPC}€ UPC / {curso.preuNoUPC}€ No UPC</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Crèdits ECTS:</strong> {curso.credits}
+                      <i className="fas fa-certificate"></i>
+                      <span><strong>Crèdits ECTS:</strong> {curso.credits}</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Requisits:</strong> {curso.requisits}
+                      <i className="fas fa-check-circle"></i>
+                      <span><strong>Requisits:</strong> {curso.requisits}</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Ubicació:</strong> {curso.ubicacio}
+                      <i className="fas fa-map-marker-alt"></i>
+                      <span><strong>Ubicació:</strong> {curso.ubicacio}</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Durada:</strong> {curso.duration}
+                      <i className="fas fa-clock"></i>
+                      <span><strong>Durada:</strong> {curso.duration}</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Data:</strong> {curso.date}
+                      <i className="fas fa-calendar-alt"></i>
+                      <span><strong>Data:</strong> {curso.date}</span>
                     </div>
                     <div className="detail-row">
-                      <strong>Nivell:</strong> {curso.level}
+                      <i className="fas fa-signal"></i>
+                      <span><strong>Nivell:</strong> {curso.level}</span>
                     </div>
                   </div>
                   <button className="btn btn-primary" onClick={(e) => e.preventDefault()}>
-                    Més informació
+                    <i className="fas fa-info-circle"></i> Més informació
+                  </button>
+                  <button className="btn btn-secondary btn-disabled" disabled>
+                    <i className="fas fa-user-plus"></i> Inscriu-te
                   </button>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Vols apuntar-te a un curs?</h2>
-            <p>
-              Si estàs interessat en algun dels nostres cursos,
-              contacta amb nosaltres. Les inscripcions s'anunciaran properament!
-            </p>
-            <Link to="/contact" className="btn btn-primary btn-large">
-              Contacta amb nosaltres
-            </Link>
           </div>
         </div>
       </section>

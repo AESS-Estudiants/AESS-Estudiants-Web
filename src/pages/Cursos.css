@@ -2,8 +2,45 @@
   min-height: 100vh;
 }
 
+.hero-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 12px;
+  color: var(--primary-light);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-note i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
 .intro-section {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
+  position: relative;
+}
+
+.intro-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.5) 50%, transparent 100%);
+}
+
+.carousel-wrapper {
+  margin-top: 3rem;
 }
 
 .cursos-disclaimer {
@@ -30,6 +67,20 @@
 
 .cursos-list-section {
   background: rgba(30, 41, 59, 0.2);
+  position: relative;
+}
+
+.cursos-list-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 400px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.6) 20%, rgba(96, 165, 250, 0.6) 80%, transparent 100%);
+  border-radius: 2px;
 }
 
 .cursos-grid {
@@ -122,6 +173,17 @@
 .detail-row {
   color: var(--text-secondary);
   font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.detail-row i {
+  color: var(--primary-light);
+  width: 18px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 0.875rem;
 }
 
 .detail-row strong {
@@ -132,6 +194,10 @@
 .curso-content .btn {
   width: 100%;
   justify-content: center;
+}
+
+.curso-content .btn:not(:last-child) {
+  margin-bottom: var(--space-sm);
 }
 
 .info-section {

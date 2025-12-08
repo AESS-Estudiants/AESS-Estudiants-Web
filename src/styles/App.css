@@ -75,7 +75,9 @@
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #5c6bf4 0%, #8655e8 100%);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  color: #fff;
 }
 
 .btn-secondary {
@@ -85,8 +87,10 @@
 }
 
 .btn-secondary:hover {
-  background: rgba(96, 165, 250, 0.08);
-  border-color: rgba(96, 165, 250, 0.8);
+  background: rgba(96, 165, 250, 0.1);
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+  transform: translateY(-1px);
 }
 
 .btn-disabled {

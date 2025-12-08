@@ -39,12 +39,41 @@ const AESSBotInscripcio = () => {
         poster={true}
       >
         <div className="hero-badge-container">
-          <div className={`countdown-badge ${isClosed ? 'closed' : countdown.days <= 7 ? 'urgent' : countdown.days <= 14 ? 'warning' : ''}`}>
-            <i className="fas fa-circle"></i>
-            <span>
-              {isClosed ? 'Inscripcions tancades' : `Inscriu-te abans de: ${countdown.days}d ${countdown.hours.toString().padStart(2, '0')}h ${countdown.minutes.toString().padStart(2, '0')}m`}
-            </span>
-          </div>
+          {isClosed ? (
+            <div className="countdown-closed">
+              <i className="fas fa-lock"></i>
+              <span>Inscripcions tancades</span>
+            </div>
+          ) : (
+            <div className="countdown-container">
+              <div className="countdown-units">
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.days}</span>
+                  </div>
+                  <span className="countdown-text">dies</span>
+                </div>
+                <div className="countdown-separator-wrapper">
+                  <span className="countdown-separator">:</span>
+                </div>
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.hours.toString().padStart(2, '0')}</span>
+                  </div>
+                  <span className="countdown-text">hores</span>
+                </div>
+                <div className="countdown-separator-wrapper">
+                  <span className="countdown-separator">:</span>
+                </div>
+                <div className="countdown-unit">
+                  <div className="countdown-box">
+                    <span className="countdown-value">{countdown.minutes.toString().padStart(2, '0')}</span>
+                  </div>
+                  <span className="countdown-text">min</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </Hero>
 

@@ -172,8 +172,8 @@
   color: var(--text-secondary);
   text-decoration: none;
   transition: all var(--transition-base);
-  border-radius: var(--radius-sm);
-  margin: 0 var(--space-xs);
+  border-radius: 0;
+  margin: 0;
 }
 
 .dropdown-menu li a:hover {
