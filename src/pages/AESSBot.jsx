@@ -43,48 +43,48 @@ const AESSBot = () => {
   const faqs = [
     {
       question: 'Qui pot participar a l\'AESSBot 2026?',
-      answer: 'La competició està oberta a tots els estudiants de qualsevol universitat. Es pot participar en equips de fins a 3 persones.',
+      answer: 'La competició està oberta a estudiants de totes les universitats. En cas que s\'esgotin les places, se seguiran els criteris de prioritat establerts a la normativa.',
       icon: 'fas fa-user-plus'
     },
     {
-      question: 'Com em puc inscriure a la competició?',
-      answer: 'Pots inscriure\'t fent clic al botó d\'inscripció a la pàgina principal de l\'AESSBot o directament des de la secció d\'inscripcions.',
-      icon: 'fas fa-pen-fancy'
+      question: 'Hi ha algun cost d\'inscripció?',
+      answer: 'La inscripció és gratuïta, però cal dipositar una fiança de 50€, que serà retornada si l\'equip participa el dia de la final.',
+      icon: 'fas fa-euro-sign'
     },
     {
-      question: 'Hi ha algun cost d\'inscripció?',
-      answer: 'La inscripció és totalment gratuïta. A més, els equips disposaran d\'un pressupost per a material.',
-      icon: 'fas fa-euro-sign'
+      question: 'Per a què serveixen els tallers?',
+      answer: 'Els tallers serveixen perquè els estudiants puguin aprendre eines noves que poden utilitzar per al seu robot i per resoldre dubtes.',
+      icon: 'fas fa-chalkboard-teacher'
+    },
+    {
+      question: 'Es pot construir el robot durant els tallers?',
+      answer: 'No. Els equips hauran de treballar fora de les hores de taller. Des de l\'AESS es facilitarà accés al taller en horari no lectiu per als equips que desitgin utilitzar eines o consultar dubtes.',
+      icon: 'fas fa-tools'
+    },
+    {
+      question: 'Quin material necessito per als tallers?',
+      answer: 'Cada taller pot tenir els seus propis requisits. Cal consultar el material necessari a la web abans de cada sessió.',
+      icon: 'fas fa-list-ul'
+    },
+    {
+      question: 'Hi ha premis pels guanyadors?',
+      answer: 'Sí, es repartiran més de 900€ en premis entre els millors equips classificats.',
+      icon: 'fas fa-trophy'
+    },
+    {
+      question: 'Puc obtenir crèdits ECTS?',
+      answer: 'Actualment només poden convalidar crèdits ECTS els estudiants de grau de la UPC. Estem treballant per ampliar-ho a totes les escoles. Ara mateix, està confirmat per a alumnes de grau de l\'ETSETB i la FIB. Per a la resta d\'escoles, poseu-vos en contacte amb nosaltres.',
+      icon: 'fas fa-certificate'
+    },
+    {
+      question: 'Com funciona la subvenció del robot?',
+      answer: 'Els equips compraran el material necessari. Al final de la competició, si l\'equip ha participat a la final, s\'obrirà un termini per enviar les factures. L\'equip les revisarà i es reemborsarà fins a un màxim de 100€. Per a més informació, consulteu la normativa.',
+      icon: 'fas fa-coins'
     },
     {
       question: 'On puc trobar el reglament complet?',
       answer: 'El reglament complet de la competició està disponible a la secció de normativa.',
       icon: 'fas fa-book'
-    },
-    {
-      question: 'Quins són els límits de mida i pes del robot?',
-      answer: 'El robot no ha de superar els 10x10x10 cm en la fase inicial i ha de tenir un pes màxim de 500 grams. Consulta el reglament per a més detalls.',
-      icon: 'fas fa-ruler-combined'
-    },
-    {
-      question: 'Quins tallers s\'ofereixen?',
-      answer: 'Oferim tallers d\'introducció, actuadors, sensors, PCB i disseny 3D. Tots els tallers són impartits per professionals del sector.',
-      icon: 'fas fa-chalkboard-teacher'
-    },
-    {
-      question: 'Quin material necessito per als tallers?',
-      answer: 'Només cal que portis el teu ordinador portàtil. La resta de materials necessaris seran proporcionats pels organitzadors.',
-      icon: 'fas fa-tools'
-    },
-    {
-      question: 'Quan és la final de la competició?',
-      answer: 'La final de l\'AESSBot 2026 està programada per al 6 de maig de 2026.',
-      icon: 'fas fa-calendar-alt'
-    },
-    {
-      question: 'Hi ha premis pels guanyadors?',
-      answer: 'Sí, hi haurà premis per als tres primers classificats, incloent premis en metàl·lic i oportunitats de formació.',
-      icon: 'fas fa-trophy'
     }
   ]
 
@@ -98,7 +98,7 @@ const AESSBot = () => {
         image="/images/aessbot/Cartell-original-DIN.png"
         poster={true}
         stats={[
-          { value: '1000€', label: 'En premis' },
+          { value: '+900€', label: 'En premis' },
           { value: '16', label: 'Equips' },
           { value: '3', label: 'Participants per equip' },
           { value: '1', label: 'ECTS' }
@@ -179,9 +179,9 @@ const AESSBot = () => {
       <section className="info-section section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Informació important</h2>
+            <h2 className="section-title">Informació</h2>
             <p className="section-subtitle">
-              Tot el que necessites saber sobre costos, materials i requisits per participar a l'AESSBot 2026.
+              Tot el que necessites saber sobre costos, materials i requisits per participar a l'AESSBot.
             </p>
           </div>
           <div className="info-grid">
@@ -194,24 +194,24 @@ const AESSBot = () => {
             </div>
             <div className="info-card">
               <div className="info-icon">
-                <i className="fas fa-tools"></i>
+                <i className="fas fa-hand-holding-usd"></i>
               </div>
-              <h3>Materials subvencionats</h3>
-              <p>La competició subvenciona els materials per construir el robot fins a 100€. No sortirà del teu butxaca!</p>
+              <h3>Ajut econòmic</h3>
+              <p>Subvencionem fins a 100€ en material per robot. La fiança de 50€ es retorna en participar a la final.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
-                <i className="fas fa-coins"></i>
+                <i className="fas fa-trophy"></i>
               </div>
-              <h3>Fiança retornable</h3>
-              <p>Cal depositar una fiança de 50€ per equip, retornable al final de la competició amb la condició de participar el dia de la final.</p>
+              <h3>+900€ en premis</h3>
+              <p>Repartirem més de 900€ en premis entre els millors equips classificats. A què esperes per guanyar?</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
                 <i className="fas fa-certificate"></i>
               </div>
               <h3>1 crèdit ECTS</h3>
-              <p>Es pot obtenir 1 crèdit ECTS convalidable. Consulta les condicions a la <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">normativa</a>.</p>
+              <p>Es pot obtenir 1 crèdit ECTS convalidable. Consulta les condicions a la <a href="#normativa" onClick={(e) => { e.preventDefault(); document.getElementById('normativa').scrollIntoView({ behavior: 'smooth' }) }}>normativa</a>.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
@@ -273,7 +273,7 @@ const AESSBot = () => {
         </div>
       </section>
 
-      <section className="normativa-section section">
+      <section id="normativa" className="normativa-section section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Normativa</h2>
