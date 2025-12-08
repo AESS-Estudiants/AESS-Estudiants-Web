@@ -75,7 +75,7 @@ const Home = () => {
 
             <div className="sponsor-logo-item">
               <img
-                src="/images/logos/aess/Logo_aess_blanc.svg"
+                src="/images/logos/aess/Logo_aess_blanc.png"
                 alt="AESS Logo"
                 className="sponsor-logo-img"
               />

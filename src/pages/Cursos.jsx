@@ -86,9 +86,9 @@ const Cursos = () => {
   ]
 
   const cursosImages = [
-    '/images/cursos/cartell-din4.png',
-    '/images/aess/qui-som/qui-som1.jpeg',
-    '/images/aess/qui-som/qui-som2.jpeg',
+    '/images/cursos/photos/cursos1.jpeg',
+    '/images/cursos/photos/cursos2.jpeg',
+    '/images/cursos/photos/cursos3.jpeg',
   ]
 
   return (

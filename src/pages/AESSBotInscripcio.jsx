@@ -32,50 +32,7 @@ const AESSBotInscripcio = () => {
 
   return (
     <div className="inscripcio-page">
-      <Hero
-        title="Inscripció AESSBot"
-        description="La competició de robòtica més esperada de la UPC. Apunta el teu equip avui perquè les places són limitades i es tanquen aviat."
-        image="/images/aessbot/Cartell-original-DIN.png"
-        poster={true}
-      >
-        <div className="hero-badge-container">
-          {isClosed ? (
-            <div className="countdown-closed">
-              <i className="fas fa-lock"></i>
-              <span>Inscripcions tancades</span>
-            </div>
-          ) : (
-            <div className="countdown-container">
-              <div className="countdown-units">
-                <div className="countdown-unit">
-                  <div className="countdown-box">
-                    <span className="countdown-value">{countdown.days}</span>
-                  </div>
-                  <span className="countdown-text">dies</span>
-                </div>
-                <div className="countdown-separator-wrapper">
-                  <span className="countdown-separator">:</span>
-                </div>
-                <div className="countdown-unit">
-                  <div className="countdown-box">
-                    <span className="countdown-value">{countdown.hours.toString().padStart(2, '0')}</span>
-                  </div>
-                  <span className="countdown-text">hores</span>
-                </div>
-                <div className="countdown-separator-wrapper">
-                  <span className="countdown-separator">:</span>
-                </div>
-                <div className="countdown-unit">
-                  <div className="countdown-box">
-                    <span className="countdown-value">{countdown.minutes.toString().padStart(2, '0')}</span>
-                  </div>
-                  <span className="countdown-text">min</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </Hero>
+
 
       <section className="form-section section" id="formulari-inscripcio">
         <div className="container">

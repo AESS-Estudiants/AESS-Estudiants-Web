@@ -105,7 +105,7 @@ const AESSBot = () => {
         ]}
       >
         <div className="hero-badge-container">
-          <Link to="/aessbot/inscripcio" className="btn btn-primary">
+          <Link to="/aessbot-inscripcio" className="btn btn-primary">
             <i className="fas fa-pen-fancy"></i> Inscriu-te
           </Link>
           {isClosed ? (
