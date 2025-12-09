@@ -72,6 +72,17 @@ const AESSBotInscripcio = () => {
               <h3>Requisit d'Estudiant</h3>
               <p>Tots els participants han de ser <strong>estudiants de grau o màster</strong> de qualsevol universitat.</p>
             </div>
+            <div className="reminder-card">
+              <div className="reminder-icon">
+                <i className="fas fa-book-open"></i>
+              </div>
+              <h3>Llegeix la Normativa</h3>
+              <p>Abans d'inscriure't, <strong>llegeix atentament la normativa oficial</strong> per conèixer totes les especificacions tècniques i condicions de participació.{' '}
+                <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+                  Descarrega aquí
+                </a>.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -82,7 +93,7 @@ const AESSBotInscripcio = () => {
             <h2>Inscriu el teu equip a l'AESSBot 2026</h2>
             <p className="lead-text">
               Omple el formulari següent per inscriure el teu equip a l'AESSBot 2026.
-              Tots els membres de l'equip han de ser estudiants de la UPC.
+              Tots els membres de l'equip han de ser estudiants de grau o màster de qualsevol universitat.
             </p>
             {/* Alert removed as per request */}
           </div>
@@ -130,7 +141,7 @@ const AESSBotInscripcio = () => {
               </div>
               <div className="timeline-content">
                 <h3>2. Espera al Tancament d'Inscripcions</h3>
-                <p>Un cop enviada la teva inscripció, cal esperar fins el <strong>11 de febrer de 2026</strong> quan es tanquin les inscripcions oficials.</p>
+                <p>Un cop enviada la teva inscripció, cal esperar fins el <strong>11 de febrer de 2026</strong> quan es tanquin les inscripcions oficials per aplicar els criteris de prioritat en cas que hi hagi més de 16 equips.</p>
               </div>
             </div>
             <div className="timeline-item">
@@ -157,7 +168,7 @@ const AESSBotInscripcio = () => {
               </div>
               <div className="timeline-content">
                 <h3>5. Correu de Benvinguda i Convocatòria</h3>
-                <p>Rebràs un correu de benvinguda amb la convocatòria per al primer taller que tindrà lloc el <strong>18 de febrer de 2026</strong>. També s'afegirà al vostre equip al grup de WhatsApp on rebreu tota la informació.</p>
+                <p>Rebràs un correu de benvinguda amb la convocatòria per al primer taller <strong>abans del 15 de febrer de 2026</strong>. També s'afegirà al vostre equip al grup de WhatsApp on rebreu tota la informació.</p>
               </div>
             </div>
           </div>
