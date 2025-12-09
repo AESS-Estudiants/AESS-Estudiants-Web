@@ -1,9 +1,23 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
+import CourseModal from '../components/CourseModal'
 import './Cursos.css'
 
 const Cursos = () => {
+  const [selectedCourse, setSelectedCourse] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpenModal = (curso) => {
+    setSelectedCourse(curso)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setTimeout(() => setSelectedCourse(null), 200)
+  }
   const cursos = [
     {
       name: 'Arduino Introducció',
@@ -107,7 +121,7 @@ const Cursos = () => {
       >
         <div className="hero-note">
           <i className="fas fa-info-circle"></i>
-          <span>Properament mes info sobre la propera edició dels cursos</span>
+          <span>Pròxima edició dels cursos: Gener - Febrer 2026. Les inscripcions s'obriran aviat!</span>
         </div>
       </Hero>
 
@@ -118,7 +132,7 @@ const Cursos = () => {
             <p className="section-subtitle">
               A AESS Estudiants oferim una àmplia varietat de cursos i tallers pràctics per
               desenvolupar habilitats en robòtica, programació, disseny electrònic i molt més.
-              Tots els cursos són gratuïts per als membres de l'associació. Usualment oferim una tanda de cursos a finals de Gener a Principis de Febrer, i una altra a finals de Juny a Principis de Juliol.
+              Tots els cursos són gratuïts per als membres de l'associació. Oferim dues edicions anuals: <strong>Gener-Febrer</strong> i <strong>Juny-Juliol</strong>.
             </p>
           </div>
           <div className="carousel-wrapper">
@@ -168,10 +182,14 @@ const Cursos = () => {
                       <span><strong>Nivell:</strong> {curso.level}</span>
                     </div>
                   </div>
-                  <button className="btn btn-primary" onClick={(e) => e.preventDefault()}>
+                  <button className="btn btn-primary" onClick={() => handleOpenModal(curso)}>
                     <i className="fas fa-info-circle"></i> Més informació
                   </button>
-                  <button className="btn btn-secondary btn-disabled" disabled>
+                  <button
+                    className="btn btn-secondary btn-disabled"
+                    disabled
+                    data-tooltip="Les inscripcions s'obriran a Gener 2026"
+                  >
                     <i className="fas fa-user-plus"></i> Inscriu-te
                   </button>
                 </div>
@@ -180,6 +198,12 @@ const Cursos = () => {
           </div>
         </div>
       </section>
+
+      <CourseModal
+        course={selectedCourse}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   )
 }
