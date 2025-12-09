@@ -95,6 +95,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-xl);
   margin-bottom: var(--space-4xl);
+  align-items: stretch;
 }
 
 .feature-card {
@@ -107,6 +108,9 @@
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card::before {
@@ -183,6 +187,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-xl);
   margin-top: var(--space-3xl);
+  align-items: stretch;
 }
 
 .benefit-card {
@@ -193,6 +198,9 @@
   padding: var(--space-2xl);
   text-align: center;
   transition: all var(--transition-base);
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .benefit-card:hover {
@@ -743,6 +751,8 @@
   .benefit-card,
   .step-card {
     padding: 1.5rem;
+    min-height: auto;
+    /* Remove min-height on mobile */
   }
 
   .card-icon,

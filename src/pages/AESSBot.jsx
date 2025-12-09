@@ -243,7 +243,7 @@ const AESSBot = () => {
                 <i className="fas fa-hand-holding-usd"></i>
               </div>
               <h3>Ajut econòmic</h3>
-              <p>Subvencionem fins a 100€ en material per equip per a que pugueu consegueir el robot definitiu.</p>
+              <p>Subvencionem fins a 100€ en material per equip perquè pugueu aconseguir el robot definitiu.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">

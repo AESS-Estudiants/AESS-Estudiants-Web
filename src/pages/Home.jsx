@@ -252,7 +252,7 @@ const Home = () => {
                     <i className="fas fa-calendar-alt"></i>
                     <div>
                       <span className="detail-value">Feb 18 - Mai 6</span>
-                      <span className="detail-label">Durada del competició</span>
+                      <span className="detail-label">Durada de la competició</span>
                     </div>
                   </div>
                   <div className="detail-item">
