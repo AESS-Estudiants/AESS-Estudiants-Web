@@ -54,19 +54,19 @@ const AESSBot = () => {
     },
     {
       question: 'Qui pot participar?',
-      answer: 'La competició està oberta a estudiants de grau i màster de totes les universitats.',
+      answer: 'La competició està oberta a estudiants de grau i màster de qualsevol universitat.',
       icon: 'fas fa-users'
     },
     {
       question: 'Les places són limitades?',
-      answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, se seguiran els criteris de prioritat estipulats a la normativa.',
+      answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, es prioritzen: (1) equips més grans, (2) estudiants UPC, (3) estudiants ETSETB, (4) data d\'inscripció.',
       icon: 'fas fa-sort-amount-down'
     },
 
     // Equips
     {
       question: 'Puc participar sol?',
-      answer: 'Sí. Tot i això, si s\'esgoten les places, una de les prioritats és seleccionar equips amb més membres per facilitar la participació del màxim nombre d\'estudiants.',
+      answer: 'Sí. Tot i això, si s\'esgoten les places, es prioritzen equips amb més membres per facilitar la participació del màxim nombre d\'estudiants.',
       icon: 'fas fa-user'
     },
     {
@@ -83,7 +83,7 @@ const AESSBot = () => {
     },
     {
       question: 'Com funciona la subvenció del robot?',
-      answer: 'Subvencionem fins a 100€ en material per equip. Els equips compren el material necessari i, si participen a la final, es tramita el reemborsament presentant les factures. Consulteu els detalls a la normativa.',
+      answer: 'El vostre robot pot costar el que vulgueu. Subvencionem fins a 100€ en material per equip. Els equips compren el material necessari i, si participen a la final amb un robot reglamentari, es tramita el reemborsament presentant les factures originals. Només es subvenciona material que estigui físicament integrat al robot.',
       icon: 'fas fa-coins'
     },
 
@@ -112,17 +112,17 @@ const AESSBot = () => {
     // Premis i Crèdits
     {
       question: 'Hi ha premis?',
-      answer: 'Sí, es repartiran més de 900€ en premis entre els millors equips classificats.',
+      answer: 'Sí, es repartiran més de 1000€ en premis entre els millors equips classificats.',
       icon: 'fas fa-trophy'
     },
     {
       question: 'Puc convalidar crèdits ECTS?',
-      answer: 'Sí. Pels estudiants de l\'ETSETB, es reconeixerà 1 ECTS de forma automàtica. Pels estudiants d\'altres facultats de la UPC, s\'informarà a l\'escola corresponent, però serà l\'escola qui decideixi finalment si convalidar el crèdit.',
+      answer: 'Sí. Per a estudiants de l\'ETSETB i FIB de la UPC, es reconeix 1 ECTS de forma automàtica complint els requisits. Per a estudiants d\'altres escoles de la UPC, s\'informarà a la vostra escola. Per a estudiants d\'altres universitats, consulteu amb nosaltres les opcions de reconeixement.',
       icon: 'fas fa-graduation-cap'
     },
     {
       question: 'Què s\'ha de fer per convalidar el crèdit?',
-      answer: 'Per obtenir els crèdits és necessari: assistir a tots els tallers, preparar el robot i participar a la competició final amb un robot reglamentari.',
+      answer: 'Per obtenir el crèdit ECTS és necessari: (1) Assistir a tots els tallers programats, i (2) Participar a la competició final amb un robot reglamentari i funcional. Per a estudiants de l\'ETSETB i FIB, el reconeixement és automàtic. Per a altres escoles de la UPC o altres universitats, contacta amb nosaltres.',
       icon: 'fas fa-check-circle'
     },
 
@@ -131,6 +131,34 @@ const AESSBot = () => {
       question: 'On puc trobar la normativa?',
       answer: 'El reglament complet de la competició està disponible a la secció de "Normativa" d\'aquesta mateixa pàgina.',
       icon: 'fas fa-book-open'
+    },
+
+    // Format de la competició
+    {
+      question: 'Com funciona la competició?',
+      answer: 'La competició té dues fases: (1) Fase de lliga on cada equip juga contra 6 equips assignats aleatòriament. S\'atorguen 3 punts per victòria. Els 8 millors equips passen a la següent fase. (2) Eliminatòries directes entre els 8 finalistes fins determinar el guanyador.',
+      icon: 'fas fa-trophy'
+    },
+
+    // Retirada
+    {
+      question: 'Què passa si em retiro abans de la final?',
+      answer: 'Si et retires abans de la final, perdràs la fiança de 50€ i no podràs optar al reemborsament del material. És important que només t\'inscriguis si estàs compromès a participar fins al final.',
+      icon: 'fas fa-exclamation-triangle'
+    },
+
+    // Materials
+    {
+      question: 'Hi ha restriccions sobre els materials del robot?',
+      answer: 'Sí. El robot no pot incorporar armes tallants/perforants, dispositius d\'interferència electromagnètica, làsers que saturin sensors, ni elements que puguin danyar el Dohyo. Consulta la normativa per a la llista completa de restriccions.',
+      icon: 'fas fa-ban'
+    },
+
+    // Accés al taller
+    {
+      question: 'Tinc accés al taller de l\'associació?',
+      answer: 'Sí, els equips participants tindran accés al taller de l\'AESS per utilitzar eines i rebre seguiment. Els horaris es comunicaran després de l\'acceptació.',
+      icon: 'fas fa-tools'
     }
   ]
 
@@ -144,7 +172,7 @@ const AESSBot = () => {
         image="/images/aessbot/Cartell-original-DIN.png"
         poster={true}
         stats={[
-          { value: '+900€', label: 'En premis' },
+          { value: '+1000€', label: 'En premis' },
           { value: '16', label: 'Equips' },
           { value: '3', label: 'Participants per equip' },
           { value: '1', label: 'ECTS' }
@@ -243,14 +271,14 @@ const AESSBot = () => {
                 <i className="fas fa-hand-holding-usd"></i>
               </div>
               <h3>Ajut econòmic</h3>
-              <p>Subvencionem fins a 100€ en material per equip perquè pugueu aconseguir el robot definitiu.</p>
+              <p>Subvencionem fins a 100€ en material per equip. El vostre robot pot costar el que vulgueu, però només us reemborsarem fins a 100€ si participeu a la final i presenteu les factures.</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
                 <i className="fas fa-trophy"></i>
               </div>
-              <h3>+900€ en premis</h3>
-              <p>Repartirem més de 900€ en premis entre els millors equips classificats. A què esperes per guanyar?</p>
+              <h3>+1000€ en premis</h3>
+              <p>Repartirem més de 1000€ en premis entre els millors equips classificats. A què esperes per guanyar?</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
