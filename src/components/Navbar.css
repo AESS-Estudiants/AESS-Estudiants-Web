@@ -144,7 +144,8 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-sm) 0;
-  margin-top: var(--space-sm);
+  padding-top: calc(var(--space-sm) + 8px);
+  margin-top: 0;
   min-width: 220px;
   list-style: none;
   opacity: 0;
@@ -152,6 +153,17 @@
   transform: translateY(-10px);
   transition: all var(--transition-base);
   box-shadow: var(--shadow-lg);
+}
+
+/* Bridge to prevent gap between nav-link and dropdown */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: transparent;
 }
 
 .dropdown:hover .dropdown-menu {
