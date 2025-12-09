@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import Hero from '../components/Hero'
@@ -68,6 +69,7 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <Analytics />
       <Hero
         title="Contacte"
         description="Tens alguna pregunta, suggeriment o vols col·laborar amb nosaltres? Omple el formulari i et respondrem el més aviat possible."
