@@ -74,11 +74,65 @@ const Contact = () => {
         image="/images/logos/aess/CubBlanc.svg"
       />
 
+      <section className="location-section section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Com arribar</h2>
+            <p className="section-subtitle">
+              Ens trobaràs al Campus Nord de la UPC, a l'edifici Omega
+            </p>
+          </div>
+          <div className="location-content">
+            <div className="location-info">
+              <div className="location-card">
+                <div className="location-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h3>Adreça</h3>
+                  <p>Edifici Omega, Aula S203<br />Campus Nord UPC<br />Carrer de Jordi Girona, 1-3<br />08034 Barcelona</p>
+                </div>
+              </div>
+              <div className="location-card">
+                <div className="location-icon">
+                  <i className="fas fa-subway"></i>
+                </div>
+                <div>
+                  <h3>Transports Públics</h3>
+                  <p><strong>Metro:</strong> L3 (Palau Reial)<br /><strong>Bus:</strong> 7, 33, 54, 63, 67, 68, 75</p>
+                </div>
+              </div>
+              <div className="location-card">
+                <div className="location-icon">
+                  <i className="fas fa-clock"></i>
+                </div>
+                <div>
+                  <h3>Horaris</h3>
+                  <p>L'horari varia segons disponibilitat dels membres.<br />Consulta el grup de WhatsApp per saber quan estem al taller.</p>
+                </div>
+              </div>
+            </div>
+            <div className="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1!2d2.112706!3d41.389282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f7e64b8b3b%3A0x7e4b8c6e9f1e2f3e!2sCampus%20Nord%20UPC!5e0!3m2!1sca!2ses!4v1701234567890!5m2!1sca!2ses"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicació Campus Nord UPC"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="form-section section">
         <div className="container">
           <div className="form-container">
             <h2 className="form-title">Formulari de contacte</h2>
-            
+
             {response.message && (
               <div className={`form-response ${response.type}`}>
                 {response.message}
