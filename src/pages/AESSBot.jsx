@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/next';
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import FAQ from '../components/FAQ'
@@ -166,6 +167,7 @@ const AESSBot = () => {
 
   return (
     <div className="aessbot-page">
+      <Analytics />
       <Hero
         title="AESSBot 2026"
         description="La competició de robòtica més esperada de la UPC. Apunta el teu equip avui perquè les places són limitades i es tanquen aviat."

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/next';
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
 import './Projectes.css'
@@ -41,6 +42,7 @@ const Projectes = () => {
 
   return (
     <div className="projectes-page">
+      <Analytics />
       <Hero
         title="Els nostres"
         subtitle="Projectes"

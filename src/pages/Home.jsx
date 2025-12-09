@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
@@ -60,6 +61,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Analytics />
       <Hero
         badge="Innovant en robòtica i enginyeria"
         title="AESS"

@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { useState, useEffect } from 'react'
 import Hero from '../components/Hero'
 import './AESSBotInscripcio.css'
@@ -32,7 +33,7 @@ const AESSBotInscripcio = () => {
 
   return (
     <div className="inscripcio-page">
-
+      <Analytics />
 
 
       <section className="reminders-section section">
