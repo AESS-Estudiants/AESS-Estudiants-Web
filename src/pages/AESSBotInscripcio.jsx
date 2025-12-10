@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect } from 'react'
 import Hero from '../components/Hero'
 import './AESSBotInscripcio.css'
@@ -79,9 +79,10 @@ const AESSBotInscripcio = () => {
               </div>
               <h3>Llegeix la Normativa</h3>
               <p>Abans d'inscriure't, <strong>llegeix atentament la normativa oficial</strong> per conèixer totes les especificacions tècniques i condicions de participació.{' '}
-                <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+                {/* <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
                   Descarrega aquí
-                </a>.
+                </a> */}
+                <span>La normativa estarà disponible pròximament.</span>
               </p>
             </div>
           </div>
