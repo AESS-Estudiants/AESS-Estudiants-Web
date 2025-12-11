@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react';
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
@@ -107,6 +108,7 @@ const Cursos = () => {
 
   return (
     <div className="cursos-page">
+      <Analytics />
       <Hero
         title="Cursos"
         description="Aprèn amb els nostres cursos pràctics en robòtica, electrònica i programació. Des de iniciació fins a nivell avançat, tenim el curs perfecte per a tu."
