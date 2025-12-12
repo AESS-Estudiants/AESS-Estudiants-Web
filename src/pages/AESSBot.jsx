@@ -38,7 +38,7 @@ const AESSBot = () => {
     { fecha: '16 Mar 2026', hora: '11:00 - 13:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory' },
     { fecha: '23 Mar 2026', hora: '11:00 - 13:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube' },
     { fecha: '22 Apr 2026', hora: '11:00 - 13:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks' },
-    { fecha: '29 Apr 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true }
+    { fecha: '6 Mai 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true }
   ]
 
   const faqs = [
