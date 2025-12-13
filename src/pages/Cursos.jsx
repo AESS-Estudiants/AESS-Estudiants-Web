@@ -112,15 +112,7 @@ const Cursos = () => {
         ]}
         image="/images/cursos/cursos-aess-26-febrer-fixed.png"
         poster={true}
-      >
-        <div className="hero-note">
-          <i className="fas fa-info-circle"></i>
-          <span>
-            Calendari Gener-Febrer 2026: 26-30 gen (matins Python) · 26-30 gen (tardes Fusion) · 31 gen i 1 feb (Arduino intro) ·
-            2-6 feb (matins Raspberry Pi) · 2-6 feb (tardes Arduino avançat). Les inscripcions s'obriran aviat!
-          </span>
-        </div>
-      </Hero>
+      />
 
       <section className="intro-section section">
         <div className="container">
