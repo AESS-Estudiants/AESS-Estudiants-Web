@@ -319,7 +319,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="event-image">
-                <img src="/images/cursos/cartell-din4.png" alt="Cursos AESS" />
+                <img src="/images/cursos/cursos-aess-26-febrer-fixed.png" alt="Cursos AESS" />
               </div>
             </div>
           </div>
