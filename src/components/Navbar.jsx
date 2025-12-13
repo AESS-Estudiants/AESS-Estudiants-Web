@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <img
-            src="/images/logos/aess/Logo_aess_blanc.svg"
+            src="/images/logos/aess/Logo_aess_blanc.png"
             alt="AESS Logo"
             className="logo-img"
           />

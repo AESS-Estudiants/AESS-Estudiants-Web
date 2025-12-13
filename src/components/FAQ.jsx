@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './FAQ.css'
 
 const FAQ = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(null)
 
   const toggleItem = (index) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -11,11 +11,11 @@ const FAQ = ({ items }) => {
   return (
     <div className="faq-accordion">
       {items.map((item, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className={`faq-item ${openIndex === index ? 'active' : ''}`}
         >
-          <button 
+          <button
             className="faq-question"
             onClick={() => toggleItem(index)}
             aria-expanded={openIndex === index}

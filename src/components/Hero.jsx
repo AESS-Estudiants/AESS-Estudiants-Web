@@ -1,6 +1,19 @@
 import './Hero.css'
 
 const Hero = ({ badge, title, subtitle, description, image, stats, children, poster = false }) => {
+  const renderStats = () => (
+    stats && (
+      <div className={`hero-stats ${poster ? 'hero-stats-poster' : ''}`}>
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-item">
+            <span className="stat-number">{stat.value}</span>
+            <span className="stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    )
+  )
+
   return (
     <header className={`hero ${poster ? 'poster-hero' : ''}`}>
       <div className="hero-background">
@@ -27,16 +40,8 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
             <p className="hero-description">{description}</p>
           )}
           {children}
-          {stats && (
-            <div className="hero-stats">
-              {stats.map((stat, index) => (
-                <div key={index} className="stat-item">
-                  <span className="stat-number">{stat.value}</span>
-                  <span className="stat-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
+          {/* Stats shown inline for non-poster mode */}
+          {!poster && renderStats()}
         </div>
         {image && (
           <div className={`hero-visual ${poster ? 'poster-hero' : ''}`}>
@@ -49,6 +54,8 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
             )}
           </div>
         )}
+        {/* Stats shown after poster for poster mode - enables mobile reordering */}
+        {poster && renderStats()}
       </div>
     </header>
   )
