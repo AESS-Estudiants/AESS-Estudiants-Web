@@ -301,7 +301,7 @@ const AESSBot = () => {
                 <i className="fas fa-book"></i>
               </div>
               <h3>Més informació</h3>
-              <p>Per a més detalls sobre el reglament, límits tècnics i condicions, consulta la {/* <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">normativa oficial</a> */}<span>normativa oficial (disponible pròximament)</span>.</p>
+              <p>Per a més detalls sobre el reglament, límits tècnics i condicions, consulta la <a href="/documents/Reglament%20V2.docx.pdf" target="_blank" rel="noopener noreferrer">normativa oficial</a>.</p>
             </div>
           </div>
         </div>
@@ -358,16 +358,15 @@ const AESSBot = () => {
               Assegura't de llegir-lo atentament abans de participar a la competició.
             </p>
             <div className="normativa-cta">
-              {/* <a
-                href="/documents/normativa_v4.pdf"
-                download="AESSBot_2026_Normativa.pdf"
+              <a
+                href="/documents/Reglament%20V2.docx.pdf"
+                download="AESSBot_Reglament_V2.pdf"
                 className="btn btn-primary btn-large"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i className="fas fa-file-pdf"></i> Descarregar Normativa 2026
-              </a> */}
-              <button className="btn btn-primary btn-large" disabled>
-                Normativa disponible pròximament
-              </button>
+                <i className="fas fa-file-pdf"></i> Descarregar Reglament Actualitzat
+              </a>
               <p className="small-disclaimer">* Subjecte a canvis</p>
             </div>
           </div>
