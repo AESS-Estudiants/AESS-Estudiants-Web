@@ -23,7 +23,7 @@ const Cursos = () => {
     {
       name: 'Arduino Introducció',
       logo: '/images/cursos/logos/logo_arduino_intro.png',
-      description: 'Curs exprés de dos dies per passar de zero a tenir el teu primer projecte amb sensors, actuadors i bones pràctiques de cablejat.',
+      description: 'Curs intensiu de dos dies per passar de zero a tenir el teu primer projecte amb sensors, actuadors i bones pràctiques de cablejat.',
       detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat.',
       duration: '2 sessions (10 hores cada una)',
       date: '31 de gener i 1 de febrer',
@@ -116,7 +116,7 @@ const Cursos = () => {
         <div className="hero-note">
           <i className="fas fa-info-circle"></i>
           <span>
-            Calendari Gener-Febrer 2026: 26-30 gen (matins Python) · 26-30 gen (tardes Fusion) · 31 gen i 1 feb (Arduino intro exprés) ·
+            Calendari Gener-Febrer 2026: 26-30 gen (matins Python) · 26-30 gen (tardes Fusion) · 31 gen i 1 feb (Arduino intro) ·
             2-6 feb (matins Raspberry Pi) · 2-6 feb (tardes Arduino avançat). Les inscripcions s'obriran aviat!
           </span>
         </div>
