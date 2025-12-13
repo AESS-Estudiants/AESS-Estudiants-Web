@@ -23,9 +23,10 @@ const Cursos = () => {
     {
       name: 'Arduino Introducció',
       logo: '/images/cursos/logos/logo_arduino_intro.png',
-      description: 'Introducció a la programació de microcontroladors Arduino. Control de sensors, actuadors i comunicació bàsica. Perfecte per començar en el món de l\'electrònica.',
-      duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
+      description: 'Curs exprés de dos dies per passar de zero a tenir el teu primer projecte amb sensors, actuadors i bones pràctiques de cablejat.',
+      detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat.',
+      duration: '2 sessions (10 hores cada una)',
+      date: '31 de gener i 1 de febrer',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
@@ -36,9 +37,10 @@ const Cursos = () => {
     {
       name: 'Arduino Avançat',
       logo: '/images/cursos/logos/logo_arduino_avanzado.svg',
-      description: 'Aprofundeix en Arduino amb projectes complexos: comunicació I2C/SPI, interrupcions, control PID i optimització de codi.',
+      description: 'Projectes complets amb I2C/SPI, interrupcions, control PID, optimització de codi i integració de sensors avançats.',
+      detailedContent: 'Busos I2C/SPI, interrupcions i timers, control PID per motors, optimització de codi i projecte final amb integració de diversos sensors.',
       duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
+      date: '2 al 6 de febrer · tardes',
       level: 'Avançat',
       preuUPC: '85',
       preuNoUPC: '105',
@@ -49,9 +51,10 @@ const Cursos = () => {
     {
       name: 'Fusion 3D Design',
       logo: '/images/cursos/logos/logo_fusion.png',
-      description: 'Aprèn a modelar peces en 3D amb Fusion 360. Des de formes bàsiques fins a dissenys complexos per impressió 3D i fabricació.',
+      description: 'Modelatge 3D amb Fusion 360: sketches nets, assemblatges, adaptació per impressió 3D i exportació per fabricació ràpida.',
+      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació a slicer.',
       duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
+      date: '26 al 30 de gener · tardes',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
@@ -62,9 +65,10 @@ const Cursos = () => {
     {
       name: 'Raspberry Pi',
       logo: '/images/cursos/logos/logo_respbaerry_pi.svg',
-      description: 'Descobreix les possibilitats de la Raspberry Pi: sistema operatiu Linux, programació GPIO, projectes IoT i automatització.',
+      description: 'Linux a la pràctica, GPIO amb Python, automatització i IoT lleuger sobre Raspberry Pi amb projectes guiats.',
+      detailedContent: 'Linux bàsic i terminals, configuració de GPIO amb Python, serveis i systemd, IoT lleuger i mini projecte final.',
       duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
+      date: '2 al 6 de febrer · matins',
       level: 'Inicial/Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
@@ -75,23 +79,11 @@ const Cursos = () => {
     {
       name: 'Programació en Python',
       logo: '/images/cursos/logos/logo_python.png',
-      description: 'Aprèn Python des de zero: sintaxi bàsica, estructures de dades, funcions, i aplicacions en automatització i anàlisi de dades.',
+      description: 'Python des de zero amb focus en scripts útils: sintaxi, estructures de dades i automatització per a projectes ràpids.',
+      detailedContent: 'Sintaxi base, llistes i diccionaris, lectura d\'arxius, entorns virtuals, scripts d\'automatització i petit projecte pràctic.',
       duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
+      date: '26 al 30 de gener · matins',
       level: 'Inicial',
-      preuUPC: '85',
-      preuNoUPC: '105',
-      credits: '1',
-      requisits: 'Cap',
-      ubicacio: 'Campus Nord UPC - Aules per determinar'
-    },
-    {
-      name: 'Programació en C++',
-      logo: '/images/cursos/logos/Logo_c++.png',
-      description: 'Domina C++ per a sistemes embeguts i aplicacions de rendiment. Gestió de memòria, POO i programació eficient.',
-      duration: '5 sessions (4 hores cada una)',
-      date: 'Properament',
-      level: 'Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
@@ -113,17 +105,20 @@ const Cursos = () => {
         title="Cursos"
         description="Aprèn amb els nostres cursos pràctics en robòtica, electrònica i programació. Des de iniciació fins a nivell avançat, tenim el curs perfecte per a tu."
         stats={[
-          { value: '6', label: 'Cursos disponibles' },
+          { value: '5', label: 'Cursos disponibles' },
           { value: '100%', label: 'Pràctic' },
           { value: '1-2 ECTS', label: 'Convalidable' },
           { value: 'Places', label: 'Limitades' }
         ]}
-        image="/images/cursos/cartell-din4.png"
+        image="/images/cursos/cursos-aess-26-febrer-fixed.png"
         poster={true}
       >
         <div className="hero-note">
           <i className="fas fa-info-circle"></i>
-          <span>Pròxima edició dels cursos: Gener - Febrer 2026. Les inscripcions s'obriran aviat!</span>
+          <span>
+            Calendari Gener-Febrer 2026: 26-30 gen (matins Python) · 26-30 gen (tardes Fusion) · 31 gen i 1 feb (Arduino intro exprés) ·
+            2-6 feb (matins Raspberry Pi) · 2-6 feb (tardes Arduino avançat). Les inscripcions s'obriran aviat!
+          </span>
         </div>
       </Hero>
 

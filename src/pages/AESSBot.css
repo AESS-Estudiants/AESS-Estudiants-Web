@@ -465,7 +465,7 @@
 
 .small-disclaimer {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: var(--text-secondary);
   margin-top: var(--space-sm);
   font-style: italic;

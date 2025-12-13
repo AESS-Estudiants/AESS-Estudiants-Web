@@ -62,13 +62,15 @@ const CourseModal = ({ course, isOpen, onClose }) => {
 
                     <section className="modal-section">
                         <h3><i className="fas fa-laptop"></i> Material Necessari</h3>
-                        <ul className="modal-list">
-                            <li>Ordinador portàtil</li>
-                            <li>Material per prendre notes</li>
-                            {course.additionalMaterial && course.additionalMaterial.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
+                        {course.additionalMaterial && course.additionalMaterial.length > 0 ? (
+                            <ul className="modal-list">
+                                {course.additionalMaterial.map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>No cal portar material; el facilitarem durant el curs.</p>
+                        )}
                     </section>
 
                     <div className="modal-details-grid">
