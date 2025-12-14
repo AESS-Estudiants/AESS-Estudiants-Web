@@ -359,13 +359,13 @@ const AESSBot = () => {
             </p>
             <div className="normativa-cta">
               <a
-                href="/documents/Reglament%20V2.docx.pdf"
-                download="AESSBot_Reglament_V2.pdf"
+                href="/documents/Reglament.pdf"
+                download="AESSBot_Reglament.pdf"
                 className="btn btn-primary btn-large"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-file-pdf"></i> Descarregar Reglament Actualitzat
+                <i className="fas fa-file-pdf"></i> Descarregar Reglament
               </a>
               <p className="small-disclaimer">* Subjecte a canvis</p>
             </div>
