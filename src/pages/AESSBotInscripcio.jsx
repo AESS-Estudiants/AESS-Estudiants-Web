@@ -169,7 +169,7 @@ const AESSBotInscripcio = () => {
               </div>
               <div className="timeline-content">
                 <h3>5. Correu de Benvinguda i Convocatòria</h3>
-                <p>Rebràs un correu de benvinguda amb la convocatòria per al primer taller <strong>abans del 15 de febrer de 2026</strong>. També s'afegirà al vostre equip al grup de WhatsApp on rebreu tota la informació.</p>
+                <p>Rebràs un correu de benvinguda amb la convocatòria per al primer taller <strong>abans del 15 de febrer de 2026</strong>.</p>
               </div>
             </div>
           </div>

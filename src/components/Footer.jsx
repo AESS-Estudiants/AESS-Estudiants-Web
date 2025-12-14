@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <div className="footer-logo">
-            <img 
-              src="/images/logos/aess/CubBlanc.svg" 
-              alt="AESS Logo" 
+            <img
+              src="/images/logos/aess/CubBlanc.svg"
+              alt="AESS Logo"
               className="footer-logo-img"
             />
             <span>AESS Estudiants</span>
@@ -18,32 +18,23 @@ const Footer = () => {
             Associació d'estudiants de la UPC dedicada a la tecnologia, robòtica i innovació.
           </p>
           <div className="social-links">
-            <a 
-              href="https://www.instagram.com/aessestudiants" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/aessestudiants"
+              target="_blank"
               rel="noopener noreferrer"
-              className="social-icon" 
+              className="social-icon"
               aria-label="Instagram"
             >
               <i className="fab fa-instagram"></i>
             </a>
-            <a 
-              href="https://www.linkedin.com/company/aess-upc/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/company/aess-upc/"
+              target="_blank"
               rel="noopener noreferrer"
-              className="social-icon" 
+              className="social-icon"
               aria-label="LinkedIn"
             >
               <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a 
-              href="https://github.com/AESS-Estudiants" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-icon" 
-              aria-label="GitHub"
-            >
-              <i className="fab fa-github"></i>
             </a>
           </div>
         </div>
@@ -85,7 +76,7 @@ const Footer = () => {
               Política de privacitat
             </a>
             <span className="divider">|</span>
-            <a href="/documents/normativa_v4.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/documents/Reglament.pdf" target="_blank" rel="noopener noreferrer">
               Normativa
             </a>
           </div>
