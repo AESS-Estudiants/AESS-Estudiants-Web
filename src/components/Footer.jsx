@@ -28,7 +28,7 @@ const Footer = () => {
               <i className="fab fa-instagram"></i>
             </a>
             <a
-              href="https://www.linkedin.com/company/aess-upc/"
+              href="https://www.linkedin.com/company/aess-estudiants-upc/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
