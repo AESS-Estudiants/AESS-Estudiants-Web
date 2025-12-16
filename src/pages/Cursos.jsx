@@ -19,12 +19,14 @@ const Cursos = () => {
     setIsModalOpen(false)
     setTimeout(() => setSelectedCourse(null), 200)
   }
+  const enrollLink = 'https://docs.google.com/forms/d/e/1FAIpQLSfPPmNP2heuAxZne8FewLPJgNdluvf332XoYgQdJmhzzoZDZA/viewform?usp=header'
+
   const cursos = [
     {
       name: 'Arduino Introducció',
       logo: '/images/cursos/logos/logo_arduino_intro.png',
-      description: 'Curs intensiu de dos dies per passar de zero a tenir el teu primer projecte amb sensors, actuadors i bones pràctiques de cablejat.',
-      detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat.',
+      description: 'Arrenca des de zero i construeix el teu primer projecte real amb sensors i actuadors, aprenent les bases d\'Arduino i les bones pràctiques de cablejat.',
+      detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat per consolidar-ho.',
       duration: '2 sessions (10 hores cada una)',
       date: '31 de gener i 1 de febrer',
       level: 'Inicial',
@@ -37,8 +39,8 @@ const Cursos = () => {
     {
       name: 'Arduino Avançat',
       logo: '/images/cursos/logos/logo_arduino_avanzado.svg',
-      description: 'Projectes complets amb I2C/SPI, interrupcions, control PID, optimització de codi i integració de sensors avançats.',
-      detailedContent: 'Busos I2C/SPI, interrupcions i timers, control PID per motors, optimització de codi i projecte final amb integració de diversos sensors.',
+      description: 'Fes el salt als projectes complexos: busos I2C/SPI, interrupcions, PID per motors i optimització de codi amb integració de sensors avançats.',
+      detailedContent: 'Busos I2C/SPI, interrupcions i timers, control PID per motors, optimització de codi i projecte final integrant diversos sensors i actuadors.',
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · tardes',
       level: 'Avançat',
@@ -51,8 +53,8 @@ const Cursos = () => {
     {
       name: 'Fusion 3D Design',
       logo: '/images/cursos/logos/logo_fusion.png',
-      description: 'Modelatge 3D amb Fusion 360: sketches nets, assemblatges, adaptació per impressió 3D i exportació per fabricació ràpida.',
-      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació a slicer.',
+      description: 'Porta a la realitat totes les teves idees! Aprèn a dissenyar peces i estructures des dels fonaments del 3D fins a aplicacions habituals al món laboral.',
+      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació. Eines aplicables a Fusion, SolidWorks o Onshape.',
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · tardes',
       level: 'Inicial',
@@ -65,8 +67,8 @@ const Cursos = () => {
     {
       name: 'Raspberry Pi',
       logo: '/images/cursos/logos/logo_respbaerry_pi.svg',
-      description: 'Linux a la pràctica, GPIO amb Python, automatització i IoT lleuger sobre Raspberry Pi amb projectes guiats.',
-      detailedContent: 'Linux bàsic i terminals, configuració de GPIO amb Python, serveis i systemd, IoT lleuger i mini projecte final.',
+      description: 'Domina la Raspberry Pi amb Linux pràctic, GPIO amb Python i automatització. Ideal per muntar projectes IoT lleugers amb serveis propis.',
+      detailedContent: 'Linux bàsic i terminals, configuració de GPIO amb Python, serveis i systemd, IoT lleuger i mini projecte final aplicat.',
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · matins',
       level: 'Inicial/Intermedi',
@@ -79,8 +81,8 @@ const Cursos = () => {
     {
       name: 'Programació en Python',
       logo: '/images/cursos/logos/logo_python.png',
-      description: 'Python des de zero amb focus en scripts útils: sintaxi, estructures de dades i automatització per a projectes ràpids.',
-      detailedContent: 'Sintaxi base, llistes i diccionaris, lectura d\'arxius, entorns virtuals, scripts d\'automatització i petit projecte pràctic.',
+      description: 'Aprèn Python des de zero amb enfocament pràctic en scripts útils, automatització i projectes ràpids per al dia a dia.',
+      detailedContent: 'Sintaxi base, llistes i diccionaris, lectura d\'arxius, llibreries i petit projecte pràctic aplicat.',
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · matins',
       level: 'Inicial',
@@ -107,7 +109,7 @@ const Cursos = () => {
         stats={[
           { value: '5', label: 'Cursos disponibles' },
           { value: '100%', label: 'Pràctic' },
-          { value: '1-2 ECTS', label: 'Convalidable' },
+          { value: '1 ECTS', label: 'Convalidable' },
           { value: 'Places', label: 'Limitades' }
         ]}
         image="/images/cursos/cursos-aess-26-febrer-fixed.png"
@@ -174,13 +176,14 @@ const Cursos = () => {
                   <button className="btn btn-primary" onClick={() => handleOpenModal(curso)}>
                     <i className="fas fa-info-circle"></i> Més informació
                   </button>
-                  <button
-                    className="btn btn-secondary btn-disabled"
-                    disabled
-                    data-tooltip="Les inscripcions s'obriran a Gener 2026"
+                  <a
+                    className="btn btn-secondary"
+                    href={enrollLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fas fa-user-plus"></i> Inscriu-te
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
