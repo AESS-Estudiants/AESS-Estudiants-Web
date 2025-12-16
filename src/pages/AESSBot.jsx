@@ -336,15 +336,11 @@ const AESSBot = () => {
                       </div>
                       <div className="taller-desc">{taller.desc}</div>
                     </td>
-                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'per confirmar' : 'aula per determinar'}</td>
+                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'plaça Telecos' : 'aula per determinar'}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="talleres-disclaimer">
-              <i className="fas fa-info-circle"></i>
-              <span>Les dates i hores dels tallers poden canviar.</span>
-            </div>
           </div>
         </div>
       </section>
