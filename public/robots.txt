@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aess-estudiants.vercel.app/sitemap.xml
