@@ -25,71 +25,76 @@ const Cursos = () => {
     {
       name: 'Arduino Introducció',
       logo: '/images/cursos/logos/logo_arduino_intro.png',
-      description: 'Arrenca des de zero i construeix el teu primer projecte real amb sensors i actuadors, aprenent les bases d\'Arduino i les bones pràctiques de cablejat.',
-      detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat per consolidar-ho.',
+      description: 'Arrenca des de zero i construeix el teu primer projecte real amb sensors i actuadors. Comencem des de zero i consolidarem conceptes amb un mini projecte pràctic.',
+      detailedContent: 'Sessions: Repàs de C i funcions bàsiques d\'Arduino; port sèrie i UART; LCD, servos i SoftwareSerial; I2C, SPI i sensors; projecte final aplicat.',
+      additionalMaterial: ['Portàtil', 'Arduino IDE (recomanat)'],
       duration: '2 sessions (10 hores cada una)',
       date: '31 de gener i 1 de febrer',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Cap (es recomana portar Arduino IDE instal·lat)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Arduino Avançat',
       logo: '/images/cursos/logos/logo_arduino_avanzado.svg',
-      description: 'Fes el salt als projectes complexos: busos I2C/SPI, interrupcions, PID per motors i optimització de codi amb integració de sensors avançats.',
-      detailedContent: 'Busos I2C/SPI, interrupcions i timers, control PID per motors, optimització de codi i projecte final integrant diversos sensors i actuadors.',
+      description: 'Fes el salt als projectes complexos amb interrupcions, comunicacions i control de motors; inclou taller pràctic i projecte final.',
+      detailedContent: 'Sessions: Interrupcions i registres interns; EEPROM i motors; comunicació radio, SPI, NFC i targetes SD; HID i sensors capacitatius; projecte final.',
+      additionalMaterial: ['Portàtil', 'Arduino IDE (recomanat)'],
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · tardes',
       level: 'Avançat',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Coneixements bàsics d\'Arduino (es recomana portar Arduino IDE)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Fusion 3D Design',
       logo: '/images/cursos/logos/logo_fusion.png',
-      description: 'Porta a la realitat totes les teves idees! Aprèn a dissenyar peces i estructures des dels fonaments del 3D fins a aplicacions habituals al món laboral.',
-      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació. Eines aplicables a Fusion, SolidWorks o Onshape.',
+      description: 'Porta a la realitat totes les teves idees! Comencem des de zero i aprendràs a dissenyar peces i estructures des dels fonaments del 3D fins a aplicacions habituals al món laboral.',
+      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació. Es recomana portar el programari Fusion instal·lat si és possible; porta un portàtil i ratolí per seguir els exercicis. Eines aplicables a Fusion, SolidWorks o Onshape.',
+      additionalMaterial: ['Portàtil', 'Ratolí', 'Fusion (recomanat)'],
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · tardes',
-      level: 'Inicial',
+      level: 'Inicial/Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Cap (comencem des de zero)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Raspberry Pi',
       logo: '/images/cursos/logos/logo_respbaerry_pi.svg',
       description: 'Domina la Raspberry Pi amb Linux pràctic, GPIO amb Python i automatització. Ideal per muntar projectes IoT lleugers amb serveis propis.',
-      detailedContent: 'Linux bàsic i terminals, configuració de GPIO amb Python, serveis i systemd, IoT lleuger i mini projecte final aplicat.',
+      detailedContent: 'Sessions: Linux bàsic i terminals; GPIO amb Python; I2C/SPI i perifèrics; serveis i systemd; mini projecte aplicat (IoT).',
+      additionalMaterial: ['Portàtil', 'MicroSD/SD amb imatge i Raspberry(opcional)'],
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · matins',
       level: 'Inicial/Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil (si tens Raspberry Pi, portala amb una SD amb imatge preparada si pot ser)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Programació en Python',
       logo: '/images/cursos/logos/logo_python.png',
       description: 'Aprèn Python des de zero amb enfocament pràctic en scripts útils, automatització i projectes ràpids per al dia a dia.',
-      detailedContent: 'Sintaxi base, llistes i diccionaris, lectura d\'arxius, llibreries i petit projecte pràctic aplicat.',
+      detailedContent: 'Sessions: Sintaxi i estructures de dades; funcions i mòduls; fitxers i I/O; llibreries i entorns virtuals; petit projecte pràctic final.',
+      additionalMaterial: ['Portàtil', 'Python instal·lat (recomanat)'],
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · matins',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil (es recomana portar Python instal·lat)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     }
   ]
@@ -111,7 +116,7 @@ const Cursos = () => {
           { value: '100%', label: 'Pràctic' },
           { value: '1 ECTS', label: 'Convalidable' },
           { value: 'Places', label: 'Limitades' }
-        ]}
+        ]} 
         image="/images/cursos/cursos-aess-26-febrer-fixed.png"
         poster={true}
       />
