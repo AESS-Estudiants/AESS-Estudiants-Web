@@ -34,7 +34,7 @@ const Cursos = () => {
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap (es recomana portar Arduino IDE instal·lat)',
+      requisits: 'Portàtil (es recomana portar Arduino IDE instal·lat)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
@@ -49,7 +49,7 @@ const Cursos = () => {
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Coneixements bàsics d\'Arduino (es recomana portar Arduino IDE)',
+      requisits: 'Portàtil; Coneixements bàsics d\'Arduino (es recomana portar Arduino IDE)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
@@ -64,7 +64,7 @@ const Cursos = () => {
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap (comencem des de zero)',
+      requisits: 'Cap més que portar Portàtil (es recomana portar Fusion instal·lat; si no el tens, s\'explicarà a classe)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
