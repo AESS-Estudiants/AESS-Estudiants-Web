@@ -50,9 +50,12 @@ const Projectes = () => {
         image="/images/logos/aess/CubBlanc.svg"
       >
         <div className="hero-buttons">
-          <Link to="#participa" className="btn btn-secondary">
+          <button
+            onClick={() => document.getElementById('participa').scrollIntoView({ behavior: 'smooth' })}
+            className="btn btn-secondary"
+          >
             <i className="fas fa-users"></i> Uneix-te a l'equip
-          </Link>
+          </button>
         </div>
       </Hero>
 
