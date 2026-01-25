@@ -1,7 +1,7 @@
 .optimized-image-wrapper {
     position: relative;
     overflow: hidden;
-    background: rgba(30, 41, 59, 0.3);
+    /* background removed to support transparent images */
     border-radius: inherit;
 }
 

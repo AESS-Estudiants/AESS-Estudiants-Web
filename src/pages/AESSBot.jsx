@@ -32,12 +32,12 @@ const AESSBot = () => {
   }, [])
 
   const talleres = [
-    { fecha: '18 Feb 2026', hora: '11:00 - 13:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb' },
-    { fecha: '25 Feb 2026', hora: '11:00 - 13:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog' },
-    { fecha: '2 Mar 2026', hora: '11:00 - 13:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip' },
-    { fecha: '16 Mar 2026', hora: '11:00 - 13:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory' },
-    { fecha: '23 Mar 2026', hora: '11:00 - 13:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube' },
-    { fecha: '22 Apr 2026', hora: '11:00 - 13:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks' },
+    { fecha: '18 Feb 2026', hora: '12:00 - 14:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb' },
+    { fecha: '25 Feb 2026', hora: '12:00 - 14:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog' },
+    { fecha: '2 Mar 2026', hora: '12:00 - 14:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip' },
+    { fecha: '16 Mar 2026', hora: '12:00 - 14:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory' },
+    { fecha: '23 Mar 2026', hora: '12:00 - 14:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube' },
+    { fecha: '22 Apr 2026', hora: '12:00 - 14:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks' },
     { fecha: '6 Mai 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true }
   ]
 
@@ -336,15 +336,11 @@ const AESSBot = () => {
                       </div>
                       <div className="taller-desc">{taller.desc}</div>
                     </td>
-                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'per confirmar' : 'aula per determinar'}</td>
+                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'plaça Telecos' : 'aula per determinar'}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="talleres-disclaimer">
-              <i className="fas fa-info-circle"></i>
-              <span>Les dates i hores dels tallers poden canviar.</span>
-            </div>
           </div>
         </div>
       </section>
@@ -359,13 +355,13 @@ const AESSBot = () => {
             </p>
             <div className="normativa-cta">
               <a
-                href="/documents/Reglament%20V2.docx.pdf"
-                download="AESSBot_Reglament_V2.pdf"
+                href="/documents/Reglament.pdf"
+                download="AESSBot_Reglament.pdf"
                 className="btn btn-primary btn-large"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-file-pdf"></i> Descarregar Reglament Actualitzat
+                <i className="fas fa-file-pdf"></i> Descarregar Reglament
               </a>
               <p className="small-disclaimer">* Subjecte a canvis</p>
             </div>

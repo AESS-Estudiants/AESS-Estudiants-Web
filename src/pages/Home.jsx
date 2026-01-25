@@ -49,7 +49,7 @@ const Home = () => {
     },
     {
       question: 'Hi ha algun cost per ser membre?',
-      answer: 'Per ser membre de l\'associació cal pagar la quota anual de 20€. Aquests diners serveixen per a la compra de material, organització d\'activitats, etc.',
+      answer: 'Entrar a l\'associació i conèixer-nos és completament gratuït! Hi ha una quota anual de 20€ però només és per als membres actius que ja han vingut a l\'associació uns quants cops. Així que primer vine, coneix-nos i quan decideixis participar activament, podràs pagar la quota. Els diners serveixen perquè l\'associació pugui comprar material i eines a les quals podràs accedir un cop siguis membre. ',
       icon: 'fas fa-euro-sign'
     },
     {
@@ -313,13 +313,18 @@ const Home = () => {
                   <Link to="/cursos" className="btn btn-primary">
                     <i className="fas fa-info-circle"></i> Més informació
                   </Link>
-                  <button className="btn btn-secondary btn-disabled" disabled>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfPPmNP2heuAxZne8FewLPJgNdluvf332XoYgQdJmhzzoZDZA/viewform?usp=header"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
                     <i className="fas fa-user-plus"></i> Inscriu-te!
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="event-image">
-                <img src="/images/cursos/cartell-din4.png" alt="Cursos AESS" />
+                <img src="/images/cursos/cursos-aess-26-febrer-fixed.png" alt="Cursos AESS" />
               </div>
             </div>
           </div>

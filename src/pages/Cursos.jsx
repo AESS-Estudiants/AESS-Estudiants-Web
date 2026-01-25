@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
 import CourseModal from '../components/CourseModal'
+import OptimizedImage from '../components/OptimizedImage'
 import './Cursos.css'
 
 const Cursos = () => {
@@ -19,75 +20,82 @@ const Cursos = () => {
     setIsModalOpen(false)
     setTimeout(() => setSelectedCourse(null), 200)
   }
+  const enrollLink = 'https://docs.google.com/forms/d/e/1FAIpQLSfPPmNP2heuAxZne8FewLPJgNdluvf332XoYgQdJmhzzoZDZA/viewform?usp=header'
+
   const cursos = [
     {
       name: 'Arduino Introducció',
       logo: '/images/cursos/logos/logo_arduino_intro.png',
-      description: 'Curs intensiu de dos dies per passar de zero a tenir el teu primer projecte amb sensors, actuadors i bones pràctiques de cablejat.',
-      detailedContent: 'Dia 1: bases d\'Arduino, E/S digitals, sensors i lectures segures. Dia 2: actuadors, drivers, bones pràctiques de cablejat i mini projecte guiat.',
+      description: 'Arrenca des de zero i construeix el teu primer projecte real amb sensors i actuadors. Comencem des de zero i consolidarem conceptes amb un mini projecte pràctic.',
+      detailedContent: 'Sessions: Repàs de C i funcions bàsiques d\'Arduino; port sèrie i UART; LCD, servos i SoftwareSerial; I2C, SPI i sensors; projecte final aplicat.',
+      additionalMaterial: ['Portàtil, Preferiblement amb Arduino IDE instal·lat'],
       duration: '2 sessions (10 hores cada una)',
       date: '31 de gener i 1 de febrer',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil preferiblement amb Arduino IDE instal·lat',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Arduino Avançat',
       logo: '/images/cursos/logos/logo_arduino_avanzado.svg',
-      description: 'Projectes complets amb I2C/SPI, interrupcions, control PID, optimització de codi i integració de sensors avançats.',
-      detailedContent: 'Busos I2C/SPI, interrupcions i timers, control PID per motors, optimització de codi i projecte final amb integració de diversos sensors.',
+      description: 'Fes el salt als projectes complexos amb interrupcions, comunicacions i control de motors; inclou taller pràctic i projecte final.',
+      detailedContent: 'Sessions: Interrupcions i registres interns; EEPROM i motors; comunicació radio, SPI, NFC i targetes SD; HID i sensors capacitatius; projecte final.',
+      additionalMaterial: ['Portàtil, Preferiblement amb Arduino IDE instal·lat'],
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · tardes',
       level: 'Avançat',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil preferiblement amb Arduino IDE instal·lat; Coneixements bàsics d\'Arduino',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Fusion 3D Design',
       logo: '/images/cursos/logos/logo_fusion.png',
-      description: 'Modelatge 3D amb Fusion 360: sketches nets, assemblatges, adaptació per impressió 3D i exportació per fabricació ràpida.',
-      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació a slicer.',
+      description: 'Porta a la realitat totes les teves idees! Comencem des de zero i aprendràs a dissenyar peces i estructures des dels fonaments del 3D fins a aplicacions habituals al món laboral.',
+      detailedContent: 'Sketches paramètrics, extrusions i lofts, assemblatges, juntes i restriccions, preparació per impressió 3D i exportació. Es recomana portar el programari Fusion instal·lat si és possible; porta un portàtil i ratolí per seguir els exercicis. Eines aplicables a Fusion, SolidWorks o Onshape.',
+      additionalMaterial: ['Portàtil, Preferiblement amb Fusion instal·lat'],
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · tardes',
-      level: 'Inicial',
+      level: 'Inicial/Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil preferiblement amb Fusion instal·lat',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Raspberry Pi',
       logo: '/images/cursos/logos/logo_respbaerry_pi.svg',
-      description: 'Linux a la pràctica, GPIO amb Python, automatització i IoT lleuger sobre Raspberry Pi amb projectes guiats.',
-      detailedContent: 'Linux bàsic i terminals, configuració de GPIO amb Python, serveis i systemd, IoT lleuger i mini projecte final.',
+      description: 'Domina la Raspberry Pi amb Linux pràctic, GPIO amb Python i automatització. Ideal per muntar projectes IoT lleugers amb serveis propis.',
+      detailedContent: 'Sessions: Linux bàsic i terminals; GPIO amb Python; I2C/SPI i perifèrics; serveis i systemd; mini projecte aplicat (IoT).',
+      additionalMaterial: ['Portàtil', 'Opcional: Raspberry Pi'],
       duration: '5 sessions (4 hores cada una)',
       date: '2 al 6 de febrer · matins',
-      level: 'Inicial/Intermedi',
+      level: 'Intermedi',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     },
     {
       name: 'Programació en Python',
       logo: '/images/cursos/logos/logo_python.png',
-      description: 'Python des de zero amb focus en scripts útils: sintaxi, estructures de dades i automatització per a projectes ràpids.',
-      detailedContent: 'Sintaxi base, llistes i diccionaris, lectura d\'arxius, entorns virtuals, scripts d\'automatització i petit projecte pràctic.',
+      description: 'Aprèn Python des de zero amb enfocament pràctic en scripts útils, automatització i projectes ràpids per al dia a dia.',
+      detailedContent: 'Sessions: Sintaxi i estructures de dades; funcions i mòduls; fitxers i I/O; llibreries i entorns virtuals; petit projecte pràctic final.',
+      additionalMaterial: ['Portàtil', 'Python instal·lat (recomanat)'],
       duration: '5 sessions (4 hores cada una)',
       date: '26 al 30 de gener · matins',
       level: 'Inicial',
       preuUPC: '85',
       preuNoUPC: '105',
       credits: '1',
-      requisits: 'Cap',
+      requisits: 'Portàtil (preferiblement amb Python instal·lat)',
       ubicacio: 'Campus Nord UPC - Aules per determinar'
     }
   ]
@@ -107,20 +115,12 @@ const Cursos = () => {
         stats={[
           { value: '5', label: 'Cursos disponibles' },
           { value: '100%', label: 'Pràctic' },
-          { value: '1-2 ECTS', label: 'Convalidable' },
+          { value: '1 ECTS', label: 'Convalidable' },
           { value: 'Places', label: 'Limitades' }
         ]}
         image="/images/cursos/cursos-aess-26-febrer-fixed.png"
         poster={true}
-      >
-        <div className="hero-note">
-          <i className="fas fa-info-circle"></i>
-          <span>
-            Calendari Gener-Febrer 2026: 26-30 gen (matins Python) · 26-30 gen (tardes Fusion) · 31 gen i 1 feb (Arduino intro) ·
-            2-6 feb (matins Raspberry Pi) · 2-6 feb (tardes Arduino avançat). Les inscripcions s'obriran aviat!
-          </span>
-        </div>
-      </Hero>
+      />
 
       <section className="intro-section section">
         <div className="container">
@@ -144,7 +144,14 @@ const Cursos = () => {
             {cursos.map((curso, index) => (
               <div key={index} className="curso-card">
                 <div className="curso-image">
-                  <img src={curso.logo} alt={`${curso.name} logo`} />
+                  <OptimizedImage
+                    src={curso.logo}
+                    alt={`${curso.name} logo`}
+                    className="curso-logo"
+                    objectFit="contain"
+                    width={200}
+                    height={200}
+                  />
                 </div>
                 <div className="curso-content">
                   <h3>{curso.name}</h3>
@@ -182,13 +189,14 @@ const Cursos = () => {
                   <button className="btn btn-primary" onClick={() => handleOpenModal(curso)}>
                     <i className="fas fa-info-circle"></i> Més informació
                   </button>
-                  <button
-                    className="btn btn-secondary btn-disabled"
-                    disabled
-                    data-tooltip="Les inscripcions s'obriran a Gener 2026"
+                  <a
+                    className="btn btn-secondary"
+                    href={enrollLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fas fa-user-plus"></i> Inscriu-te
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}

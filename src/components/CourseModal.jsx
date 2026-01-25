@@ -106,7 +106,7 @@ const CourseModal = ({ course, isOpen, onClose }) => {
 
                     <section className="modal-section">
                         <h3><i className="fas fa-user-plus"></i> Inscripció</h3>
-                        <p>Les inscripcions per a la propera edició s'obriran a <strong>Gener 2026</strong>. Estigues atent a les nostres xarxes socials i al grup de WhatsApp per no perdre't cap novetat!</p>
+                        <p>Les inscripcions per a la propera edició s'obriran a <strong>Gener 2026</strong>. Estigues atent a les nostres xarxes socials i als grups de WhatsApp per no perdre't cap novetat!</p>
                     </section>
                 </div>
 
