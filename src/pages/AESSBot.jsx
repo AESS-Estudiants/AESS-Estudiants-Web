@@ -60,7 +60,7 @@ const AESSBot = () => {
     },
     {
       question: 'Les places són limitades?',
-      answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, es prioritzen: (1) equips més grans, (2) estudiants UPC, (3) estudiants ETSETB, (4) data d\'inscripció.',
+      answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, es prioritzen: (1) equips més grans, (2) estudiants ETSETB, (3) estudiants UPC, (4) data d\'inscripció.',
       icon: 'fas fa-sort-amount-down'
     },
 
@@ -83,9 +83,14 @@ const AESSBot = () => {
       icon: 'fas fa-wallet'
     },
     {
-      question: 'Com funciona la subvenció del robot?',
-      answer: 'El vostre robot pot costar el que vulgueu. Subvencionem fins a 100€ en material per equip. Els equips compren el material necessari i, si participen a la final amb un robot reglamentari, es tramita el reemborsament presentant les factures originals. Només es subvenciona material que estigui físicament integrat al robot.',
+      question: 'Reben els equips ajut econòmic pel material?',
+      answer: 'Sí. Es reemborsarà fins a un màxim de 100€ (IVA inclòs) per equip en despeses justificades de material utilitzat per a la construcció del robot. Les factures han de ser originals i a nom d\'AESS Estudiants. El vostre robot pot costar més de 100€, però només es reemborsarà fins aquest màxim. Per a més informació sobre requisits i procediment, consulteu el reglament.',
       icon: 'fas fa-coins'
+    },
+    {
+      question: 'El reemborsament està garantit?',
+      answer: 'L\'organització té la voluntat ferma de garantir el reemborsament i estructura el pressupost amb aquesta prioritat. Només en el cas de circumstàncies excepcionals i sobrevingudes, alienes a la voluntat de l\'organització (com ara la cancel·lació imprevista d\'un patrocinador principal o una situació de força major), podria veure\'s compromès el pagament total o parcial. En aquests casos, s\'informaria de manera transparent i amb la màxima antelació possible.',
+      icon: 'fas fa-shield-alt'
     },
 
     // Construcció i Tallers
@@ -137,7 +142,7 @@ const AESSBot = () => {
     // Format de la competició
     {
       question: 'Com funciona la competició?',
-      answer: 'La competició té dues fases: (1) Fase de lliga on cada equip juga contra 6 equips assignats aleatòriament. S\'atorguen 3 punts per victòria. Els 8 millors equips passen a la següent fase. (2) Eliminatòries directes entre els 8 finalistes fins determinar el guanyador.',
+      answer: 'La competició té tres fases: (1) Fase de Lliga: cada equip disputa 8 combats contra oponents assignats aleatòriament. S\'atorguen 3 punts per victòria. Els 7 millors equips es classifiquen directament per a la Fase 3. (2) Fase de Repesca (Battle Royale): els equips no classificats participen en una batalla en un ring més gran. El guanyador obté la 8a plaça. (3) Fase d\'Eliminatòries: els 8 equips classificats disputen quarts de final, semifinals i final fins determinar el campió.',
       icon: 'fas fa-trophy'
     },
 
@@ -273,7 +278,7 @@ const AESSBot = () => {
                 <i className="fas fa-hand-holding-usd"></i>
               </div>
               <h3>Ajut econòmic</h3>
-              <p>Subvencionem fins a 100€ en material per equip. El vostre robot pot costar el que vulgueu, però només us reemborsarem fins a 100€ si participeu a la final i presenteu les factures.</p>
+              <p>Es reemborsarà fins a 100€ en material per equip. El vostre robot pot costar el que vulgueu, però només us reemborsarem fins a 100€ si participeu a la final i presenteu les factures originals (a nom d'AESS Estudiants).</p>
             </div>
             <div className="info-card">
               <div className="info-icon">
