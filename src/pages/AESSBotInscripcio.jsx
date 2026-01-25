@@ -79,7 +79,7 @@ const AESSBotInscripcio = () => {
               </div>
               <h3>Llegeix la Normativa</h3>
               <p>Abans d'inscriure't, <strong>llegeix atentament la normativa oficial</strong> per conèixer totes les especificacions tècniques i condicions de participació.{' '}
-                <a href="/documents/Reglament%20V2.docx.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+                <a href="/documents/Reglament.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
                   Descarrega aquí
                 </a>
               </p>
