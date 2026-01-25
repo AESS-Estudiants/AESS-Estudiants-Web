@@ -239,7 +239,7 @@ const Home = () => {
                   <div className="detail-item">
                     <i className="fas fa-trophy"></i>
                     <div>
-                      <span className="detail-value">Més de 900€</span>
+                      <span className="detail-value">Més de 1.000€</span>
                       <span className="detail-label">En premis</span>
                     </div>
                   </div>
