@@ -32,13 +32,13 @@ const AESSBot = () => {
   }, [])
 
   const talleres = [
-    { fecha: '18 Feb 2026', hora: '12:00 - 14:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb' },
-    { fecha: '25 Feb 2026', hora: '12:00 - 14:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog' },
-    { fecha: '4 Mar 2026', hora: '12:00 - 14:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube' },
-    { fecha: '18 Mar 2026', hora: '12:00 - 14:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip' },
-    { fecha: '25 Mar 2026', hora: '12:00 - 14:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory' },
-    { fecha: '22 Apr 2026', hora: '12:00 - 14:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks' },
-    { fecha: '6 Mai 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true }
+    { fecha: '18 Feb 2026', hora: '12:00 - 14:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb', aula: 'Biblioteca Gabriel Ferreter' },
+    { fecha: '25 Feb 2026', hora: '12:00 - 14:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog', aula: 'C4S102C i C4S102B' },
+    { fecha: '2 Mar 2026', hora: '12:00 - 14:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip', aula: 'C4S102C i C4S102B' },
+    { fecha: '16 Mar 2026', hora: '12:00 - 14:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory', aula: 'C4S102C i C4S102B' },
+    { fecha: '23 Mar 2026', hora: '12:00 - 14:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube', aula: 'C4S102C i C4S102B' },
+    { fecha: '22 Apr 2026', hora: '12:00 - 14:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks', aula: 'C4S102C i C4S102B' },
+    { fecha: '6 Mai 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true, aula: 'Plaça Telecomunicacions' }
   ]
 
   const faqs = [
@@ -62,6 +62,11 @@ const AESSBot = () => {
       question: 'Les places són limitades?',
       answer: 'Sí, la competició està limitada a 16 equips de màxim 3 persones. En cas que hi hagi més sol·licituds, es prioritzen: (1) equips més grans, (2) estudiants ETSETB, (3) estudiants UPC, (4) data d\'inscripció.',
       icon: 'fas fa-sort-amount-down'
+    },
+    {
+      question: 'Com funciona el procés d\'inscripció?',
+      answer: 'Les inscripcions es tanquen l\'11 de febrer de 2026. Abans del 15 de febrer, rebreu un correu electrònic confirmant si heu estat admesos a la competició. Els equips acceptats hauran de portar la fiança de 50€ en efectiu el primer dia de taller. Si algun equip admès causa baixa, se li comunicarà immediatament al següent equip de la llista d\'espera.',
+      icon: 'fas fa-clipboard-check'
     },
 
     // Equips
@@ -341,7 +346,7 @@ const AESSBot = () => {
                       </div>
                       <div className="taller-desc">{taller.desc}</div>
                     </td>
-                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.final ? 'plaça Telecos' : 'aula per determinar'}</td>
+                    <td className="ubicacion" data-label="Ubicació">Campus Nord, {taller.aula}</td>
                   </tr>
                 ))}
               </tbody>
