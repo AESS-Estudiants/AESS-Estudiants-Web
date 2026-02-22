@@ -84,18 +84,13 @@ const AESSBot = () => {
     // Costos
     {
       question: 'La participació és gratuïta?',
-      answer: 'Sí. La inscripció és gratuïta, però cal dipositar una fiança de 50€ per equip, que serà retornada al final de la competició si l\'equip hi participa.',
+      answer: 'Sí. La inscripció és gratuïta, però cal dipositar una fiança de 50€ per equip. Les condicions de retorn de la fiança estan detallades al reglament.',
       icon: 'fas fa-wallet'
     },
     {
       question: 'Reben els equips ajut econòmic pel material?',
-      answer: 'Sí. Es reemborsarà fins a un màxim de 100€ (IVA inclòs) per equip en despeses justificades de material utilitzat per a la construcció del robot. Les factures han de ser originals i a nom d\'AESS Estudiants. El vostre robot pot costar més de 100€, però només es reemborsarà fins aquest màxim. Per a més informació sobre requisits i procediment, consulteu el reglament.',
+      answer: 'Sí. Es reemborsarà fins a un màxim de 100€ (IVA inclòs) per equip en despeses justificades de material per a la construcció del robot. Per a tots els detalls sobre requisits, procediment i condicions, consulteu el reglament.',
       icon: 'fas fa-coins'
-    },
-    {
-      question: 'El reemborsament està garantit?',
-      answer: 'L\'organització té la voluntat ferma de garantir el reemborsament i estructura el pressupost amb aquesta prioritat. Només en el cas de circumstàncies excepcionals i sobrevingudes, alienes a la voluntat de l\'organització (com ara la cancel·lació imprevista d\'un patrocinador principal o una situació de força major), podria veure\'s compromès el pagament total o parcial. En aquests casos, s\'informaria de manera transparent i amb la màxima antelació possible.',
-      icon: 'fas fa-shield-alt'
     },
 
     // Construcció i Tallers
@@ -154,7 +149,7 @@ const AESSBot = () => {
     // Retirada
     {
       question: 'Què passa si em retiro abans de la final?',
-      answer: 'Si et retires abans de la final, perdràs la fiança de 50€ i no podràs optar al reemborsament del material. És important que només t\'inscriguis si estàs compromès a participar fins al final.',
+      answer: 'En cas de retirada sense causa justificada, la fiança no serà retornada. Per als detalls complets sobre les condicions de retirada, consulta el reglament oficial.',
       icon: 'fas fa-exclamation-triangle'
     },
 
@@ -311,7 +306,7 @@ const AESSBot = () => {
                 <i className="fas fa-book"></i>
               </div>
               <h3>Més informació</h3>
-              <p>Per a més detalls sobre el reglament, límits tècnics i condicions, consulta la <a href="/documents/Reglament%20V2.docx.pdf" target="_blank" rel="noopener noreferrer">normativa oficial</a>.</p>
+              <p>Per a més detalls sobre el reglament, límits tècnics i condicions, consulta la <a href="/documents/Reglament.pdf" target="_blank" rel="noopener noreferrer">normativa oficial</a>.</p>
             </div>
           </div>
         </div>

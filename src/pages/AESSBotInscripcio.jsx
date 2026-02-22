@@ -64,7 +64,7 @@ const AESSBotInscripcio = () => {
                 <i className="fas fa-euro-sign"></i>
               </div>
               <h3>Fiança Retornable</h3>
-              <p>Cal abonar una <strong>fiança de 50€ per equip</strong> que es retornarà al participar a la final. Més informació a la normativa.</p>
+              <p>Cal abonar una <strong>fiança de 50€ per equip</strong> el primer dia de taller. Consulta el reglament per a les condicions de retorn.</p>
             </div>
             <div className="reminder-card">
               <div className="reminder-icon">
@@ -151,7 +151,7 @@ const AESSBotInscripcio = () => {
               </div>
               <div className="timeline-content">
                 <h3>3. Correu de Benvinguda i Convocatòria</h3>
-                <p>Rebràs un correu de benvinguda amb la convocatòria per al primer taller <strong>abans del 15 de febrer de 2026</strong>. També es demanarà el telèfon dels membres del vostre equip per posar-los al grup de WhatsApp on rebreu tota la informació.</p>
+                <p>Rebràs un correu <strong>com a màxim el 13 de febrer de 2026 a les 23:59</strong> confirmant si el teu equip ha estat admès o si queda a la llista d'espera. Si sou admesos, disposareu de 72 hores per confirmar la vostra participació.</p>
               </div>
             </div>
           </div>
