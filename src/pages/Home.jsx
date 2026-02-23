@@ -12,8 +12,9 @@ const Home = () => {
     '/images/aess/qui-som/qui-som3.jpeg',
     '/images/aess/qui-som/qui-som5.jpeg',
     '/images/aess/qui-som/qui-som6.png',
-    // '/images/aess/qui-som/qui-som7.jpeg',
+    '/images/aess/qui-som/qui-som7.jpeg',
     '/images/aess/qui-som/qui-som8.png',
+    '/images/aess/qui-som/qui-som9.jpeg',
   ]
 
   const faqs = [
@@ -194,7 +195,7 @@ const Home = () => {
               <h3>Uneix-te al nostre grup</h3>
               <p>Accedeix al nostre grup de WhatsApp per a noves incorporacions per estar al corrent de totes les nostres activitats i coneixer la resta de membres.</p>
               <a
-                href="https://chat.whatsapp.com/CXzyvcUaoLNK9m5VdRNvnR"
+                href="https://chat.whatsapp.com/H8rNzFeSTG9BGTsCGX8DL8?mode=gi_t"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
