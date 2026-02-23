@@ -12,7 +12,7 @@ const Home = () => {
     '/images/aess/qui-som/qui-som3.jpeg',
     '/images/aess/qui-som/qui-som5.jpeg',
     '/images/aess/qui-som/qui-som6.png',
-    '/images/aess/qui-som/qui-som7.jpeg',
+    // '/images/aess/qui-som/qui-som7.jpeg',
     '/images/aess/qui-som/qui-som8.png',
   ]
 
