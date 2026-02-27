@@ -34,9 +34,9 @@ const AESSBot = () => {
   const talleres = [
     { fecha: '18 Feb 2026', hora: '12:00 - 14:00', titulo: 'Introducció', desc: 'Benvinguda, explicació de la competició i planificació del projecte.', icon: 'fas fa-lightbulb', aula: 'Biblioteca Gabriel Ferreter' },
     { fecha: '25 Feb 2026', hora: '12:00 - 14:00', titulo: 'Actuadors', desc: 'Control de motors (DC, servos, steppers).', icon: 'fas fa-cog', aula: 'C4S102C i C4S102B' },
-    { fecha: '4 Mar 2026', hora: '12:00 - 14:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip', aula: 'C4S102C i C4S102B' },
-    { fecha: '18 Mar 2026', hora: '12:00 - 14:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory', aula: 'C4S102C i C4S102B' },
-    { fecha: '25 Mar 2026', hora: '12:00 - 14:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube', aula: 'C4S102C i C4S102B' },
+    { fecha: '4 Mar 2026', hora: '12:00 - 14:00', titulo: 'Disseny 3D', desc: 'Disseny 3D amb OnShape.', icon: 'fas fa-cube', aula: 'C4S102C i C4S102B' },
+    { fecha: '18 Mar 2026', hora: '12:00 - 14:00', titulo: 'Sensors', desc: 'Connexió i ús de sensors: pulsadors, ultrasó, sharp i sensors de llum del terra.', icon: 'fas fa-microchip', aula: 'C4S102C i C4S102B' },
+    { fecha: '25 Mar 2026', hora: '12:00 - 14:00', titulo: 'PCB', desc: 'Disseny de plaques i tècniques de soldadura en placa de topos.', icon: 'fas fa-memory', aula: 'C4S102C i C4S102B' },
     { fecha: '22 Apr 2026', hora: '12:00 - 14:00', titulo: 'Seguiment', desc: 'Acompanyament i seguiment pels equips.', icon: 'fas fa-tasks', aula: 'C4S102C i C4S102B' },
     { fecha: '6 Mai 2026', hora: '11:00 - 15:00', titulo: 'Final AESSBot 2026', desc: 'Gran final de la competició amb tots els participants', icon: 'fas fa-trophy', final: true, aula: 'Plaça Telecomunicacions' }
   ]
