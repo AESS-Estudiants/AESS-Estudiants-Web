@@ -386,18 +386,21 @@ const AESSBot = () => {
             <div className="sponsor-category">
               <h3>Patrocinadors Oficials</h3>
               <div className="sponsor-logos-row">
+                <div className="sponsor-item sponsor-item-official">
+                  <img
+                    src="/images/logos/vento-build.svg"
+                    alt="Vento.build"
+                    className="sponsor-logo-wide"
+                  />
+                </div>
+                {/* Placeholder original per si en el futur cal tornar a mostrar un patrocinador pendent
                 <div className="mystery-sponsor-large">
                   <div className="mystery-icon-large">
                     <i className="fas fa-question"></i>
                     <div className="pulse-effect"></div>
                   </div>
                 </div>
-                <div className="mystery-sponsor-large">
-                  <div className="mystery-icon-large">
-                    <i className="fas fa-question"></i>
-                    <div className="pulse-effect"></div>
-                  </div>
-                </div>
+                */}
               </div>
             </div>
             <div className="sponsor-category">
@@ -405,11 +408,9 @@ const AESSBot = () => {
               <div className="sponsor-logos-row">
                 <div className="sponsor-item">
                   <img src="/images/logos/logo-telecos.svg" alt="ETSETB" />
-                  <span>ETSETB</span>
                 </div>
                 <div className="sponsor-item">
                   <img src="/images/logos/logo-upc.svg" alt="UPC" />
-                  <span>UPC</span>
                 </div>
               </div>
             </div>
@@ -443,4 +444,3 @@ const AESSBot = () => {
 }
 
 export default AESSBot
-

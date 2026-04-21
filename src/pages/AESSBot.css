@@ -551,18 +551,20 @@
 
 .sponsor-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
   padding: var(--space-xl);
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   width: 200px;
   height: 150px;
+  text-align: center;
   transition: all var(--transition-base);
+}
+
+.sponsor-item-official {
+  min-height: 150px;
 }
 
 .sponsor-item:hover {
@@ -574,13 +576,17 @@
 .sponsor-item img {
   max-width: 120px;
   max-height: 80px;
+  margin: 0 auto;
   object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
 }
 
-.sponsor-item span {
-  color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.875rem;
+.sponsor-item img.sponsor-logo-wide {
+  width: auto;
+  max-width: 160px;
+  max-height: 56px;
+  margin: 0 auto;
 }
 
 .mystery-sponsor-large {
@@ -881,6 +887,11 @@
   .sponsor-item img {
     max-width: 100px;
     max-height: 70px;
+  }
+
+  .sponsor-item img.sponsor-logo-wide {
+    max-width: 120px;
+    max-height: 44px;
   }
 
   .sponsor-item span {
