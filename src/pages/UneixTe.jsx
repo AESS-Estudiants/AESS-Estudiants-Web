@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import './UneixTe.css'
 
 const whatsappLink = 'https://chat.whatsapp.com/H8rNzFeSTG9BGTsCGX8DL8?mode=gi_t'
+const openDayFormLink = 'https://docs.google.com/forms/d/e/1FAIpQLSdh6Tu6yz4BULLGlxu-_IVcHA_qemaGXZqTycv_EIxKydkguw/viewform'
 
 const UneixTe = () => {
   return (
@@ -74,7 +75,7 @@ const UneixTe = () => {
                 </div>
               </div>
               <a
-                href={whatsappLink}
+                href={openDayFormLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"

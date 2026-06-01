@@ -20,7 +20,7 @@ const Home = () => {
   const faqs = [
     {
       question: 'Per què ser membre?',
-      answer: 'Ser membre d\'AESS t\'ofereix múltiples beneficis: aplicar coneixements reals en projectes pràctics, unir-te amb persones amb els mateixos interessos, desenvolupar soft skills com parlar en públic i gestionar projectes, accés al nostre taller amb eines professionals, participar en competicions com l\'AESSBot, cursos amb crèdits ECTS convalidables, i integrar-te en una comunitat multidisciplinar. Descobreix més sobre els beneficis a la secció "Per què participar a AESS?".',
+      answer: 'Ser membre d\'AESS t\'ofereix múltiples beneficis: aplicar coneixements reals en projectes pràctics, unir-te amb persones amb els mateixos interessos, desenvolupar soft skills com parlar en públic i gestionar projectes, accés al nostre taller amb eines professionals, participar en competicions com l\'AESSBot, cursos amb crèdits ECTS convalidables, i integrar-te en una comunitat multidisciplinar.',
       icon: 'fas fa-users'
     },
     {
@@ -67,7 +67,7 @@ const Home = () => {
         badge="Innovant en robòtica i enginyeria"
         title="AESS"
         subtitle="Estudiants"
-        description="Impulsant el futur de la tecnologia a la UPC. Una comunitat d'estudiants units per la passió per la robòtica, la tecnologia i la innovació."
+        description="Som una associació d'estudiants on aprenem construint. Organitzem tallers, competicions i projectes perquè qualsevol persona amb curiositat per la tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen."
         image="/images/logos/aess/CubBlanc.svg"
       >
         <div className="home-hero-join">
@@ -80,114 +80,116 @@ const Home = () => {
           </Link>
         </div>
       </Hero>
+<section className="que-fem-section section">
+  <div className="container">
+    <div className="section-header que-fem-header">
+      <h2 className="section-title">Qui som i què fem?</h2>
+    </div>
 
-      <section className="about-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Qui som?</h2>
-
-            <div className="sponsor-logo-item">
-              <img
-                src="/images/logos/aess/Logo_aess_blanc.png"
-                alt="AESS Logo"
-                className="sponsor-logo-img"
-              />
-            </div>
-
-            <div className="about-content">
-              <p>
-                <strong>AESS Estudiants</strong> (Aerospace and Electronic Systems Society) és una associació sense ànim de lucre de l'ETSETB (UPC) fundada el 1999.
-              </p>
-              <p>
-                Formem una comunitat d'estudiants multidisciplinar (ETSETB, FIB, ETSEIB, etc.), units per la passió per la robòtica i la tecnologia. <strong>Organitzem competicions, cursos, tallers i projectes</strong> que complementen la formació acadèmica i fomenten la innovació i l'aprenentatge pràctic.
-              </p>
-            </div>
-          </div>
+    <div className="about-mosaic" aria-label="Informació sobre AESS i les seves activitats">
+      <div className="about-mosaic-card about-mosaic-card-main">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-cubes"></i>
         </div>
-      </section>
+        <span className="about-mosaic-eyebrow">AESS Estudiants</span>
+        <h3>L'associació de robòtica de l'ETSETB</h3>
+        <p>
+          Som una associació sense ànim de lucre de l'ETSETB (UPC), fundada el
+          1999, oberta a tota persona amb ganes de fer projectes
+          i trobar gent amb qui compartir hores al taller.
+        </p>
+        <Link to="/uneix-te" className="about-mosaic-link">
+          Vine a conèixer-nos <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
 
-      <section className="que-fem-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Què fem?</h2>
-          </div>
-          <div className="cards-grid">
-            <div className="feature-card">
-              <div className="card-icon">
-                <i className="fas fa-project-diagram"></i>
-              </div>
-              <h3>Projectes</h3>
-              <p>Participa en projectes de robòtica amb altres estudiants. Disposem de taller propi amb eines i equipament perquè puguis desenvolupar els teus projectes aplicant els coneixements adquirits a la universitat.</p>
-            </div>
-            <div className="feature-card">
-              <div className="card-icon">
-                <i className="fas fa-robot"></i>
-              </div>
-              <h3>AESSBot</h3>
-              <p>La nostra competició de robots minisumo, on dissenyes i construeixes robots autònoms que s'enfronten en emocionants combats. Aprèn electrònica, programació i mecànica.</p>
-            </div>
-            <div className="feature-card">
-              <div className="card-icon">
-                <i className="fas fa-graduation-cap"></i>
-              </div>
-              <h3>Cursos</h3>
-              <p>Oferim cursos pràctics sobre programació, electrònica i disseny 3D. Aprèn i posa en pràctica els teus coneixements des del primer dia, i a més a més, emporta't fins a 2 crèdits ECTS.</p>
-            </div>
-            <div className="feature-card">
-              <div className="card-icon">
-                <i className="fas fa-university"></i>
-              </div>
-              <h3>Vida universitària</h3>
-              <p>Més enllà de les aules, organitzem activitats i sortides per compartir experiències. Perque de tant en tant, també cal desconectar.</p>
-            </div>
-          </div>
-          <div className="carousel-wrapper">
-            <Carousel images={activities} />
-          </div>
+      <Link to="/projectes" className="about-mosaic-card about-mosaic-card-tall">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-project-diagram"></i>
         </div>
-      </section>
+        <span className="about-mosaic-eyebrow">Projectes</span>
+        <h3>Fem robots i invents diversos</h3>
+        <p>
+          Barregem electrònica, mecànica, programació i moltes proves fins que
+          allò que teníem al cap comença a funcionar.
+        </p>
+        <p>
+          No ens limitem a la robòtica. També hi caben projectes de software,
+          automatització, disseny, eines internes o qualsevol idea que els membres
+          tinguin ganes de tirar endavant.
+        </p>
+      </Link>
 
-      <section className="perque-participar-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Per què participar a AESS?</h2>
-            <p className="section-subtitle">
-              Participar a AESS et permet aprofundir no només en allò més acadèmic, sinó també et permetrà desenvolupar-te en altres discliplines.
-            </p>
-          </div>
-          <div className="benefits-grid">
-            <div className="benefit-card">
-              <div className="benefit-icon">
-                <i className="fas fa-lightbulb"></i>
-              </div>
-              <h3>Aplicar coneixements reals</h3>
-              <p>Com a estudiants, podem agafar els coneixements que aprenem a la universitat i aplicar-los a la vida real. Això ens permet entendre millor el que estudiem i veure'n l'aplicació pràctica.</p>
-            </div>
-            <div className="benefit-card">
-              <div className="benefit-icon">
-                <i className="fas fa-users"></i>
-              </div>
-              <h3>Comunitat i connexió</h3>
-              <p>Ser curiosos i unir-nos amb altres persones amb els mateixos interessos. Creem una comunitat on tots aprenem junts i compartim la passió per la robòtica i la tecnologia.</p>
-            </div>
-            <div className="benefit-card">
-              <div className="benefit-icon">
-                <i className="fas fa-microphone"></i>
-              </div>
-              <h3>Desenvolupament de soft skills</h3>
-              <p>Treballem habilitats més complicades d'aprendre a les aules com parlar en públic, gestionar projectes i organitzar esdeveniments. Aquestes habilitats són essencials per al teu desenvolupament professional.</p>
-            </div>
-            <div className="benefit-card">
-              <div className="benefit-icon">
-                <i className="fas fa-rocket"></i>
-              </div>
-              <h3>Valor de les associacions</h3>
-              <p>Les associacions estudiantils són un espai per compartir interessos i créixer, tant personalment com professionalment. Molts membres han fet de la seva experiència a AESS un primer assaig per a la seva carrera, desenvolupant-hi habilitats i descobrint vocacions.</p>
-            </div>
-          </div>
+      <div className="about-mosaic-card">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-users"></i>
         </div>
-      </section>
+        <span className="about-mosaic-eyebrow">Qui hi participa</span>
+        <h3>Persones d'àmbits diversos</h3>
+        <p>
+          La majoria venim de Telecos, la FIB o altres escoles de la UPC, però
+          l’associació està oberta a qualsevol persona amb ganes de participar-hi:
+          estudiants d’altres centres, gent de batxillerat o persones que ja han
+          acabat la universitat.
+        </p>
+      </div>
 
+      <div className="about-mosaic-card">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-tools"></i>
+        </div>
+        <span className="about-mosaic-eyebrow">Taller propi</span>
+        <h3>Un lloc on provar coses sense por</h3>
+        <p>
+          Tenim eines, material i gent que et pot donar un cop de mà. No cal
+          venir sabent soldar, programar o dissenyar. I si ja en saps, t'ho passaràs bé!
+        </p>
+      </div>
+
+      <Link to="/cursos" className="about-mosaic-card">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-graduation-cap"></i>
+        </div>
+        <span className="about-mosaic-eyebrow">Cursos</span>
+        <h3>Formació</h3>
+        <p>
+          Fem tallers i cursos impartits per membres de l'associació per a
+          qualsevol persona que vulgui aprendre tecnologia d'una manera pràctica,
+          tocant electrònica, programació, disseny 3D, robòtica i altres eines que
+          després es poden aplicar a projectes reals.
+        </p>
+      </Link>
+
+      <Link to="/aessbot" className="about-mosaic-card">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-robot"></i>
+        </div>
+        <span className="about-mosaic-eyebrow">AESSBot</span>
+        <h3>Organitzem competicions de robots</h3>
+        <p>
+          AESSBot és la nostra competició de robots minisumo on els equips dissenyen,
+          construeixen i programen el seu propi robot per enfrontar-se dins d'un ring.
+        </p>
+      </Link>
+
+      <Link to="/uneix-te" className="about-mosaic-card about-mosaic-card-wide">
+        <div className="about-mosaic-icon">
+          <i className="fas fa-university"></i>
+        </div>
+        <span className="about-mosaic-eyebrow">Vida associativa</span>
+        <h3>No tot és soldar, compilar i apretar cargols</h3>
+        <p>
+          Els projectes són l’excusa perfecta per conèixer gent, compartir espai i
+          acabar formant part d’una comunitat que es mou més enllà del taller.
+        </p>
+      </Link>
+    </div>
+
+    <div className="carousel-wrapper">
+      <Carousel images={activities} />
+    </div>
+  </div>
+</section>
       <section className="esdeveniments-section section">
         <div className="container">
           <div className="section-header">

@@ -27,79 +27,17 @@
   color: var(--success);
 }
 
-.about-section {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
-  position: relative;
-}
-
-.about-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 600px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.5) 50%, transparent 100%);
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.logo-sponsor-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.sponsor-logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: transparent;
-  backdrop-filter: none;
-  border: none;
-  border-radius: 16px;
-  min-width: 200px;
-  min-height: 150px;
-  transition: all 0.3s ease;
-}
-
-.sponsor-logo-item:hover {
-  transform: translateY(-5px);
-}
-
-.sponsor-logo-img {
-  max-width: 350px;
-  max-height: 200px;
-  height: auto;
-  object-fit: contain;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-}
-
-.about-content p {
-  margin-bottom: 1.5rem;
-}
-
-.about-content strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
 .que-fem-section {
-  background: rgba(30, 41, 59, 0.2);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(30, 41, 59, 0.22) 100%),
+    rgba(30, 41, 59, 0.2);
   position: relative;
+  overflow: hidden;
 }
 
 .que-fem-section::after {
@@ -113,6 +51,185 @@
   height: 3px;
   background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.6) 20%, rgba(96, 165, 250, 0.6) 80%, transparent 100%);
   border-radius: 2px;
+}
+
+.que-fem-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.que-fem-header .section-title {
+  margin-bottom: var(--space-md);
+}
+
+.que-fem-header .section-subtitle {
+  margin-bottom: 0;
+}
+
+.about-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, auto);
+  gap: var(--space-md);
+  margin-bottom: var(--space-4xl);
+}
+
+.about-mosaic-card {
+  position: relative;
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-xl);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.58)),
+    rgba(15, 23, 42, 0.76);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.about-mosaic a.about-mosaic-card:not(.btn):not(.nav-link) {
+  display: flex;
+}
+
+.about-mosaic-card-main {
+  grid-column: span 2;
+  grid-row: span 2;
+  justify-content: center;
+  min-height: 456px;
+  padding: var(--space-2xl);
+  background:
+    linear-gradient(180deg, rgba(96, 165, 250, 0.12), transparent 42%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.72));
+}
+
+.about-mosaic-card-tall {
+  grid-row: span 2;
+}
+
+.about-mosaic-card-wide {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+.about-mosaic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.74), rgba(245, 158, 11, 0.48), transparent);
+  opacity: 0.78;
+  transition: opacity var(--transition-base);
+}
+
+a.about-mosaic-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: var(--shadow-xl), 0 0 34px rgba(96, 165, 250, 0.14);
+  color: #fff;
+}
+
+.about-mosaic-card:hover::before {
+  opacity: 1;
+}
+
+.about-mosaic-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-sm);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: var(--radius-sm);
+  color: #fde68a;
+  background: rgba(96, 165, 250, 0.12);
+  font-size: 1.2rem;
+}
+
+.about-mosaic-eyebrow {
+  width: fit-content;
+  color: #bfdbfe;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.about-mosaic-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.2rem, 1.5vw, 1.65rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.about-mosaic-card-main h3 {
+  max-width: 12ch;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.96;
+}
+
+.about-mosaic-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.58;
+}
+
+.about-mosaic-card p + p {
+  margin-top: var(--space-sm);
+}
+
+.about-mosaic-card-main p {
+  max-width: 48ch;
+  font-size: 1.05rem;
+}
+
+.about-mosaic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.about-mosaic-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.about-mosaic-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: fit-content;
+  margin-top: var(--space-sm);
+  color: #fff;
+  font-weight: 800;
+}
+
+.about-mosaic-link i {
+  transition: transform var(--transition-fast);
+}
+
+.about-mosaic-link:hover i {
+  transform: translateX(4px);
 }
 
 .cards-grid {
@@ -188,76 +305,6 @@
 
 .carousel-wrapper {
   margin-top: 3rem;
-}
-
-.perque-participar-section {
-  background: rgba(30, 41, 59, 0.2);
-  position: relative;
-}
-
-.perque-participar-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  max-width: 500px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.5) 50%, transparent 100%);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
-  margin-top: var(--space-3xl);
-  align-items: stretch;
-}
-
-.benefit-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-2xl);
-  text-align: center;
-  transition: all var(--transition-base);
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-.benefit-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-light);
-  box-shadow: var(--shadow-xl);
-}
-
-.benefit-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-1);
-  border-radius: 20px;
-  font-size: 2.5rem;
-  color: #fff;
-  box-shadow: var(--shadow-md);
-}
-
-.benefit-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.benefit-card p {
-  color: var(--text-secondary);
-  line-height: 1.7;
 }
 
 .esdeveniments-section {
@@ -517,6 +564,18 @@
 }
 
 @media (max-width: 1024px) {
+  .about-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-mosaic-card-main {
+    min-height: 380px;
+  }
+
+  .about-mosaic-card-main h3 {
+    max-width: 14ch;
+  }
+
   .events-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -535,8 +594,7 @@
     gap: 0.75rem;
   }
 
-  .cards-grid,
-  .benefits-grid {
+  .cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
   }
@@ -546,6 +604,28 @@
 @media (max-width: 768px) {
   .home-hero-join {
     justify-content: center;
+  }
+
+  .about-mosaic {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .about-mosaic-card,
+  .about-mosaic-card-main,
+  .about-mosaic-card-tall,
+  .about-mosaic-card-wide {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: auto;
+    padding: var(--space-xl);
+  }
+
+  .about-mosaic-card-main h3 {
+    font-size: 2.4rem;
+    max-width: 12ch;
   }
 
   .events-grid {
@@ -582,19 +662,7 @@
     font-size: 0.875rem;
   }
 
-  .sponsor-logo-item {
-    min-width: 150px;
-    min-height: 120px;
-    padding: var(--space-lg);
-  }
-
-  .sponsor-logo-img {
-    max-width: 250px;
-    max-height: 150px;
-  }
-
-  .cards-grid,
-  .benefits-grid {
+  .cards-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
@@ -604,6 +672,36 @@
   .home-hero-join,
   .home-hero-join .btn {
     width: 100%;
+  }
+
+  .que-fem-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .about-mosaic-card,
+  .about-mosaic-card-main,
+  .about-mosaic-card-tall,
+  .about-mosaic-card-wide {
+    padding: var(--space-lg);
+  }
+
+  .about-mosaic-card-main h3 {
+    font-size: 2rem;
+    max-width: none;
+  }
+
+  .about-mosaic-card-main p,
+  .about-mosaic-card p {
+    font-size: 0.95rem;
+  }
+
+  .about-mosaic-tags span {
+    min-height: 2rem;
+    font-size: 0.82rem;
+  }
+
+  .about-mosaic-card h3 {
+    font-size: 1.25rem;
   }
 
   .home-hero-event,
@@ -617,43 +715,28 @@
     text-align: center;
   }
 
-  .sponsor-logo-item {
-    min-width: 120px;
-    min-height: 100px;
-    padding: 1rem;
-  }
-
-  .sponsor-logo-img {
-    max-width: 100px;
-    max-height: 60px;
-  }
-
 }
 
 
 @media (max-width: 480px) {
 
-  .cards-grid,
-  .benefits-grid {
+  .cards-grid {
     gap: 1.5rem;
   }
 
-  .feature-card,
-  .benefit-card {
+  .feature-card {
     padding: 1.5rem;
     min-height: auto;
     /* Remove min-height on mobile */
   }
 
-  .card-icon,
-  .benefit-icon {
+  .card-icon {
     width: 60px;
     height: 60px;
     font-size: 2rem;
   }
 
-  .feature-card h3,
-  .benefit-card h3 {
+  .feature-card h3 {
     font-size: 1.25rem;
   }
 
@@ -683,18 +766,6 @@
     gap: 0.625rem;
   }
 
-  .sponsor-logo-item {
-    min-width: 120px;
-    min-height: 100px;
-    padding: 1rem;
-  }
-
-  .sponsor-logo-img {
-    max-width: 100px;
-    max-height: 60px;
-  }
-
-
   /* Compact "Que fem?" for mobile */
   .cards-grid {
     grid-template-columns: 1fr;
@@ -722,35 +793,6 @@
   }
 
   .feature-card p {
-    font-size: 0.75rem;
-    line-height: 1.35;
-  }
-
-  /* Compact "Per què participar?" */
-  .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .benefit-card {
-    padding: 1rem;
-    border-radius: 16px;
-  }
-
-  .benefit-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    border-radius: 10px;
-  }
-
-  .benefit-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .benefit-card p {
     font-size: 0.75rem;
     line-height: 1.35;
   }
