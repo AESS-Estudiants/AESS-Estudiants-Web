@@ -69,7 +69,17 @@ const Home = () => {
         subtitle="Estudiants"
         description="Impulsant el futur de la tecnologia a la UPC. Una comunitat d'estudiants units per la passió per la robòtica, la tecnologia i la innovació."
         image="/images/logos/aess/CubBlanc.svg"
-      />
+      >
+        <div className="home-hero-join">
+          <span className="home-hero-event">
+            <i className="far fa-calendar"></i>
+            Portes obertes · Data pendent de confirmar
+          </span>
+          <Link to="/uneix-te" className="btn btn-primary">
+            <i className="fas fa-user-plus"></i> Fes-te membre!
+          </Link>
+        </div>
+      </Hero>
 
       <section className="about-section section">
         <div className="container">
@@ -173,51 +183,6 @@ const Home = () => {
               </div>
               <h3>Valor de les associacions</h3>
               <p>Les associacions estudiantils són un espai per compartir interessos i créixer, tant personalment com professionalment. Molts membres han fet de la seva experiència a AESS un primer assaig per a la seva carrera, desenvolupant-hi habilitats i descobrint vocacions.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="com-participar-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Com fer-te membre</h2>
-            <p className="section-subtitle">
-              Fer-te membre d'AESS és molt fàcil. Només has de tenir ganes d'aprendre i participar. No hi ha cap requisit d'assistència mínima ni de coneixements.
-            </p>
-          </div>
-          <div className="steps-grid">
-            <div className="step-card">
-              <div className="step-number">1</div>
-              <div className="step-icon">
-                <i className="fab fa-whatsapp"></i>
-              </div>
-              <h3>Uneix-te al nostre grup</h3>
-              <p>Accedeix al nostre grup de WhatsApp per a noves incorporacions per estar al corrent de totes les nostres activitats i coneixer la resta de membres.</p>
-              <a
-                href="https://chat.whatsapp.com/H8rNzFeSTG9BGTsCGX8DL8?mode=gi_t"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                <i className="fab fa-whatsapp"></i> Uneix-te al grup de WhatsApp
-              </a>
-            </div>
-            <div className="step-card">
-              <div className="step-number">2</div>
-              <div className="step-icon">
-                <i className="fas fa-comment-alt"></i>
-              </div>
-              <h3>Presenta't</h3>
-              <p>Explica'ns una mica sobre tu: el teu nom, què estudies i per què vols formar part d'AESS. Coneix-nos sense cap compromís!</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">3</div>
-              <div className="step-icon">
-                <i className="fas fa-handshake"></i>
-              </div>
-              <h3>Vine a conèixer-nos</h3>
-              <p>Quedem al nostre taller per a una primera trobada. Podràs conèixer l'espai, els nostres projectes i resoldre tots els teus dubtes.</p>
             </div>
           </div>
         </div>
@@ -352,4 +317,3 @@ const Home = () => {
 }
 
 export default Home
-

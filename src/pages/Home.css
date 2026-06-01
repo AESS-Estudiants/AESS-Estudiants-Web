@@ -2,6 +2,31 @@
   min-height: 100vh;
 }
 
+.home-hero-join {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.home-hero-event {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1rem;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.home-hero-event i {
+  color: var(--primary-light);
+}
+
 .about-section {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
   position: relative;
@@ -233,150 +258,6 @@
 .benefit-card p {
   color: var(--text-secondary);
   line-height: 1.7;
-}
-
-.com-participar-section {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-  position: relative;
-}
-
-.com-participar-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  max-width: 300px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.7) 50%, transparent 100%);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2xl);
-  margin-top: var(--space-3xl);
-}
-
-.step-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-xl);
-  text-align: center;
-  position: relative;
-  transition: all var(--transition-base);
-  display: flex;
-  flex-direction: column;
-  min-height: 320px;
-}
-
-.step-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-light);
-  box-shadow: var(--shadow-lg);
-}
-
-.step-number {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  box-shadow: var(--shadow-md);
-}
-
-.step-icon {
-  width: 80px;
-  height: 80px;
-  margin: 1.5rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(96, 165, 250, 0.1);
-  border-radius: 20px;
-  font-size: 2.5rem;
-  color: var(--primary-light);
-}
-
-.step-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.step-card p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: var(--space-lg);
-}
-
-.step-card .btn {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  white-space: normal;
-  line-height: 1.3;
-  min-height: 44px;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Connect steps with line on desktop */
-.steps-grid {
-  position: relative;
-}
-
-.steps-grid::before {
-  content: '';
-  position: absolute;
-  top: 50px;
-  /* Aligned with circle centers roughly */
-  left: 16%;
-  right: 16%;
-  height: 2px;
-  background: var(--gradient-1);
-  z-index: 0;
-  opacity: 0.3;
-  display: none;
-  /* Hidden by default, enable if needed or keep hidden for cleaner look */
-}
-
-/* Arrow between steps */
-.step-card::after {
-  content: '\f105';
-  /* fa-angle-right */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  right: -1.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: var(--primary-light);
-  opacity: 0.5;
-}
-
-.step-card:last-child::after {
-  display: none;
 }
 
 .esdeveniments-section {
@@ -660,13 +541,13 @@
     gap: var(--space-lg);
   }
 
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-  }
 }
 
 @media (max-width: 768px) {
+  .home-hero-join {
+    justify-content: center;
+  }
+
   .events-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -713,18 +594,29 @@
   }
 
   .cards-grid,
-  .benefits-grid,
-  .steps-grid {
+  .benefits-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
-  }
-
-  .step-card {
-    min-height: auto;
   }
 }
 
 @media (max-width: 480px) {
+  .home-hero-join,
+  .home-hero-join .btn {
+    width: 100%;
+  }
+
+  .home-hero-event,
+  .home-hero-join .btn {
+    justify-content: center;
+  }
+
+  .home-hero-event {
+    width: 100%;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
   .sponsor-logo-item {
     min-width: 120px;
     min-height: 100px;
@@ -742,38 +634,27 @@
 @media (max-width: 480px) {
 
   .cards-grid,
-  .benefits-grid,
-  .steps-grid {
+  .benefits-grid {
     gap: 1.5rem;
   }
 
   .feature-card,
-  .benefit-card,
-  .step-card {
+  .benefit-card {
     padding: 1.5rem;
     min-height: auto;
     /* Remove min-height on mobile */
   }
 
   .card-icon,
-  .benefit-icon,
-  .step-icon {
+  .benefit-icon {
     width: 60px;
     height: 60px;
     font-size: 2rem;
   }
 
   .feature-card h3,
-  .benefit-card h3,
-  .step-card h3 {
+  .benefit-card h3 {
     font-size: 1.25rem;
-  }
-
-  .step-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
-    top: -15px;
   }
 
   .event-image {
@@ -874,56 +755,4 @@
     line-height: 1.35;
   }
 
-  /* Compact "Com fer-te membre?" */
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    /* Steps need a bit more gap for the visual flow */
-  }
-
-  .step-card {
-    padding: 1rem 1rem 1.5rem;
-    /* Extra bottom padding for button if present */
-    border-radius: 16px;
-    margin-top: 1rem;
-    /* Space for the floating number */
-  }
-
-  .step-number {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-    top: -16px;
-  }
-
-  .step-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
-    margin: 1rem auto;
-    border-radius: 10px;
-  }
-
-  .step-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .step-card p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-
-  /* Hide arrows on mobile/stacked view */
-  .step-card::after {
-    content: '\f107';
-    /* fa-angle-down */
-    right: 50%;
-    bottom: -1.75rem;
-    top: auto;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }

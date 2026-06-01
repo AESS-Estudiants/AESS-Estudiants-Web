@@ -26,7 +26,6 @@ html {
 .card,
 .feature-card,
 .benefit-card,
-.step-card,
 .event-card,
 .curso-card,
 .projecte-card,
@@ -140,7 +139,6 @@ textarea {
 .social-icon,
 .card-icon,
 .benefit-icon,
-.step-icon,
 .project-icon {
     transition: transform var(--transition-base);
 }
@@ -148,7 +146,6 @@ textarea {
 .social-icon:hover,
 .card-icon:hover,
 .benefit-icon:hover,
-.step-icon:hover,
 .project-icon:hover {
     transform: scale(1.1);
 }

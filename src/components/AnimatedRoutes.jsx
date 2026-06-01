@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 const Home = React.lazy(() => import('../pages/Home'));
 const Cursos = React.lazy(() => import('../pages/Cursos'));
 const Projectes = React.lazy(() => import('../pages/Projectes'));
+const UneixTe = React.lazy(() => import('../pages/UneixTe'));
 
 const Contact = React.lazy(() => import('../pages/Contact'));
 const AESSBot = React.lazy(() => import('../pages/AESSBot'));
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
                     <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                     <Route path="/cursos" element={<PageTransition><Cursos /></PageTransition>} />
                     <Route path="/projectes" element={<PageTransition><Projectes /></PageTransition>} />
+                    <Route path="/uneix-te" element={<PageTransition><UneixTe /></PageTransition>} />
 
                     <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                     <Route path="/aessbot" element={<PageTransition><AESSBot /></PageTransition>} />

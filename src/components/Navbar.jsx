@@ -145,6 +145,15 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link
+              to="/uneix-te"
+              className={`nav-link ${isActive('/uneix-te') ? 'active' : ''}`}
+              onClick={handleNavClick}
+            >
+              Uneix-te
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/contact"
               className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
               onClick={handleNavClick}
@@ -243,6 +252,16 @@ const Navbar = () => {
 
                   <motion.li variants={itemVariants} className="mobile-nav-item">
                     <Link
+                      to="/uneix-te"
+                      className={`mobile-nav-link ${isActive('/uneix-te') ? 'active' : ''}`}
+                      onClick={handleNavClick}
+                    >
+                      Uneix-te
+                    </Link>
+                  </motion.li>
+
+                  <motion.li variants={itemVariants} className="mobile-nav-item">
+                    <Link
                       to="/contact"
                       className={`mobile-nav-link ${isActive('/contact') ? 'active' : ''}`}
                       onClick={handleNavClick}
@@ -261,4 +280,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

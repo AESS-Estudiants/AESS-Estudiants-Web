@@ -142,7 +142,7 @@ const Projectes = () => {
               Tens una idea de projecte o et vols unir a algun dels nostres projectes actius? A AESS Estudiants valorem la creativitat
               i l'entusiasme de persones com tu. Sigues part del nostre equip i dóna vida a projectes innovadors en robòtica i tecnologia!
             </p>
-            <Link to="/#com-participar-section" className="btn btn-primary btn-large">
+            <Link to="/uneix-te" className="btn btn-primary btn-large">
               <i className="fas fa-paper-plane"></i> Fes-te membre
             </Link>
           </div>
@@ -153,4 +153,3 @@ const Projectes = () => {
 }
 
 export default Projectes
-

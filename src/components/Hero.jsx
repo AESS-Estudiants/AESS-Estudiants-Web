@@ -62,4 +62,3 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
 }
 
 export default Hero
-
