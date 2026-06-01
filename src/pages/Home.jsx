@@ -7,14 +7,15 @@ import './Home.css'
 
 const Home = () => {
   const activities = [
-    '/images/aess/qui-som/qui-som1.jpeg',
-    '/images/aess/qui-som/qui-som2.jpeg',
-    '/images/aess/qui-som/qui-som3.jpeg',
-    '/images/aess/qui-som/qui-som5.jpeg',
-    '/images/aess/qui-som/qui-som6.png',
-    '/images/aess/qui-som/qui-som7.jpeg',
     '/images/aess/qui-som/qui-som8.png',
+    '/images/aess/qui-som/qui-som1.jpeg',
+    '/images/aess/qui-som/qui-som3.jpeg',
+    '/images/aess/qui-som/qui-som4.jpeg',
+    '/images/aess/qui-som/qui-som5.jpeg',
+    '/images/aess/qui-som/qui-som6.jpeg',
+    '/images/aess/qui-som/qui-som7.jpeg',
     '/images/aess/qui-som/qui-som9.jpeg',
+    '/images/aess/qui-som/qui-som2.jpeg',
   ]
 
   const faqs = [
@@ -64,7 +65,6 @@ const Home = () => {
     <div className="home">
       <Analytics />
       <Hero
-        badge="Innovant en robòtica i enginyeria"
         title="AESS"
         subtitle="Estudiants"
         description="Som una associació d'estudiants on aprenem construint. Organitzem tallers, competicions i projectes perquè qualsevol persona amb curiositat per la tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen."
