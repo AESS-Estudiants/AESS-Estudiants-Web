@@ -62,11 +62,11 @@ const UneixTe = () => {
               <div className="join-event-details">
                 <div>
                   <i className="far fa-calendar"></i>
-                  <span>Data pendent de confirmar</span>
+                  <span>19 de juny</span>
                 </div>
                 <div>
                   <i className="far fa-clock"></i>
-                  <span>Hora pendent de confirmar</span>
+                  <span>15:00 - 21:00</span>
                 </div>
                 <div>
                   <i className="fas fa-location-dot"></i>

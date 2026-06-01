@@ -73,7 +73,7 @@ const Home = () => {
         <div className="home-hero-join">
           <span className="home-hero-event">
             <i className="far fa-calendar"></i>
-            Portes obertes · Data pendent de confirmar
+            Portes obertes · 19 de juny · 15:00 - 21:00
           </span>
           <Link to="/uneix-te" className="btn btn-primary">
             <i className="fas fa-user-plus"></i> Fes-te membre!
