@@ -95,6 +95,9 @@ El nuevo diseño incluye:
 - Los documentos PDF deben estar en `public/documents/`
 - El formulario de contacto usa EmailJS (configurar en `Contact.jsx`)
 - El formulario de inscripción de AESSBot usa un iframe de Google Forms
+- Las nuevas features deben respetar la constitución del proyecto en
+  `.specify/memory/constitution.md`: componentes y estilos reutilizables,
+  contenido parametrizable y verificación web antes de aceptar cambios.
 
 ## 🌐 Despliegue
 

@@ -77,6 +77,10 @@
 
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
+- How does the page/component behave when configurable content is empty, missing
+  images, unusually long, or reordered?
+- How does the experience remain usable on mobile, keyboard navigation, and slow
+  image/network conditions?
 
 ## Requirements *(mandatory)*
 
@@ -92,16 +96,32 @@
 - **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-006**: System MUST separate repeatable content, image lists, links, FAQs,
+  SEO metadata, and form configuration from page JSX whenever they can be
+  represented as data or configuration.
+- **FR-007**: System MUST reuse existing components, styles, and interaction
+  patterns before introducing new variants.
+- **FR-008**: System MUST meet responsive, accessibility, and performance
+  expectations defined by the project constitution.
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-009**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
+- **FR-010**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
+- **[Content Entity]**: [Repeatable page content such as course, project, FAQ,
+  image, navigation item, CTA, SEO metadata, or form field configuration]
+
+### Reusable Design & Content Model *(mandatory for web/UI features)*
+
+- **Reusable components**: [Existing or new components/patterns this feature will use]
+- **Shared styles/tokens**: [Global styles, CSS utilities, variables, or page-level exceptions]
+- **Parameterized content**: [Lists, image collections, links, copy blocks, and config values moved out of page JSX]
+- **Accessibility/responsive notes**: [Keyboard, focus, contrast, semantic structure, and layout behavior]
 
 ## Success Criteria *(mandatory)*
 

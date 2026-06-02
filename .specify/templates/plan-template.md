@@ -40,7 +40,24 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Document concrete answers for each AESS Estudiants Web principle:
+
+- **Modularidad por Responsabilidad**: Identify the pages, reusable components,
+  services/utilities, and data/config modules affected by this feature. Any new
+  module must have one clear responsibility.
+- **Reutilizacion de Componentes y Estilos**: List shared UI patterns, design
+  tokens, CSS utilities, and component variants that will be reused or created.
+  Justify any page-only style or duplicated UI pattern.
+- **Contenido Parametrizable y Datos Separados**: Identify all lists, images,
+  links, FAQs, SEO metadata, form configuration, and repeated copy introduced by
+  the feature, and state where they will live outside page JSX.
+- **Calidad Web, Accesibilidad y Rendimiento**: State responsive, semantic HTML,
+  keyboard/focus, contrast, image optimization, and animation constraints.
+- **Entrega Verificable y Mantenible**: Define the build/test/manual/visual checks
+  required before accepting the feature and note any new dependency or abstraction.
+
+If any gate is not satisfied, record it in Complexity Tracking with the reason,
+the simpler alternative considered, and the follow-up needed to restore compliance.
 
 ## Project Structure
 
@@ -67,14 +84,15 @@ specs/[###-feature]/
 ```text
 # [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
 src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+├── components/
+├── pages/
+├── data/ or config/
+├── services/ or utils/
+└── styles/
 
 tests/
-├── contract/
-├── integration/
+├── accessibility/
+├── visual/
 └── unit/
 
 # [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
@@ -89,7 +107,9 @@ frontend/
 ├── src/
 │   ├── components/
 │   ├── pages/
-│   └── services/
+│   ├── data/ or config/
+│   ├── services/ or utils/
+│   └── styles/
 └── tests/
 
 # [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
