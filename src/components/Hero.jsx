@@ -1,6 +1,6 @@
 import './Hero.css'
 
-const Hero = ({ badge, title, subtitle, description, image, stats, children, poster = false }) => {
+const Hero = ({ badge, title, subtitle, description, image, stats, children, poster = false, terminal = false }) => {
   const renderStats = () => (
     stats && (
       <div className={`hero-stats ${poster ? 'hero-stats-poster' : ''}`}>
@@ -14,8 +14,38 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
     )
   )
 
+  const renderTerminal = () => (
+    <section className="hero-terminal" aria-label="Arrencada del terminal AESS">
+      <div className="hero-terminal-log">
+        <span><strong>[0x456E686F72]</strong> &gt; boot aess-estudiants.service</span>
+        <span><strong>[0x61626F6E61]</strong> <em>[ OK ]</em> kernel: robotics-community loaded</span>
+        <span><strong>[0x212056696E]</strong> <em>[ OK ]</em> mount /campus-nord/upc</span>
+        <span><strong>[0x6520616C20]</strong> <em>[ OK ]</em> load module: aessbot.minisumo</span>
+        <span><strong>[0x74616C6C65]</strong> <em>[ OK ]</em> load module: cursos.tallers</span>
+        <span><strong>[0x7220692065]</strong> <em>[ OK ]</em> load module: projectes.robotica</span>
+        <span><strong>[0x7420636F6E]</strong> <em>[ OK ]</em> load module: comunitat.estudiants</span>
+        <span><strong>[0x766964656D]</strong> &gt; checking materials ........ ready</span>
+        <span><strong>[0x206120756E]</strong> &gt; checking motors ........... ready</span>
+        <span><strong>[0x6120636572]</strong> &gt; checking sensors .......... ready</span>
+        <span><strong>[0x7665736121]</strong> &gt; checking curiosity ........ unlimited</span>
+        <span>&gt; status: associacio inicialitzada</span>
+      </div>
+      <pre className="hero-terminal-art" aria-hidden="true">{`
+        .-----------------------.
+       /  AESSBOT // MINISUMO   \\
+      |   [ o ]           [ o ]  |
+      |        ___     ___       |
+      |       |___|___|___|      |
+      |          /  UPC  \\       |
+       \\_____.--'--------'--.___/
+          O                  O
+        sensors: ON  motors: READY
+`}</pre>
+    </section>
+  )
+
   return (
-    <header className={`hero ${poster ? 'poster-hero' : ''}`}>
+    <header className={`hero ${poster ? 'poster-hero' : ''} ${terminal ? 'terminal-hero' : ''}`}>
       <div className="hero-background">
         <div className="hero-gradient"></div>
         <div className="hero-shapes">
@@ -43,7 +73,8 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
           {/* Stats shown inline for non-poster mode */}
           {!poster && renderStats()}
         </div>
-        {image && (
+        {terminal && !poster && renderTerminal()}
+        {image && !terminal && (
           <div className={`hero-visual ${poster ? 'poster-hero' : ''}`}>
             {poster ? (
               <img src={image} alt="Poster" className="poster-image" />

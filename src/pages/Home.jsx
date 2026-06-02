@@ -68,15 +68,17 @@ const Home = () => {
         title="AESS"
         subtitle="Estudiants"
         description="Som una associació d'estudiants on aprenem construint. Organitzem tallers, competicions i projectes perquè qualsevol persona amb curiositat per la tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen."
-        image="/images/logos/aess/CubBlanc.svg"
+        terminal
       >
+        <div className="home-hero-event">
+          <span>Jornada de portes obertes · 19 de juny · 15:00 - 21:00</span>
+        </div>
         <div className="home-hero-join">
-          <span className="home-hero-event">
-            <i className="far fa-calendar"></i>
-            Portes obertes · 19 de juny · 15:00 - 21:00
-          </span>
           <Link to="/uneix-te" className="btn btn-primary">
-            <i className="fas fa-user-plus"></i> Fes-te membre!
+            <i className="fas fa-terminal"></i> JOIN AESS
+          </Link>
+          <Link to="/aessbot" className="btn btn-secondary">
+            <i className="fas fa-robot"></i> GOTO AESSBot
           </Link>
         </div>
       </Hero>
@@ -88,11 +90,10 @@ const Home = () => {
 
     <div className="about-mosaic" aria-label="Informació sobre AESS i les seves activitats">
       <div className="about-mosaic-card about-mosaic-card-main">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-cubes"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">AESS Estudiants</span>
-        <h3>L'associació de robòtica de l'ETSETB</h3>
+        <h3>Qui som i què fem?</h3>
+        <p>
+          L'associació de robòtica de l'ETSETB.
+        </p>
         <p>
           Som una associació sense ànim de lucre de l'ETSETB (UPC), fundada el
           1999, oberta a tota persona amb ganes de fer projectes
@@ -107,7 +108,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-project-diagram"></i>
         </div>
-        <span className="about-mosaic-eyebrow">Projectes</span>
+        <span className="about-mosaic-eyebrow">./projectes.md</span>
         <h3>Fem robots i invents diversos</h3>
         <p>
           Barregem electrònica, mecànica, programació i moltes proves fins que
@@ -124,7 +125,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-users"></i>
         </div>
-        <span className="about-mosaic-eyebrow">Qui hi participa</span>
+        <span className="about-mosaic-eyebrow">./comunitat.md</span>
         <h3>Persones d'àmbits diversos</h3>
         <p>
           La majoria venim de Telecos, la FIB o altres escoles de la UPC, però
@@ -138,7 +139,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-tools"></i>
         </div>
-        <span className="about-mosaic-eyebrow">Taller propi</span>
+        <span className="about-mosaic-eyebrow">./taller.md</span>
         <h3>Un lloc on provar coses sense por</h3>
         <p>
           Tenim eines, material i gent que et pot donar un cop de mà. No cal
@@ -150,7 +151,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-graduation-cap"></i>
         </div>
-        <span className="about-mosaic-eyebrow">Cursos</span>
+        <span className="about-mosaic-eyebrow">./cursos.md</span>
         <h3>Formació</h3>
         <p>
           Fem tallers i cursos impartits per membres de l'associació per a
@@ -164,7 +165,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-robot"></i>
         </div>
-        <span className="about-mosaic-eyebrow">AESSBot</span>
+        <span className="about-mosaic-eyebrow">./aessbot.md</span>
         <h3>Organitzem competicions de robots</h3>
         <p>
           AESSBot és la nostra competició de robots minisumo on els equips dissenyen,
@@ -176,7 +177,7 @@ const Home = () => {
         <div className="about-mosaic-icon">
           <i className="fas fa-university"></i>
         </div>
-        <span className="about-mosaic-eyebrow">Vida associativa</span>
+        <span className="about-mosaic-eyebrow">./vida-associativa.md</span>
         <h3>No tot és soldar, compilar i apretar cargols</h3>
         <p>
           Els projectes són l’excusa perfecta per conèixer gent, compartir espai i
@@ -199,7 +200,7 @@ const Home = () => {
             <div className="event-card aessbot-card">
               <div className="event-card-content">
                 <div className="event-card-header">
-                  <div className="event-badge">Competició Anual</div>
+                  <div className="event-badge">./aessbot.event</div>
                   <h3>AESSBot 2026</h3>
                   <p>La competició de robòtica més esperada de la UPC. Construeix el teu propi robot minisumo i competeix contra altres equips en una batalla d'enginyeria i estratègia.</p>
                 </div>
@@ -250,7 +251,7 @@ const Home = () => {
             <div className="event-card cursos-card">
               <div className="event-card-content">
                 <div className="event-card-header">
-                  <div className="event-badge">Cursos semestrals</div>
+                  <div className="event-badge">./cursos.event</div>
                   <h3>Cursos</h3>
                   <p>Desenvolupa habilitats pràctiques en robòtica i electrònica amb els nostres cursos intensius. Tots els cursos es fan en períodes no lectius (gener-febrer i juny-juliol).</p>
                 </div>
@@ -274,6 +275,13 @@ const Home = () => {
                     <div>
                       <span className="detail-value">Properament</span>
                       <span className="detail-label">Properament</span>
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <i className="fas fa-tools"></i>
+                    <div>
+                      <span className="detail-value">Tallers pràctics</span>
+                      <span className="detail-label">Robòtica i electrònica</span>
                     </div>
                   </div>
                 </div>

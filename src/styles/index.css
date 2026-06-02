@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
@@ -10,45 +9,45 @@
 
 :root {
   /* Colors - Base */
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --primary-light: #60a5fa;
-  --secondary: #8b5cf6;
-  --accent: #f59e0b;
+  --primary: #38bdf8;
+  --primary-dark: #0284c7;
+  --primary-light: #7dd3fc;
+  --secondary: #93c5fd;
+  --accent: #facc15;
   --success: #22c55e;
-  --warning: #f59e0b;
+  --warning: #facc15;
   --error: #ef4444;
 
   /* Background Colors */
-  --bg-dark: #0f172a;
-  --bg-darker: #020617;
-  --bg-light: #1e293b;
-  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-dark: #061726;
+  --bg-darker: #020817;
+  --bg-light: #0b2438;
+  --bg-card: rgba(56, 189, 248, 0.08);
 
   /* Text Colors - Improved Contrast */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-disabled: #64748b;
+  --text-primary: #d8f3ff;
+  --text-secondary: rgba(216, 243, 255, 0.78);
+  --text-muted: rgba(216, 243, 255, 0.58);
+  --text-disabled: rgba(216, 243, 255, 0.38);
 
   /* Border */
-  --border: rgba(255, 255, 255, 0.1);
-  --border-light: rgba(255, 255, 255, 0.05);
-  --border-strong: rgba(255, 255, 255, 0.2);
+  --border: rgba(56, 189, 248, 0.28);
+  --border-light: rgba(56, 189, 248, 0.14);
+  --border-strong: rgba(56, 189, 248, 0.56);
 
   /* Gradients - Primary */
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-1: linear-gradient(135deg, #38bdf8 0%, #93c5fd 100%);
+  --gradient-2: linear-gradient(135deg, #facc15 0%, #38bdf8 100%);
+  --gradient-3: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 100%);
+  --gradient-4: linear-gradient(135deg, #22c55e 0%, #38bdf8 100%);
 
   /* Gradients - Text */
-  --gradient-text-primary: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 50%, #ec4899 100%);
-  --gradient-text-secondary: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+  --gradient-text-primary: linear-gradient(135deg, #d8f3ff 0%, #38bdf8 58%, #facc15 100%);
+  --gradient-text-secondary: linear-gradient(135deg, #d8f3ff 0%, #38bdf8 100%);
 
   /* Gradients - Background */
-  --gradient-bg-subtle: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
-  --gradient-bg-strong: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  --gradient-bg-subtle: linear-gradient(180deg, rgba(6, 23, 38, 0) 0%, rgba(56, 189, 248, 0.08) 100%);
+  --gradient-bg-strong: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(147, 197, 253, 0.08) 100%);
 
   /* Shadows */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -59,8 +58,8 @@
   --shadow-2xl: 0 30px 80px rgba(0, 0, 0, 0.4);
 
   /* Shadows - Colored */
-  --shadow-primary: 0 10px 40px rgba(96, 165, 250, 0.3);
-  --shadow-secondary: 0 10px 40px rgba(139, 92, 246, 0.3);
+  --shadow-primary: 0 0 36px rgba(56, 189, 248, 0.24);
+  --shadow-secondary: 0 0 36px rgba(147, 197, 253, 0.2);
 
   /* Spacing System */
   --space-xs: 0.5rem;
@@ -84,10 +83,10 @@
 
   /* Border Radius */
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
   --radius-full: 9999px;
 
   /* Typography Scale - Fluid */
@@ -114,6 +113,8 @@
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-mono: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 html {
@@ -121,11 +122,13 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-darker);
+  background:
+    radial-gradient(circle at 50% 8%, rgba(56, 189, 248, 0.14), transparent 30%),
+    radial-gradient(circle at 12% 70%, rgba(56, 189, 248, 0.08), transparent 26%),
+    var(--bg-dark);
   color: var(--text-primary);
   line-height: var(--leading-relaxed);
   overflow-x: hidden;
@@ -168,9 +171,9 @@ h4,
 h5,
 h6 {
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 850;
   line-height: var(--leading-tight);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 img {
@@ -221,11 +224,11 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-darker);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-light);
+  background: rgba(56, 189, 248, 0.34);
   border-radius: 5px;
 }
 

@@ -1,14 +1,14 @@
 .carousel-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-md);
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
   background:
-    linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.56)),
-    rgba(15, 23, 42, 0.72);
-  box-shadow: var(--shadow-xl);
+    linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(2, 8, 23, 0.14)),
+    rgba(2, 8, 23, 0.7);
+  box-shadow: inset 0 0 42px rgba(56, 189, 248, 0.06), var(--shadow-xl);
   overflow: hidden;
   isolation: isolate;
 }
@@ -18,19 +18,17 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background:
-    linear-gradient(90deg, rgba(96, 165, 250, 0.38), rgba(139, 92, 246, 0.32), rgba(34, 197, 94, 0.22));
+  background: transparent;
   opacity: 0.65;
   pointer-events: none;
-  z-index: -1;
+  z-index: 5;
 }
 
 .carousel-container::after {
   content: '';
   position: absolute;
-  inset: 0.75rem;
-  border-radius: calc(var(--radius-md) - 0.35rem);
-  box-shadow: inset 0 -110px 90px rgba(2, 6, 23, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  inset: 0;
+  box-shadow: inset 0 -120px 100px rgba(2, 8, 23, 0.48), inset 0 0 60px rgba(56, 189, 248, 0.08);
   pointer-events: none;
   z-index: 4;
 }
@@ -38,11 +36,11 @@
 .carousel-track {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 520px;
   display: flex;
   overflow: hidden;
-  border-radius: calc(var(--radius-md) - 0.35rem);
-  background: rgba(15, 23, 42, 0.74);
+  border-radius: 0;
+  background: rgba(2, 8, 23, 0.74);
 }
 
 .carousel-slide {
@@ -58,35 +56,36 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(0.92) contrast(1.05);
 }
 
 .carousel-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(15, 23, 42, 0.62);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius-full);
-  width: 46px;
-  height: 46px;
+  background: rgba(2, 8, 23, 0.76);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--primary-light);
   font-size: 1rem;
   cursor: pointer;
   transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
   z-index: 10;
-  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.3);
+  box-shadow: inset 0 0 18px rgba(56, 189, 248, 0.08), 0 10px 28px rgba(2, 6, 23, 0.3);
 }
 
 .carousel-nav:hover,
 .carousel-nav:focus-visible {
-  background: rgba(37, 99, 235, 0.82);
+  background: rgba(56, 189, 248, 0.16);
   border-color: var(--primary-light);
   transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.26);
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.22);
   outline: none;
 }
 
@@ -111,11 +110,11 @@
 }
 
 .carousel-indicator {
-  width: 2.35rem;
-  height: 0.34rem;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.4);
-  border: 0;
+  width: 2rem;
+  height: 0.42rem;
+  border-radius: 0;
+  background: rgba(216, 243, 255, 0.22);
+  border: 1px solid rgba(216, 243, 255, 0.18);
   cursor: pointer;
   transition: width var(--transition-base), background var(--transition-base), transform var(--transition-base);
   padding: 0;
@@ -124,14 +123,15 @@
 
 .carousel-indicator:hover,
 .carousel-indicator:focus-visible {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(56, 189, 248, 0.42);
   outline: none;
 }
 
 .carousel-indicator.active {
-  width: 3.3rem;
-  background: linear-gradient(90deg, var(--primary-light), #86efac);
+  width: 3rem;
+  background: var(--primary);
   transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.34);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -144,11 +144,11 @@
 
 @media (max-width: 768px) {
   .carousel-container {
-    padding: 0.6rem;
+    border-radius: 8px;
   }
 
   .carousel-container::after {
-    inset: 0.6rem;
+    inset: 0;
   }
 
   .carousel-track {

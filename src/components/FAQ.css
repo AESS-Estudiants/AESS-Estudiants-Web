@@ -1,6 +1,10 @@
 .faq-accordion {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  align-items: start;
 }
 
 .faq-item {
@@ -8,7 +12,7 @@
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
   overflow: hidden;
   transition: all var(--transition-base);
 }
@@ -89,6 +93,10 @@
 }
 
 @media (max-width: 768px) {
+  .faq-accordion {
+    grid-template-columns: 1fr;
+  }
+
   .faq-question {
     font-size: 1rem;
     padding: 1.25rem;
