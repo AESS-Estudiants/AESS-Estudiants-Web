@@ -289,36 +289,42 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="events-cli-shell">
+            <div className="events-cli-list">
               <p className="events-cli-command">
                 <span>aess:~/events$</span> ls -la --with-preview
               </p>
-              <div className="events-list-container">
-                {upcomingEvents.map((event, index) => (
-                  <article
-                    className="event-list-item"
-                    key={event.file}
-                    data-file={event.file}
-                  >
-                    <div className="event-list-meta">
-                      <span className="event-index">{String(index + 1).padStart(2, '0')}</span>
-                      <span className="event-permissions" aria-hidden="true">drwxr-xr-x</span>
-                      <span className="event-list-title">{event.title}</span>
-                      <span className="event-status event-status-ended">{event.status}</span>
-                    </div>
-                    <p className="event-list-description">{event.description}</p>
-                    <div className="event-list-details">
+              {upcomingEvents.map((event, index) => (
+                <article
+                  className="event-card"
+                  key={event.file}
+                  data-file={event.file}
+                  aria-labelledby={`event-card-title-${index}`}
+                >
+                  <div className="event-cli-tree" aria-hidden="true">
+                    <span>{index === upcomingEvents.length - 1 ? '└──' : '├──'}</span>
+                  </div>
+                  <figure className="event-image">
+                    <img src={event.image} alt={event.alt} loading="lazy" />
+                  </figure>
+                  <div className="event-card-content">
+                    <div className="event-card-header">
+                      <div className="event-meta">
+                        <span className="event-index">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="event-permissions" aria-hidden="true">drwxr-xr-x</span>
+                        <span className="event-badge">{event.title}</span>
+                        <span className="event-status event-status-ended">{event.status}</span>
+                      </div>
+                      <p id={`event-card-title-${index}`}>{event.description}</p>
                       <span className="event-date-badge">{event.date}</span>
+                    </div>
+                    <div className="event-actions">
                       <Link to={event.to} className="event-cli-link">
                         cd {event.file} <i className="fas fa-arrow-right"></i>
                       </Link>
                     </div>
-                    <figure className="event-list-image">
-                      <img src={event.image} alt={event.alt} loading="lazy" />
-                    </figure>
-                  </article>
-                ))}
-              </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
