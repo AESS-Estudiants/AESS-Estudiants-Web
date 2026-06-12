@@ -1,6 +1,37 @@
+import { useMemo } from 'react'
 import './Hero.css'
 
 const Hero = ({ badge, title, subtitle, description, image, stats, children, poster = false, terminal = false }) => {
+  const heroVariant = title
+    ? `hero-${title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`
+    : ''
+
+  const terminalLogs = [
+    { code: '[0x456E686F72]', text: '> boot aess-estudiants.service' },
+    { code: '[0x61626F6E61]', status: '[ OK ]', text: 'kernel: robotics-community loaded' },
+    { code: '[0x212056696E]', status: '[ OK ]', text: 'mount /campus-nord/upc' },
+    { code: '[0x6520616C20]', status: '[ OK ]', text: 'load module: aessbot.minisumo' },
+    { code: '[0x74616C6C65]', status: '[ OK ]', text: 'load module: cursos.tallers' },
+    { code: '[0x7220692065]', status: '[ OK ]', text: 'load module: projectes.robotica' },
+    { code: '[0x7420636F6E]', status: '[ OK ]', text: 'load module: comunitat.estudiants' },
+    { code: '[0x766964656D]', text: '> checking materials ........ ready' },
+    { code: '[0x206120756E]', text: '> checking motors ........... ready' },
+    { code: '[0x6120636572]', text: '> checking sensors .......... ready' },
+    { code: '[0x7665736121]', text: '> checking curiosity ........ unlimited' },
+    { text: '> status: associacio inicialitzada' }
+  ]
+
+  const terminalLogDelays = useMemo(() => {
+    const intervals = terminalLogs.map(() => 0.2 + Math.random())
+    const total = intervals.reduce((sum, interval) => sum + interval, 0)
+    let elapsed = 0
+
+    return intervals.map((interval) => {
+      elapsed += interval
+      return `${(elapsed / total) * 4.8}s`
+    })
+  }, [])
+
   const renderStats = () => (
     stats && (
       <div className={`hero-stats ${poster ? 'hero-stats-poster' : ''}`}>
@@ -16,36 +47,41 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
 
   const renderTerminal = () => (
     <section className="hero-terminal" aria-label="Arrencada del terminal AESS">
+      <h1 className="sr-only">{title} {subtitle}</h1>
+      <pre className="hero-terminal-brand" aria-hidden="true">{`
+█████╗ ███████╗███████╗███████╗
+██╔══██╗██╔════╝██╔════╝██╔════╝
+███████║█████╗  ███████╗███████╗
+██╔══██║██╔══╝  ╚════██║╚════██║
+██║  ██║███████╗███████║███████║
+╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
+███████╗███████╗████████╗██╗   ██╗██████╗ ██╗ █████╗ ███╗   ██╗████████╗███████╗
+██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗██║██╔══██╗████╗  ██║╚══██╔══╝██╔════╝
+█████╗  ███████╗   ██║   ██║   ██║██║  ██║██║███████║██╔██╗ ██║   ██║   ███████╗
+██╔══╝  ╚════██║   ██║   ██║   ██║██║  ██║██║██╔══██║██║╚██╗██║   ██║   ╚════██║
+███████╗███████║   ██║   ╚██████╔╝██████╔╝██║██║  ██║██║ ╚████║   ██║   ███████║
+╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝`}</pre>
+      {description && <p className="hero-terminal-tagline">{description}</p>}
       <div className="hero-terminal-log">
-        <span><strong>[0x456E686F72]</strong> &gt; boot aess-estudiants.service</span>
-        <span><strong>[0x61626F6E61]</strong> <em>[ OK ]</em> kernel: robotics-community loaded</span>
-        <span><strong>[0x212056696E]</strong> <em>[ OK ]</em> mount /campus-nord/upc</span>
-        <span><strong>[0x6520616C20]</strong> <em>[ OK ]</em> load module: aessbot.minisumo</span>
-        <span><strong>[0x74616C6C65]</strong> <em>[ OK ]</em> load module: cursos.tallers</span>
-        <span><strong>[0x7220692065]</strong> <em>[ OK ]</em> load module: projectes.robotica</span>
-        <span><strong>[0x7420636F6E]</strong> <em>[ OK ]</em> load module: comunitat.estudiants</span>
-        <span><strong>[0x766964656D]</strong> &gt; checking materials ........ ready</span>
-        <span><strong>[0x206120756E]</strong> &gt; checking motors ........... ready</span>
-        <span><strong>[0x6120636572]</strong> &gt; checking sensors .......... ready</span>
-        <span><strong>[0x7665736121]</strong> &gt; checking curiosity ........ unlimited</span>
-        <span>&gt; status: associacio inicialitzada</span>
+        {terminalLogs.map((log, index) => (
+          <span key={log.code || log.text} style={{ '--log-delay': terminalLogDelays[index] }}>
+            {log.code && <strong>{log.code}</strong>}
+            {log.code && ' '}
+            {log.status && <em>{log.status}</em>}
+            {log.status && ' '}
+            {log.text}
+          </span>
+        ))}
       </div>
-      <pre className="hero-terminal-art" aria-hidden="true">{`
-        .-----------------------.
-       /  AESSBOT // MINISUMO   \\
-      |   [ o ]           [ o ]  |
-      |        ___     ___       |
-      |       |___|___|___|      |
-      |          /  UPC  \\       |
-       \\_____.--'--------'--.___/
-          O                  O
-        sensors: ON  motors: READY
-`}</pre>
     </section>
   )
 
   return (
-    <header className={`hero ${poster ? 'poster-hero' : ''} ${terminal ? 'terminal-hero' : ''}`}>
+    <header
+      className={`hero ${heroVariant} ${poster ? 'poster-hero' : ''} ${terminal ? 'terminal-hero' : ''}`}
+      data-label={title || ''}
+    >
       <div className="hero-background">
         <div className="hero-gradient"></div>
         <div className="hero-shapes">
@@ -55,25 +91,31 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
         </div>
       </div>
       <div className="hero-content">
-        <div className="hero-text">
-          {badge && (
-            <div className="hero-badge">
-              <i className="fas fa-rocket"></i>
-              <span>{badge}</span>
-            </div>
-          )}
-          <h1 className="hero-title">
-            {title && <span className="gradient-text">{title}</span>}
-            {subtitle && <span className="hero-subtext">{subtitle}</span>}
-          </h1>
-          {description && (
-            <p className="hero-description">{description}</p>
-          )}
-          {children}
-          {/* Stats shown inline for non-poster mode */}
-          {!poster && renderStats()}
-        </div>
-        {terminal && !poster && renderTerminal()}
+        {terminal && !poster ? (
+          <>
+            {renderTerminal()}
+            <div className="terminal-hero-actions">{children}</div>
+            {renderStats()}
+          </>
+        ) : (
+          <div className="hero-text">
+            {badge && (
+              <div className="hero-badge">
+                <i className="fas fa-rocket"></i>
+                <span>{badge}</span>
+              </div>
+            )}
+            <h1 className="hero-title">
+              {title && <span className="gradient-text">{title}</span>}
+              {subtitle && <span className="hero-subtext">{subtitle}</span>}
+            </h1>
+            {description && (
+              <p className="hero-description">{description}</p>
+            )}
+            {children}
+            {!poster && renderStats()}
+          </div>
+        )}
         {image && !terminal && (
           <div className={`hero-visual ${poster ? 'poster-hero' : ''}`}>
             {poster ? (

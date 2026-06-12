@@ -11,7 +11,7 @@
   background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 2px 18px 2px 18px;
   margin-bottom: 0;
   overflow: hidden;
   transition: all var(--transition-base);
@@ -29,8 +29,8 @@
 }
 
 .faq-item.active {
-  border-color: var(--primary-light);
-  box-shadow: var(--shadow-md);
+  border-color: var(--secondary);
+  box-shadow: 0 12px 36px rgba(196, 181, 253, 0.12);
 }
 
 .faq-question {
@@ -59,7 +59,7 @@
 }
 
 .faq-question i:first-child {
-  color: var(--primary-light);
+  color: var(--accent);
   font-size: 1.25rem;
   width: 24px;
 }

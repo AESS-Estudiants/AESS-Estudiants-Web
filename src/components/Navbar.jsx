@@ -60,8 +60,8 @@ const Navbar = () => {
   }
 
   const itemVariants = {
-    closed: { x: 50, opacity: 0 },
-    open: { x: 0, opacity: 1 }
+    closed: { y: 12, opacity: 0 },
+    open: { y: 0, opacity: 1 }
   }
 
   return (
@@ -78,10 +78,13 @@ const Navbar = () => {
         <button
           className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? 'Tancar menu' : 'Obrir menu'}
+          aria-expanded={isMenuOpen}
           style={{ zIndex: 1002 }}
         >
-          <span className="hamburger"></span>
+          <span className="menu-toggle-bracket" aria-hidden="true">[</span>
+          <span className="menu-toggle-text" aria-hidden="true">{isMenuOpen ? 'exit' : 'menu'}</span>
+          <span className="menu-toggle-bracket" aria-hidden="true">]</span>
         </button>
 
         {/* Desktop Menu */}
@@ -100,6 +103,7 @@ const Navbar = () => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button
+              type="button"
               className={`nav-link ${isActive('/aessbot') || isActive('/aessbot-inscripcio') ? 'active' : ''}`}
             >
               AESSBot <i className={`fas fa-chevron-${isDropdownOpen ? 'up' : 'down'}`}></i>
@@ -181,6 +185,12 @@ const Navbar = () => {
                 exit="closed"
                 variants={menuVariants}
               >
+                <div className="mobile-terminal-header" aria-hidden="true">
+                  <span className="terminal-dot"></span>
+                  <span className="terminal-dot"></span>
+                  <span className="terminal-dot"></span>
+                  <strong>aess-nav.sh</strong>
+                </div>
                 <ul className="mobile-nav-list">
                   <motion.li variants={itemVariants} className="mobile-nav-item">
                     <Link

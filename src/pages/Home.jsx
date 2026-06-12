@@ -146,18 +146,14 @@ const Home = () => {
       <Hero
         title="AESS"
         subtitle="Estudiants"
-        description="Som una associació d'estudiants on aprenem construint. Organitzem tallers, competicions i projectes perquè qualsevol persona amb curiositat per la tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen."
+        description="L'associació de robòtica de l'ETSETB"
         terminal
       >
-        <div className="home-hero-event">
-          <span>Jornada de portes obertes · 19 de juny · 15:00 - 21:00</span>
-        </div>
         <div className="home-hero-join">
-          <Link to="/uneix-te" className="btn btn-primary">
-            <i className="fas fa-terminal"></i> JOIN AESS
-          </Link>
-          <Link to="/aessbot" className="btn btn-secondary">
-            <i className="fas fa-robot"></i> GOTO AESSBot
+          <Link to="/uneix-te" className="cli-join-button" aria-label="Join AESS">
+            <pre aria-hidden="true">{`┌────────────────┐
+│ `}<b>&gt;</b>{` JOIN AESS `}<i>█</i>{`  │
+└────────────────┘`}</pre>
           </Link>
         </div>
       </Hero>
@@ -166,8 +162,9 @@ const Home = () => {
     <div className="section-header que-fem-header">
       <h2 className="section-title">Qui som i què fem?</h2>
       <p className="section-subtitle">
-        Som una associació d'estudiants de la UPC on aprenem tecnologia fent
-        projectes reals, compartint taller i construint comunitat.
+        Som una associació d'estudiants on aprenem construint. Organitzem tallers,
+        competicions i projectes perquè qualsevol persona amb curiositat per la
+        tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen.
       </p>
     </div>
 
@@ -182,7 +179,7 @@ const Home = () => {
           </div>
           <div className="about-story-content">
             <div className="about-story-command">
-              <span className="about-story-prompt">aess@web:~$</span>
+              <span className="about-story-prompt">aess@estudiants:~$</span>
               <span className="about-story-command-name">cat</span>
               <span>{row.eyebrow}</span>
             </div>
