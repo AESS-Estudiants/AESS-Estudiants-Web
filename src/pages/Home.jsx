@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import Carousel from '../components/Carousel'
 import FAQ from '../components/FAQ'
 import './Home.css'
 
@@ -61,6 +60,86 @@ const Home = () => {
     }
   ]
 
+  const aboutRows = [
+    {
+      eyebrow: './associacio.md',
+      title: 'AESS és aprendre fent',
+      description: 'Som l\'associació de robòtica de l\'ETSETB, fundada el 1999 i oberta a qualsevol persona amb ganes de crear, provar i compartir hores al taller.',
+      image: activities[0],
+      alt: 'Membres d\'AESS participant en una activitat de robòtica',
+      icon: 'fas fa-terminal',
+      tags: ['Projectes pràctics', 'Taller i eines', 'Cursos', 'Competicions'],
+      cta: {
+        label: 'Vine a conèixer-nos',
+        to: '/uneix-te'
+      }
+    },
+    {
+      eyebrow: './projectes.md',
+      title: 'Fem robots i invents diversos',
+      description: 'Barregem electrònica, mecànica, programació i moltes proves fins que allò que teníem al cap comença a funcionar.',
+      image: activities[1],
+      alt: 'Projecte de robòtica desenvolupat per membres d\'AESS',
+      icon: 'fas fa-project-diagram',
+      cta: {
+        label: 'Veure projectes',
+        to: '/projectes'
+      }
+    },
+    {
+      eyebrow: './comunitat.md',
+      title: 'Persones d\'àmbits diversos',
+      description: 'Hi participa gent de Telecos, la FIB, altres escoles de la UPC i persones amb curiositat per aprendre fent.',
+      image: activities[2],
+      alt: 'Grup de membres d\'AESS compartint una activitat',
+      icon: 'fas fa-users'
+    },
+    {
+      eyebrow: './taller.md',
+      title: 'Un lloc on provar coses sense por',
+      description: 'Tenim eines, material i gent que et pot donar un cop de mà. No cal venir sabent soldar, programar o dissenyar.',
+      image: activities[3],
+      alt: 'Espai de taller amb material i eines per a projectes',
+      icon: 'fas fa-tools'
+    },
+    {
+      eyebrow: './cursos.md',
+      title: 'Formació pràctica',
+      description: 'Fem tallers i cursos per aprendre electrònica, programació, disseny 3D, robòtica i eines aplicables a projectes reals.',
+      image: activities[4],
+      alt: 'Sessió formativa organitzada per AESS',
+      icon: 'fas fa-graduation-cap',
+      cta: {
+        label: 'Veure cursos',
+        to: '/cursos'
+      }
+    },
+    {
+      eyebrow: './aessbot.md',
+      title: 'Organitzem competicions de robots',
+      description: 'AESSBot és la nostra competició minisumo: cada equip dissenya, construeix i programa el seu robot per competir dins d\'un ring.',
+      image: activities[5],
+      alt: 'Competició de robots minisumo AESSBot',
+      icon: 'fas fa-robot',
+      cta: {
+        label: 'Anar a AESSBot',
+        to: '/aessbot'
+      }
+    },
+    {
+      eyebrow: './vida-associativa.md',
+      title: 'No tot és soldar, compilar i apretar cargols',
+      description: 'Els projectes són l\'excusa perfecta per conèixer gent i formar part d\'una comunitat que es mou més enllà del taller.',
+      image: activities[6],
+      alt: 'Vida associativa i activitats amb membres d\'AESS',
+      icon: 'fas fa-university',
+      cta: {
+        label: 'Uneix-te',
+        to: '/uneix-te'
+      }
+    }
+  ]
+
   return (
     <div className="home">
       <Analytics />
@@ -86,221 +165,98 @@ const Home = () => {
   <div className="container">
     <div className="section-header que-fem-header">
       <h2 className="section-title">Qui som i què fem?</h2>
+      <p className="section-subtitle">
+        Som una associació d'estudiants de la UPC on aprenem tecnologia fent
+        projectes reals, compartint taller i construint comunitat.
+      </p>
     </div>
 
-    <div className="about-mosaic" aria-label="Informació sobre AESS i les seves activitats">
-      <div className="about-mosaic-card about-mosaic-card-main">
-        <h3>Qui som i què fem?</h3>
-        <p>
-          L'associació de robòtica de l'ETSETB.
-        </p>
-        <p>
-          Som una associació sense ànim de lucre de l'ETSETB (UPC), fundada el
-          1999, oberta a tota persona amb ganes de fer projectes
-          i trobar gent amb qui compartir hores al taller.
-        </p>
-        <Link to="/uneix-te" className="about-mosaic-link">
-          Vine a conèixer-nos <i className="fas fa-arrow-right"></i>
-        </Link>
-      </div>
-
-      <Link to="/projectes" className="about-mosaic-card about-mosaic-card-tall">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-project-diagram"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./projectes.md</span>
-        <h3>Fem robots i invents diversos</h3>
-        <p>
-          Barregem electrònica, mecànica, programació i moltes proves fins que
-          allò que teníem al cap comença a funcionar.
-        </p>
-        <p>
-          No ens limitem a la robòtica. També hi caben projectes de software,
-          automatització, disseny, eines internes o qualsevol idea que els membres
-          tinguin ganes de tirar endavant.
-        </p>
-      </Link>
-
-      <div className="about-mosaic-card">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-users"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./comunitat.md</span>
-        <h3>Persones d'àmbits diversos</h3>
-        <p>
-          La majoria venim de Telecos, la FIB o altres escoles de la UPC, però
-          l’associació està oberta a qualsevol persona amb ganes de participar-hi:
-          estudiants d’altres centres, gent de batxillerat o persones que ja han
-          acabat la universitat.
-        </p>
-      </div>
-
-      <div className="about-mosaic-card">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-tools"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./taller.md</span>
-        <h3>Un lloc on provar coses sense por</h3>
-        <p>
-          Tenim eines, material i gent que et pot donar un cop de mà. No cal
-          venir sabent soldar, programar o dissenyar. I si ja en saps, t'ho passaràs bé!
-        </p>
-      </div>
-
-      <Link to="/cursos" className="about-mosaic-card">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-graduation-cap"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./cursos.md</span>
-        <h3>Formació</h3>
-        <p>
-          Fem tallers i cursos impartits per membres de l'associació per a
-          qualsevol persona que vulgui aprendre tecnologia d'una manera pràctica,
-          tocant electrònica, programació, disseny 3D, robòtica i altres eines que
-          després es poden aplicar a projectes reals.
-        </p>
-      </Link>
-
-      <Link to="/aessbot" className="about-mosaic-card">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-robot"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./aessbot.md</span>
-        <h3>Organitzem competicions de robots</h3>
-        <p>
-          AESSBot és la nostra competició de robots minisumo on els equips dissenyen,
-          construeixen i programen el seu propi robot per enfrontar-se dins d'un ring.
-        </p>
-      </Link>
-
-      <Link to="/uneix-te" className="about-mosaic-card about-mosaic-card-wide">
-        <div className="about-mosaic-icon">
-          <i className="fas fa-university"></i>
-        </div>
-        <span className="about-mosaic-eyebrow">./vida-associativa.md</span>
-        <h3>No tot és soldar, compilar i apretar cargols</h3>
-        <p>
-          Els projectes són l’excusa perfecta per conèixer gent, compartir espai i
-          acabar formant part d’una comunitat que es mou més enllà del taller.
-        </p>
-      </Link>
+    <div className="about-story" aria-label="Informació sobre AESS i les seves activitats">
+      {aboutRows.map((row, index) => (
+        <article
+          className={`about-story-row ${index % 2 === 1 ? 'about-story-row-reverse' : ''}`}
+          key={row.eyebrow}
+        >
+          <div className="about-story-media">
+            <img src={row.image} alt={row.alt} loading="lazy" />
+          </div>
+          <div className="about-story-content">
+            <div className="about-story-command">
+              <span className="about-story-prompt">aess@web:~$</span>
+              <span className="about-story-command-name">cat</span>
+              <span>{row.eyebrow}</span>
+            </div>
+            <div className="about-story-icon" aria-hidden="true">
+              <i className={row.icon}></i>
+            </div>
+            <h3>{row.title}</h3>
+            <p>{row.description}</p>
+            {row.tags && (
+              <div className="about-story-tags" aria-label="Àrees principals d'AESS">
+                {row.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+            )}
+            {row.cta && (
+              <Link to={row.cta.to} className="about-story-link">
+                {row.cta.label} <i className="fas fa-arrow-right"></i>
+              </Link>
+            )}
+          </div>
+        </article>
+      ))}
     </div>
 
-    <div className="carousel-wrapper">
-      <Carousel images={activities} />
-    </div>
   </div>
 </section>
       <section className="esdeveniments-section section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Propers esdeveniments</h2>
+            <h2 className="section-title">Esdeveniments</h2>
           </div>
           <div className="events-grid">
             <div className="event-card aessbot-card">
+              <div className="event-image">
+                <img src="/images/aessbot/Cartell-original-DIN.png" alt="Cartell AESSBot 2026" />
+              </div>
               <div className="event-card-content">
                 <div className="event-card-header">
-                  <div className="event-badge">./aessbot.event</div>
+                  <div className="event-meta">
+                    <span className="event-badge">./aessbot.event</span>
+                    <span className="event-status event-status-ended">Finalitzat</span>
+                  </div>
                   <h3>AESSBot 2026</h3>
-                  <p>La competició de robòtica més esperada de la UPC. Construeix el teu propi robot minisumo i competeix contra altres equips en una batalla d'enginyeria i estratègia.</p>
-                </div>
-                <div className="event-details">
-                  <div className="detail-item">
-                    <i className="fas fa-trophy"></i>
-                    <div>
-                      <span className="detail-value">Més de 1.000€</span>
-                      <span className="detail-label">En premis</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-certificate"></i>
-                    <div>
-                      <span className="detail-value">1 ECTS</span>
-                      <span className="detail-label">Per arribar a la final</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-calendar-alt"></i>
-                    <div>
-                      <span className="detail-value">Feb 18 - Mai 6</span>
-                      <span className="detail-label">Durada de la competició</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-robot"></i>
-                    <div>
-                      <span className="detail-value">16 robots</span>
-                      <span className="detail-label">3 persones per equip</span>
-                    </div>
-                  </div>
+                  <p>Competició de robots minisumo on cada equip dissenya, construeix i programa el seu robot per competir dins del ring.</p>
+                  <span className="event-date">18 febrer - 6 maig 2026</span>
                 </div>
                 <div className="event-actions">
                   <Link to="/aessbot" className="btn btn-primary">
-                    <i className="fas fa-info-circle"></i> Més informació
-                  </Link>
-                  <Link to="/aessbot-inscripcio" className="btn btn-secondary">
-                    <i className="fas fa-user-plus"></i> Inscriu-te!
+                    <i className="fas fa-info-circle"></i> Més info
                   </Link>
                 </div>
-              </div>
-              <div className="event-image">
-                <img src="/images/aessbot/Cartell-original-DIN.png" alt="AESSBot 2026" />
               </div>
             </div>
 
             <div className="event-card cursos-card">
+              <div className="event-image">
+                <img src="/images/cursos/cursos-aess-26-febrer-fixed.png" alt="Cartell cursos AESS" />
+              </div>
               <div className="event-card-content">
                 <div className="event-card-header">
-                  <div className="event-badge">./cursos.event</div>
+                  <div className="event-meta">
+                    <span className="event-badge">./cursos.event</span>
+                    <span className="event-status event-status-ended">Finalitzat</span>
+                  </div>
                   <h3>Cursos</h3>
-                  <p>Desenvolupa habilitats pràctiques en robòtica i electrònica amb els nostres cursos intensius. Tots els cursos es fan en períodes no lectius (gener-febrer i juny-juliol).</p>
-                </div>
-                <div className="event-details">
-                  <div className="detail-item">
-                    <i className="fas fa-certificate"></i>
-                    <div>
-                      <span className="detail-value">1 ECTS</span>
-                      <span className="detail-label">Per curs aprovat</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-users"></i>
-                    <div>
-                      <span className="detail-value">Places limitades</span>
-                      <span className="detail-label">Reserva la teva aviat</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-calendar-alt"></i>
-                    <div>
-                      <span className="detail-value">Properament</span>
-                      <span className="detail-label">Properament</span>
-                    </div>
-                  </div>
-                  <div className="detail-item">
-                    <i className="fas fa-tools"></i>
-                    <div>
-                      <span className="detail-value">Tallers pràctics</span>
-                      <span className="detail-label">Robòtica i electrònica</span>
-                    </div>
-                  </div>
+                  <p>Formacions pràctiques d'AESS per aprendre robòtica, electrònica, programació i eines aplicades a projectes reals.</p>
+                  <span className="event-date">Edició febrer 2026</span>
                 </div>
                 <div className="event-actions">
                   <Link to="/cursos" className="btn btn-primary">
-                    <i className="fas fa-info-circle"></i> Més informació
+                    <i className="fas fa-info-circle"></i> Més info
                   </Link>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfPPmNP2heuAxZne8FewLPJgNdluvf332XoYgQdJmhzzoZDZA/viewform?usp=header"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                  >
-                    <i className="fas fa-user-plus"></i> Inscriu-te!
-                  </a>
                 </div>
-              </div>
-              <div className="event-image">
-                <img src="/images/cursos/cursos-aess-26-febrer-fixed.png" alt="Cursos AESS" />
               </div>
             </div>
           </div>

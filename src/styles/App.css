@@ -16,7 +16,7 @@
   content: '';
   display: block;
   height: 100px;
-  background: linear-gradient(180deg, rgba(6, 23, 38, 0) 0%, rgba(6, 23, 38, 1) 100%);
+  background: var(--bg-dark);
   margin-top: -100px;
   pointer-events: none;
 }
@@ -217,9 +217,7 @@
 .timeline-section,
 .gallery-section,
 .faq-section {
-  background:
-    linear-gradient(180deg, rgba(6, 23, 38, 0) 0%, rgba(56, 189, 248, 0.06) 100%),
-    rgba(6, 23, 38, 0.18) !important;
+  background: var(--bg-dark) !important;
 }
 
 .about-mosaic-card,
@@ -238,9 +236,7 @@
 .carousel-container {
   border: 1px solid var(--border) !important;
   border-radius: 8px !important;
-  background:
-    linear-gradient(145deg, rgba(6, 23, 38, 0.82), rgba(56, 189, 248, 0.06)),
-    rgba(2, 8, 23, 0.64) !important;
+  background: rgba(7, 24, 42, 0.86) !important;
   box-shadow: inset 0 0 32px rgba(56, 189, 248, 0.05), var(--shadow-md) !important;
 }
 

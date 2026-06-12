@@ -1,7 +1,5 @@
 .site-footer {
-  background:
-    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08), transparent 34%),
-    rgba(2, 8, 23, 0.74);
+  background: var(--bg-dark);
   color: var(--text-secondary);
   padding: var(--space-4xl) 0 var(--space-xl);
   margin-top: var(--space-3xl);

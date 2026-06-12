@@ -19,16 +19,16 @@
   --error: #ef4444;
 
   /* Background Colors */
-  --bg-dark: #061726;
-  --bg-darker: #020817;
-  --bg-light: #0b2438;
+  --bg-dark: #07182a;
+  --bg-darker: #07182a;
+  --bg-light: #0c2338;
   --bg-card: rgba(56, 189, 248, 0.08);
 
   /* Text Colors - Improved Contrast */
-  --text-primary: #d8f3ff;
-  --text-secondary: rgba(216, 243, 255, 0.78);
-  --text-muted: rgba(216, 243, 255, 0.58);
-  --text-disabled: rgba(216, 243, 255, 0.38);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.82);
+  --text-muted: rgba(255, 255, 255, 0.62);
+  --text-disabled: rgba(255, 255, 255, 0.42);
 
   /* Border */
   --border: rgba(56, 189, 248, 0.28);
@@ -125,10 +125,7 @@ body {
   font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:
-    radial-gradient(circle at 50% 8%, rgba(56, 189, 248, 0.14), transparent 30%),
-    radial-gradient(circle at 12% 70%, rgba(56, 189, 248, 0.08), transparent 26%),
-    var(--bg-dark);
+  background: var(--bg-dark);
   color: var(--text-primary);
   line-height: var(--leading-relaxed);
   overflow-x: hidden;

@@ -40,9 +40,7 @@
 }
 
 .que-fem-section {
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(30, 41, 59, 0.22) 100%),
-    rgba(30, 41, 59, 0.2);
+  background: var(--bg-dark);
   position: relative;
   overflow: hidden;
 }
@@ -61,15 +59,9 @@
 }
 
 .que-fem-header {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .que-fem-header .section-title {
@@ -77,195 +69,204 @@
 }
 
 .que-fem-header .section-subtitle {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
 }
 
-.about-mosaic {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: minmax(150px, auto);
-  gap: 14px;
+.about-story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
   margin-bottom: var(--space-4xl);
 }
 
-.about-mosaic-card {
+.about-story::before {
+  content: none;
+}
+
+.about-story-row {
   position: relative;
-  display: flex;
-  min-height: 150px;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.65rem;
-  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
   overflow: hidden;
-  isolation: isolate;
-  border: 1px solid var(--border-strong) !important;
-  border-radius: 6px !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(56, 189, 248, 0.09), rgba(56, 189, 248, 0.02)),
-    rgba(2, 8, 23, 0.58) !important;
-  color: var(--text-primary);
-  box-shadow: inset 0 0 36px rgba(56, 189, 248, 0.05) !important;
-  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+    linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(56, 189, 248, 0.02)),
+    rgba(2, 8, 23, 0.88);
+  box-shadow: inset 0 0 44px rgba(56, 189, 248, 0.06), 0 18px 44px rgba(0, 0, 0, 0.22);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 }
 
-.about-mosaic a.about-mosaic-card:not(.btn):not(.nav-link) {
-  display: flex;
+.about-story-row::before {
+  content: none;
 }
 
-.about-mosaic-card-main {
-  grid-column: span 2;
-  grid-row: span 2;
-  justify-content: flex-start;
+.about-story-row:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: inset 0 0 48px rgba(56, 189, 248, 0.08), 0 24px 54px rgba(0, 0, 0, 0.28);
+}
+
+.about-story-row-reverse {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-story-row-reverse .about-story-media {
+  order: 2;
+}
+
+.about-story-row-reverse .about-story-content {
+  order: 1;
+}
+
+.about-story-media {
+  position: relative;
   min-height: 0;
-  padding: 1.45rem;
-  background:
-    linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(2, 8, 23, 0.1)),
-    rgba(2, 8, 23, 0.48) !important;
+  height: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  border-right: 1px solid var(--border);
+  background: rgba(2, 8, 23, 0.7);
+  box-shadow: inset 0 0 36px rgba(56, 189, 248, 0.05);
 }
 
-.about-mosaic-card-tall {
-  grid-row: span 2;
+.about-story-row-reverse .about-story-media {
+  border-right: 0;
+  border-left: 1px solid var(--border);
 }
 
-.about-mosaic-card-wide {
-  grid-column: span 2;
-  min-height: 150px;
-}
-
-.about-mosaic-card::before {
+.about-story-media::after {
   content: '';
   position: absolute;
-  right: 1rem;
-  bottom: 0.75rem;
-  z-index: -1;
-  height: auto;
-  background: none !important;
-  color: rgba(56, 189, 248, 0.12);
-  font-size: 2.35rem;
-  font-weight: 900;
-  line-height: 1;
-  opacity: 1;
-  transition: opacity var(--transition-base);
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
 }
 
-.about-mosaic-card-main::before {
-  content: '>';
-  position: static;
-  z-index: 1;
-  height: auto;
-  margin-bottom: -0.2rem;
-  color: var(--primary);
-  background: none !important;
-  font-size: clamp(3.1rem, 4.4vw, 4.6rem);
-  font-weight: 900;
-  line-height: 0.8;
+.about-story-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.03) contrast(1.04);
+  transition: transform var(--transition-base), filter var(--transition-base);
 }
 
-a.about-mosaic-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.16), inset 0 0 36px rgba(56, 189, 248, 0.07) !important;
-  color: #fff;
+.about-story-row:hover .about-story-media img {
+  transform: scale(1.025);
+  filter: saturate(1.12) contrast(1.06);
 }
 
-.about-mosaic-card:hover::before {
-  opacity: 1;
+.about-story-content {
+  --about-story-padding: clamp(1.2rem, 3vw, 2rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  min-height: clamp(260px, 28vw, 390px);
+  padding: var(--about-story-padding);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--font-mono);
+  overflow: hidden;
 }
 
-.about-mosaic-icon {
-  display: none;
+.about-story-command {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-self: stretch;
+  margin: calc(var(--about-story-padding) * -1) calc(var(--about-story-padding) * -1) 0.25rem;
+  padding: 0.6rem var(--about-story-padding);
+  border-bottom: 1px solid var(--border);
+  color: var(--primary-light);
+  background: rgba(0, 0, 0, 0.28);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.about-story-prompt {
+  color: var(--text-secondary);
+}
+
+.about-story-icon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: var(--space-sm);
-  border: 1px solid rgba(96, 165, 250, 0.25);
-  border-radius: var(--radius-sm);
-  color: #fde68a;
-  background: rgba(96, 165, 250, 0.12);
-  font-size: 1.2rem;
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  font-size: 1.05rem;
 }
 
-.about-mosaic-eyebrow {
-  width: fit-content;
-  color: var(--primary-light);
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.about-mosaic-card h3 {
+.about-story-content h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
-  line-height: 1.15;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
-.about-mosaic-card-main h3 {
-  max-width: 13ch;
-  color: #e7f8ff;
-  font-size: clamp(2.75rem, 4.7vw, 4.35rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-}
-
-.about-mosaic-card p {
+.about-story-content p {
+  max-width: 58ch;
   margin: 0;
   color: var(--text-secondary);
-  line-height: 1.5;
-  font-weight: 600;
-}
-
-.about-mosaic-card p + p {
-  margin-top: var(--space-sm);
-}
-
-.about-mosaic-card-main p {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 55ch;
   font-size: 1rem;
-  line-height: 1.55;
+  font-weight: 600;
+  line-height: 1.65;
 }
 
-.about-mosaic-tags {
+.about-story-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  margin-top: var(--space-sm);
+  margin-top: 0.2rem;
 }
 
-.about-mosaic-tags span {
+.about-story-tags span {
   display: inline-flex;
   align-items: center;
   min-height: 2.2rem;
   padding: 0.45rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  border-radius: 6px;
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(56, 189, 248, 0.08);
   font-size: 0.9rem;
   font-weight: 700;
 }
 
-.about-mosaic-link {
+.about-story-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
   width: fit-content;
-  margin-top: var(--space-sm);
+  margin-top: 0.15rem;
   color: var(--primary-light);
   font-weight: 800;
 }
 
-.about-mosaic-link i {
+.about-story-link i {
   transition: transform var(--transition-fast);
 }
 
-.about-mosaic-link:hover i {
+.about-story-link:hover i {
   transform: translateX(4px);
 }
 
@@ -340,16 +341,8 @@ a.about-mosaic-card:hover {
   line-height: 1.7;
 }
 
-.carousel-wrapper {
-  position: relative;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-}
-
 .esdeveniments-section {
-  background:
-    linear-gradient(180deg, rgba(6, 23, 38, 0) 0%, rgba(56, 189, 248, 0.05) 100%),
-    rgba(2, 8, 23, 0.18);
+  background: var(--bg-dark);
   position: relative;
 }
 
@@ -367,8 +360,8 @@ a.about-mosaic-card:hover {
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
   margin-top: var(--space-2xl);
 }
 
@@ -382,9 +375,9 @@ a.about-mosaic-card:hover {
   position: relative;
   overflow: hidden;
   transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
-  display: flex;
-  flex-direction: column;
-  height: auto;
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  min-height: 220px;
   box-shadow: inset 0 0 36px rgba(56, 189, 248, 0.05);
 }
 
@@ -410,10 +403,10 @@ a.about-mosaic-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.4rem;
-  min-height: 460px;
-  order: 1;
-  border-bottom: 1px solid var(--border);
+  padding: 0;
+  min-height: 100%;
+  aspect-ratio: 210 / 297;
+  border-right: 1px solid var(--border);
 }
 
 .event-image::before {
@@ -423,8 +416,7 @@ a.about-mosaic-card:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12), transparent 42%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -434,15 +426,12 @@ a.about-mosaic-card:hover {
 
 .event-image img {
   width: 100%;
-  max-width: 350px;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: contain;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  box-shadow:
-    0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(56, 189, 248, 0.15);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1;
@@ -450,19 +439,16 @@ a.about-mosaic-card:hover {
 
 .event-card:hover .event-image img {
   transform: scale(1.015) translateY(-2px);
-  box-shadow:
-    0 30px 60px -12px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(56, 189, 248, 0.24);
 }
 
 /* Content section */
 .event-card-content {
-  padding: 1.25rem;
+  padding: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  order: 2;
+  gap: 0.9rem;
   flex: 1;
+  min-width: 0;
 }
 
 .event-card-header {
@@ -478,8 +464,34 @@ a.about-mosaic-card:hover {
   border-radius: 0;
   font-size: 0.9rem;
   font-weight: 800;
-  margin-bottom: 0.65rem;
   transition: all 0.3s ease;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.event-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0.22rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  background: rgba(56, 189, 248, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.event-status-ended {
+  border-color: rgba(250, 204, 21, 0.32);
+  color: var(--accent);
+  background: rgba(250, 204, 21, 0.08);
 }
 
 .event-card:hover .event-badge {
@@ -487,9 +499,9 @@ a.about-mosaic-card:hover {
 }
 
 .event-card h3 {
-  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+  font-size: clamp(1.25rem, 1.5vw, 1.55rem);
   font-weight: 800;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
   background: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--text-primary);
@@ -511,6 +523,22 @@ a.about-mosaic-card:hover {
   font-size: 1rem;
   flex: 0 0 auto;
   min-height: 5.1rem;
+}
+
+.event-card-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.event-date {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  color: var(--primary-light);
+  font-size: 0.86rem;
+  font-weight: 800;
 }
 
 .event-details {
@@ -565,21 +593,21 @@ a.about-mosaic-card:hover {
 .event-actions {
   display: flex;
   gap: 0.7rem;
-  justify-content: stretch;
+  justify-content: flex-start;
   flex: 0 0 auto;
   margin-top: auto;
 }
 
 .event-actions .btn {
-  flex: 1;
+  flex: 0 0 auto;
   justify-content: center;
-  padding: 0.78rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.68rem 0.9rem;
+  font-size: 0.86rem;
   font-weight: 800;
 }
 
 .faq-section {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%);
+  background: var(--bg-dark);
 }
 
 .faq-cta {
@@ -597,24 +625,31 @@ a.about-mosaic-card:hover {
 }
 
 @media (max-width: 1024px) {
-  .about-mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .about-story {
+    gap: var(--space-2xl);
   }
 
-  .about-mosaic-card-main {
-    grid-column: span 2;
-    grid-row: auto;
-    min-height: auto;
+  .about-story::before,
+  .about-story-row::before {
+    content: none;
   }
 
-  .about-mosaic-card-tall,
-  .about-mosaic-card-wide {
-    grid-column: span 1;
-    grid-row: auto;
+  .about-story-row,
+  .about-story-row-reverse {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .about-mosaic-card-main h3 {
-    max-width: 14ch;
+  .about-story-row-reverse .about-story-media,
+  .about-story-row-reverse .about-story-content {
+    order: initial;
+  }
+
+  .about-story-media {
+    min-height: clamp(260px, 48vw, 390px);
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--border);
   }
 
   .events-grid {
@@ -622,17 +657,8 @@ a.about-mosaic-card:hover {
     gap: 1.25rem;
   }
 
-  .event-image {
-    min-height: 420px;
-  }
-
-  .event-image img {
-    max-width: 320px;
-  }
-
-  .event-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+  .event-card {
+    grid-template-columns: 190px minmax(0, 1fr);
   }
 
   .cards-grid {
@@ -647,26 +673,18 @@ a.about-mosaic-card:hover {
     justify-content: center;
   }
 
-  .about-mosaic {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: var(--space-lg);
+  .about-story {
+    gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
   }
 
-  .about-mosaic-card,
-  .about-mosaic-card-main,
-  .about-mosaic-card-tall,
-  .about-mosaic-card-wide {
-    grid-column: auto;
-    grid-row: auto;
+  .about-story-content {
+    --about-story-padding: var(--space-xl);
     min-height: auto;
-    padding: var(--space-xl);
   }
 
-  .about-mosaic-card-main h3 {
-    font-size: 2.4rem;
-    max-width: 12ch;
+  .about-story-media {
+    min-height: 260px;
   }
 
   .events-grid {
@@ -674,13 +692,21 @@ a.about-mosaic-card:hover {
     gap: 1rem;
   }
 
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+
   .event-image {
-    min-height: 360px;
-    padding: 1rem;
+    min-height: auto;
+    width: 100%;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
   }
 
   .event-image img {
-    max-width: 280px;
+    max-width: none;
+    max-height: none;
   }
 
   .event-card-content {
@@ -693,12 +719,12 @@ a.about-mosaic-card:hover {
   }
 
   .event-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.75rem;
   }
 
   .event-actions .btn {
-    flex: 1;
+    flex: 0 0 auto;
     padding: 0.75rem 1rem;
     font-size: 0.875rem;
   }
@@ -719,30 +745,25 @@ a.about-mosaic-card:hover {
     margin-bottom: var(--space-xl);
   }
 
-  .about-mosaic-card,
-  .about-mosaic-card-main,
-  .about-mosaic-card-tall,
-  .about-mosaic-card-wide {
-    padding: var(--space-lg);
+  .about-story-content {
+    --about-story-padding: var(--space-lg);
   }
 
-  .about-mosaic-card-main h3 {
-    font-size: 2rem;
-    max-width: none;
+  .about-story-media {
+    min-height: 220px;
   }
 
-  .about-mosaic-card-main p,
-  .about-mosaic-card p {
+  .about-story-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .about-story-content p {
     font-size: 0.95rem;
   }
 
-  .about-mosaic-tags span {
+  .about-story-tags span {
     min-height: 2rem;
     font-size: 0.82rem;
-  }
-
-  .about-mosaic-card h3 {
-    font-size: 1.25rem;
   }
 
   .home-hero-event,
@@ -782,12 +803,14 @@ a.about-mosaic-card:hover {
   }
 
   .event-image {
-    min-height: 320px;
-    padding: 0.85rem;
+    min-height: auto;
+    width: 100%;
+    padding: 0;
   }
 
   .event-image img {
-    max-width: 240px;
+    max-width: none;
+    max-height: none;
   }
 
   .event-card-content {
@@ -795,16 +818,7 @@ a.about-mosaic-card:hover {
   }
 
   .event-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .event-details {
-    gap: 0.625rem;
-  }
-
-  .detail-item {
-    padding: 0.75rem;
-    gap: 0.625rem;
+    font-size: 1.35rem;
   }
 
   /* Compact "Que fem?" for mobile */
