@@ -148,7 +148,6 @@
   right: 0.32rem;
   bottom: 0.24rem;
   color: var(--accent);
-  animation: terminal-caret 1s steps(2, start) infinite;
 }
 
 .dropdown {
@@ -414,12 +413,6 @@
 .mobile-dropdown-menu a.active {
   color: var(--primary-light);
   padding-left: 1.35rem;
-}
-
-@keyframes terminal-caret {
-  50% {
-    opacity: 0;
-  }
 }
 
 @media (max-width: 1024px) {

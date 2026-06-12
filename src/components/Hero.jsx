@@ -7,19 +7,31 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
     : ''
 
   const terminalLogs = [
-    { code: '[0x456E686F72]', text: '> boot aess-estudiants.service' },
-    { code: '[0x61626F6E61]', status: '[ OK ]', text: 'kernel: robotics-community loaded' },
-    { code: '[0x212056696E]', status: '[ OK ]', text: 'mount /campus-nord/upc' },
-    { code: '[0x6520616C20]', status: '[ OK ]', text: 'load module: aessbot.minisumo' },
-    { code: '[0x74616C6C65]', status: '[ OK ]', text: 'load module: cursos.tallers' },
-    { code: '[0x7220692065]', status: '[ OK ]', text: 'load module: projectes.robotica' },
-    { code: '[0x7420636F6E]', status: '[ OK ]', text: 'load module: comunitat.estudiants' },
-    { code: '[0x766964656D]', text: '> checking materials ........ ready' },
-    { code: '[0x206120756E]', text: '> checking motors ........... ready' },
-    { code: '[0x6120636572]', text: '> checking sensors .......... ready' },
-    { code: '[0x7665736121]', text: '> checking curiosity ........ unlimited' },
-    { text: '> status: associacio inicialitzada' }
-  ]
+  { code: '[0x456E]', text: '> boot aess-estudiants.service' },
+
+  { code: '[0x686F]', status: '[ OK ]', text: 'mount /upc/etsetb/campus-nord/omega/s203' },
+  { code: '[0x7261]', status: '[ OK ]', text: 'detected students who say "això ho podem fer nosaltres"' },
+
+  { code: '[0x626F]', status: '[ OK ]', text: 'load module: aessbot' },
+  { code: '[0x6E61]', status: '[ OK ]', text: 'load module: courses' },
+  { code: '[0x2120]', status: '[ OK ]', text: 'load module: projects' },
+
+  { code: '[0x504C4134]', status: '[ OK ]', text: 'start daemon: perreo coding' },
+
+  { code: '[0x6C6C]', status: '[ OK ]', text: 'checking 3D printers...' },
+  { code: '[0x6572]', status: '[WARN]', text: 'soldering iron temperature: probably too hot' },
+  { code: '[0x2072]', status: '[ERR]', text: 'found bug: it was plugged backwards' },
+
+  { code: '[0x756E]', status: '[ OK ]', text: 'fsck /projects: clean, 42 ideas pending' },
+  { code: '[0x6120]', status: '[ OK ]', text: 'network: new members welcome' },
+  { code: '[0x626972]', status: '[ OK ]', text: 'chmod +rwx /students/ideas' },
+  { code: '[0x677261]', status: '[ OK ]', text: 'cron: after-class project days scheduled' },
+
+  { code: '[0x746973]', status: '[ OK ]', text: 'checking curiosity ..... unlimited' },
+
+  { text: '> status: association initialized' },
+  { text: '> next: join a workshop · start a project · build something' }
+];
 
   const terminalLogDelays = useMemo(() => {
     const intervals = terminalLogs.map(() => 0.2 + Math.random())

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Analytics } from '@vercel/analytics/react';
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
@@ -5,6 +6,8 @@ import FAQ from '../components/FAQ'
 import './Home.css'
 
 const Home = () => {
+  const [activeAboutIndex, setActiveAboutIndex] = useState(0)
+
   const activities = [
     '/images/aess/qui-som/qui-som8.png',
     '/images/aess/qui-som/qui-som1.jpeg',
@@ -64,11 +67,11 @@ const Home = () => {
     {
       eyebrow: './associacio.md',
       title: 'AESS és aprendre fent',
-      description: 'Som l\'associació de robòtica de l\'ETSETB, fundada el 1999 i oberta a qualsevol persona amb ganes de crear, provar i compartir hores al taller.',
+      description: 'Associació de robòtica de l\'ETSETB, activa des de 1999 i oberta a gent amb ganes de crear.',
       image: activities[0],
       alt: 'Membres d\'AESS participant en una activitat de robòtica',
       icon: 'fas fa-terminal',
-      tags: ['Projectes pràctics', 'Taller i eines', 'Cursos', 'Competicions'],
+      tags: ['Projectes', 'Taller', 'Cursos', 'Competicions'],
       cta: {
         label: 'Vine a conèixer-nos',
         to: '/uneix-te'
@@ -76,8 +79,8 @@ const Home = () => {
     },
     {
       eyebrow: './projectes.md',
-      title: 'Fem robots i invents diversos',
-      description: 'Barregem electrònica, mecànica, programació i moltes proves fins que allò que teníem al cap comença a funcionar.',
+      title: 'Robots i invents',
+      description: 'Electrònica, mecànica, codi i proves fins que la idea arrenca.',
       image: activities[1],
       alt: 'Projecte de robòtica desenvolupat per membres d\'AESS',
       icon: 'fas fa-project-diagram',
@@ -88,16 +91,16 @@ const Home = () => {
     },
     {
       eyebrow: './comunitat.md',
-      title: 'Persones d\'àmbits diversos',
-      description: 'Hi participa gent de Telecos, la FIB, altres escoles de la UPC i persones amb curiositat per aprendre fent.',
+      title: 'Comunitat UPC',
+      description: 'Gent de Telecos, FIB, altres escoles i perfils curiosos.',
       image: activities[2],
       alt: 'Grup de membres d\'AESS compartint una activitat',
       icon: 'fas fa-users'
     },
     {
       eyebrow: './taller.md',
-      title: 'Un lloc on provar coses sense por',
-      description: 'Tenim eines, material i gent que et pot donar un cop de mà. No cal venir sabent soldar, programar o dissenyar.',
+      title: 'Taller sense por',
+      description: 'Eines, material i ajuda. No cal venir sabent-ho tot.',
       image: activities[3],
       alt: 'Espai de taller amb material i eines per a projectes',
       icon: 'fas fa-tools'
@@ -105,7 +108,7 @@ const Home = () => {
     {
       eyebrow: './cursos.md',
       title: 'Formació pràctica',
-      description: 'Fem tallers i cursos per aprendre electrònica, programació, disseny 3D, robòtica i eines aplicables a projectes reals.',
+      description: 'Tallers de robòtica, programació, electrònica i disseny 3D.',
       image: activities[4],
       alt: 'Sessió formativa organitzada per AESS',
       icon: 'fas fa-graduation-cap',
@@ -116,8 +119,8 @@ const Home = () => {
     },
     {
       eyebrow: './aessbot.md',
-      title: 'Organitzem competicions de robots',
-      description: 'AESSBot és la nostra competició minisumo: cada equip dissenya, construeix i programa el seu robot per competir dins d\'un ring.',
+      title: 'AESSBot',
+      description: 'Competició minisumo: dissenya, construeix i programa el robot.',
       image: activities[5],
       alt: 'Competició de robots minisumo AESSBot',
       icon: 'fas fa-robot',
@@ -128,8 +131,8 @@ const Home = () => {
     },
     {
       eyebrow: './vida-associativa.md',
-      title: 'No tot és soldar, compilar i apretar cargols',
-      description: 'Els projectes són l\'excusa perfecta per conèixer gent i formar part d\'una comunitat que es mou més enllà del taller.',
+      title: 'Vida associativa',
+      description: 'Els projectes també són una excusa per conèixer gent.',
       image: activities[6],
       alt: 'Vida associativa i activitats amb membres d\'AESS',
       icon: 'fas fa-university',
@@ -139,6 +142,31 @@ const Home = () => {
       }
     }
   ]
+
+  const upcomingEvents = [
+    {
+      file: './aessbot-2026.md',
+      title: 'AESSBot 2026',
+      description: 'Competició de robots minisumo on cada equip dissenya, construeix i programa el seu robot per competir dins del ring.',
+      date: '18 febrer - 6 maig 2026',
+      status: 'Finalitzat',
+      image: '/images/aessbot/Cartell-original-DIN.png',
+      alt: 'Cartell AESSBot 2026',
+      to: '/aessbot'
+    },
+    {
+      file: './cursos-hivern-2026',
+      title: 'Cursos',
+      description: 'Formacions pràctiques d\'AESS per aprendre robòtica, electrònica, programació i eines aplicades a projectes reals.',
+      date: 'Edició febrer 2026',
+      status: 'Finalitzat',
+      image: '/images/cursos/cursos-aess-26-febrer-fixed.png',
+      alt: 'Cartell cursos AESS',
+      to: '/cursos'
+    }
+  ]
+
+  const activeAbout = aboutRows[activeAboutIndex]
 
   return (
     <div className="home">
@@ -152,109 +180,151 @@ const Home = () => {
         <div className="home-hero-join">
           <Link to="/uneix-te" className="cli-join-button" aria-label="Join AESS">
             <pre aria-hidden="true">{`┌────────────────┐
-│ `}<b>&gt;</b>{` JOIN AESS `}<i>█</i>{`  │
+│ `}<b>&gt;</b>{` JOIN AESS `}<i>█</i>{` │
 └────────────────┘`}</pre>
           </Link>
         </div>
       </Hero>
-<section className="que-fem-section section">
-  <div className="container">
-    <div className="section-header que-fem-header">
-      <h2 className="section-title">Qui som i què fem?</h2>
-      <p className="section-subtitle">
-        Som una associació d'estudiants on aprenem construint. Organitzem tallers,
-        competicions i projectes perquè qualsevol persona amb curiositat per la
-        tecnologia pugui començar, equivocar-se, aprendre i acabar fent coses que funcionen.
-      </p>
-    </div>
+      <section className="que-fem-section section">
+        <div className="container">
+          <div className="about-terminal" aria-label="Informació sobre AESS i les seves activitats">
+            <div className="about-terminal-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>cd /qui-som</strong>
+            </div>
 
-    <div className="about-story" aria-label="Informació sobre AESS i les seves activitats">
-      {aboutRows.map((row, index) => (
-        <article
-          className={`about-story-row ${index % 2 === 1 ? 'about-story-row-reverse' : ''}`}
-          key={row.eyebrow}
-        >
-          <div className="about-story-media">
-            <img src={row.image} alt={row.alt} loading="lazy" />
-          </div>
-          <div className="about-story-content">
-            <div className="about-story-command">
-              <span className="about-story-prompt">aess@estudiants:~$</span>
-              <span className="about-story-command-name">cat</span>
-              <span>{row.eyebrow}</span>
-            </div>
-            <div className="about-story-icon" aria-hidden="true">
-              <i className={row.icon}></i>
-            </div>
-            <h3>{row.title}</h3>
-            <p>{row.description}</p>
-            {row.tags && (
-              <div className="about-story-tags" aria-label="Àrees principals d'AESS">
-                {row.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+            <div className="about-terminal-intro">
+              <div className="about-terminal-copy">
+                <h2>Qui som i què fem?</h2>
+                <p>
+                  Som una associació d'estudiants on aprenem construint: projectes,
+                  tallers, competicions i moltes proves al taller.
+                </p>
               </div>
-            )}
-            {row.cta && (
-              <Link to={row.cta.to} className="about-story-link">
-                {row.cta.label} <i className="fas fa-arrow-right"></i>
-              </Link>
-            )}
-          </div>
-        </article>
-      ))}
-    </div>
+            </div>
 
-  </div>
-</section>
+            <div className="about-cli-shell">
+              <nav className="about-cli-menu" aria-label="Menú de seccions sobre AESS">
+                <p className="about-cli-prompt">
+                  <span>aess:~$</span> select --section
+                </p>
+                <div className="about-cli-options" role="tablist" aria-label="Apartats de Qui som i què fem">
+                  {aboutRows.map((row, index) => (
+                    <button
+                      type="button"
+                      className={`about-cli-option ${index === activeAboutIndex ? 'is-active' : ''}`}
+                      key={row.eyebrow}
+                      onClick={() => setActiveAboutIndex(index)}
+                      role="tab"
+                      aria-selected={index === activeAboutIndex}
+                      aria-controls="about-cli-output"
+                      id={`about-cli-tab-${index}`}
+                    >
+                      <span className="about-cli-index">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="about-cli-caret">&gt;</span>
+                      <span>{row.eyebrow}</span>
+                    </button>
+                  ))}
+                </div>
+              </nav>
+
+              <article
+                className="about-cli-output"
+                id="about-cli-output"
+                role="tabpanel"
+                aria-labelledby={`about-cli-tab-${activeAboutIndex}`}
+              >
+                <div className="about-cli-output-command">
+                  <span>aess:~$</span> cat {activeAbout.eyebrow}
+                </div>
+                <div className="about-cli-output-grid">
+                  <div className="about-cli-output-copy">
+                    <div className="about-story-icon" aria-hidden="true">
+                      <i className={activeAbout.icon}></i>
+                    </div>
+                    <h3>{activeAbout.title}</h3>
+                    <p>{activeAbout.description}</p>
+                    {activeAbout.tags && (
+                      <div className="about-story-tags" aria-label="Àrees principals d'AESS">
+                        {activeAbout.tags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                    {activeAbout.cta && (
+                      <Link to={activeAbout.cta.to} className="about-story-link">
+                        {activeAbout.cta.label} <i className="fas fa-arrow-right"></i>
+                      </Link>
+                    )}
+                  </div>
+                  <figure className="about-terminal-media about-cli-media">
+                    <img src={activeAbout.image} alt={activeAbout.alt} loading="lazy" />
+                    <figcaption>preview: {activeAbout.eyebrow}</figcaption>
+                  </figure>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="esdeveniments-section section">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Esdeveniments</h2>
-          </div>
-          <div className="events-grid">
-            <div className="event-card aessbot-card">
-              <div className="event-image">
-                <img src="/images/aessbot/Cartell-original-DIN.png" alt="Cartell AESSBot 2026" />
-              </div>
-              <div className="event-card-content">
-                <div className="event-card-header">
-                  <div className="event-meta">
-                    <span className="event-badge">./aessbot.event</span>
-                    <span className="event-status event-status-ended">Finalitzat</span>
-                  </div>
-                  <h3>AESSBot 2026</h3>
-                  <p>Competició de robots minisumo on cada equip dissenya, construeix i programa el seu robot per competir dins del ring.</p>
-                  <span className="event-date">18 febrer - 6 maig 2026</span>
-                </div>
-                <div className="event-actions">
-                  <Link to="/aessbot" className="btn btn-primary">
-                    <i className="fas fa-info-circle"></i> Més info
-                  </Link>
-                </div>
+          <div className="events-terminal" aria-label="Llistat de pròxims esdeveniments d'AESS">
+            <div className="about-terminal-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>cd /events</strong>
+            </div>
+
+            <div className="events-terminal-intro">
+              <div className="about-terminal-copy">
+                <h2>Pròxims esdeveniments</h2>
+                <p>
+                  Agenda d'activitats, cursos i competicions en mode directori:
+                  fitxes, estat i preview del cartell en una sola sortida.
+                </p>
               </div>
             </div>
 
-            <div className="event-card cursos-card">
-              <div className="event-image">
-                <img src="/images/cursos/cursos-aess-26-febrer-fixed.png" alt="Cartell cursos AESS" />
-              </div>
-              <div className="event-card-content">
-                <div className="event-card-header">
-                  <div className="event-meta">
-                    <span className="event-badge">./cursos.event</span>
-                    <span className="event-status event-status-ended">Finalitzat</span>
+            <div className="events-cli-list">
+              <p className="events-cli-command">
+                <span>aess:~/events$</span> ls -la --with-preview
+              </p>
+              {upcomingEvents.map((event, index) => (
+                <article
+                  className="event-card"
+                  key={event.file}
+                  data-file={event.file}
+                  aria-labelledby={`event-card-title-${index}`}
+                >
+                  <div className="event-cli-tree" aria-hidden="true">
+                    <span>{index === upcomingEvents.length - 1 ? '└──' : '├──'}</span>
                   </div>
-                  <h3>Cursos</h3>
-                  <p>Formacions pràctiques d'AESS per aprendre robòtica, electrònica, programació i eines aplicades a projectes reals.</p>
-                  <span className="event-date">Edició febrer 2026</span>
-                </div>
-                <div className="event-actions">
-                  <Link to="/cursos" className="btn btn-primary">
-                    <i className="fas fa-info-circle"></i> Més info
-                  </Link>
-                </div>
-              </div>
+                  <figure className="event-image">
+                    <img src={event.image} alt={event.alt} loading="lazy" />
+                  </figure>
+                  <div className="event-card-content">
+                    <div className="event-card-header">
+                      <div className="event-meta">
+                        <span className="event-index">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="event-permissions" aria-hidden="true">drwxr-xr-x</span>
+                        <span className="event-badge">{event.title}</span>
+                        <span className="event-status event-status-ended">{event.status}</span>
+                      </div>
+                      <p id={`event-card-title-${index}`}>{event.description}</p>
+                      <span className="event-date-badge">{event.date}</span>
+                    </div>
+                    <div className="event-actions">
+                      <Link to={event.to} className="event-cli-link">
+                        cd {event.file} <i className="fas fa-arrow-right"></i>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
@@ -269,8 +339,10 @@ const Home = () => {
           <FAQ items={faqs} />
           <div className="faq-cta">
             <p>No trobes el que busques?</p>
-            <Link to="/contact" className="btn btn-primary">
-              <i className="fas fa-paper-plane"></i> Contacta'ns
+            <Link to="/contact" className="cli-join-button faq-cli-button" aria-label="Contacta'ns">
+              <pre aria-hidden="true">{`┌────────────────┐
+│ `}<b>&gt;</b>{` CONTACTA'NS `}<i>█</i>{` │
+└────────────────┘`}</pre>
             </Link>
           </div>
         </div>

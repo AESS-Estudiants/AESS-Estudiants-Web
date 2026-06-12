@@ -359,7 +359,7 @@
 }
 
 .hero-terminal-tagline::before {
-  content: 'aess@estudiants:~$ ';
+  content: 'aess:~$ ';
   color: var(--primary);
   font-weight: 900;
 }
