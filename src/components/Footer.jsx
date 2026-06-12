@@ -5,81 +5,77 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-container">
-        <div className="footer-section">
-          <div className="footer-logo">
-            <img
-              src="/images/logos/aess/CubBlanc.svg"
-              alt="AESS Logo"
-              className="footer-logo-img"
-            />
-            <span>AESS Estudiants</span>
-          </div>
-          <p className="footer-description">
-            Associació d'estudiants de la UPC dedicada a la tecnologia, robòtica i innovació.
-          </p>
-          <div className="social-links">
-            <a
-              href="https://www.instagram.com/aessestudiants"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-              aria-label="Instagram"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/aess-estudiants-upc/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-              aria-label="LinkedIn"
-            >
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+        <p className="footer-command">
+          <span>aess:~$</span> tree ./connect --depth=2
+        </p>
+
+        <div className="footer-grid">
+          <section className="footer-section footer-brand" aria-labelledby="footer-brand-title">
+            <h2 id="footer-brand-title" className="sr-only">AESS Estudiants</h2>
+            <pre className="footer-ascii" aria-hidden="true">{`+------------------+
+| AESS ESTUDIANTS |
++------------------+`}</pre>
+            <p className="footer-description">
+              Associació d'estudiants de la UPC dedicada a la tecnologia, robòtica i innovació.
+            </p>
+            <nav className="social-links" aria-label="Xarxes socials">
+              <a
+                href="https://www.instagram.com/aessestudiants"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ./instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/company/aess-estudiants-upc/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ./linkedin
+              </a>
+            </nav>
+          </section>
+
+          <nav className="footer-section" aria-labelledby="footer-navigation-title">
+            <h2 className="footer-heading" id="footer-navigation-title">./navigation/</h2>
+            <ul className="quick-links">
+              <li><Link to="/aessbot"><span>|--</span> aessbot</Link></li>
+              <li><Link to="/cursos"><span>|--</span> cursos</Link></li>
+              <li><Link to="/projectes"><span>|--</span> projectes</Link></li>
+              <li><Link to="/contact"><span>`--</span> contacte</Link></li>
+            </ul>
+          </nav>
+
+          <section className="footer-section" aria-labelledby="footer-contact-title">
+            <h2 className="footer-heading" id="footer-contact-title">CONTACT</h2>
+            <dl className="contact-info">
+              <div>
+                <dt>location</dt>
+                <dd>Campus Nord UPC, Barcelona</dd>
+              </div>
+              <div>
+                <dt>email</dt>
+                <dd><a href="mailto:aess.estudiants@upc.edu">aess.estudiants@upc.edu</a></dd>
+              </div>
+              <div>
+                <dt>phone</dt>
+                <dd><a href="tel:+34934137564">+34 934 13 75 64</a></dd>
+              </div>
+            </dl>
+          </section>
         </div>
 
-        <div className="footer-section">
-          <h3 className="footer-heading">Enllaços ràpids</h3>
-          <ul className="quick-links">
-            <li><Link to="/aessbot"><i className="fas fa-chevron-right"></i> AESSBot</Link></li>
-            <li><Link to="/cursos"><i className="fas fa-chevron-right"></i> Cursos</Link></li>
-            <li><Link to="/projectes"><i className="fas fa-chevron-right"></i> Projectes</Link></li>
-            <li><Link to="/contact"><i className="fas fa-chevron-right"></i> Contacte</Link></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h3 className="footer-heading">Contacte</h3>
-          <ul className="contact-info">
-            <li>
-              <i className="fas fa-map-marker-alt"></i>
-              <span>Campus Nord UPC, Barcelona</span>
-            </li>
-            <li>
-              <i className="fas fa-envelope"></i>
-              <a href="mailto:aess.estudiants@upc.edu">aess.estudiants@upc.edu</a>
-            </li>
-            <li>
-              <i className="fas fa-phone"></i>
-              <a href="tel:+34934137564">+34 934 13 75 64</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <div className="container">
-          <p>&copy; 2025 AESS Estudiants. Tots els drets reservats.</p>
-          <div className="legal-links">
+        <div className="footer-bottom">
+          <p><span>aess:~$</span> echo "© {new Date().getFullYear()} AESS Estudiants"</p>
+          <nav className="legal-links" aria-label="Documents legals">
             <a href="/documents/Política_Privacitat.pdf" target="_blank" rel="noopener noreferrer">
-              Política de privacitat
+              [privacitat.md]
             </a>
-            <span className="divider">|</span>
             <a href="/documents/Reglament.pdf" target="_blank" rel="noopener noreferrer">
-              Normativa
+              [normativa.md]
             </a>
-          </div>
+          </nav>
+          <p className="footer-status" aria-hidden="true">[ OK ] connection closed cleanly</p>
         </div>
       </div>
     </footer>
@@ -87,4 +83,3 @@ const Footer = () => {
 }
 
 export default Footer
-

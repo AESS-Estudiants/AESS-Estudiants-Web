@@ -20,12 +20,14 @@ const FAQ = ({ items }) => {
             onClick={() => toggleItem(index)}
             aria-expanded={openIndex === index}
           >
-            <i className={item.icon || 'fas fa-question-circle'}></i>
-            <span>{item.question}</span>
-            <i className={`fas fa-chevron-${openIndex === index ? 'up' : 'down'}`}></i>
+            <span className="faq-index">{String(index + 1).padStart(2, '0')}</span>
+            <span className="faq-toggle" aria-hidden="true">
+              [{openIndex === index ? '-' : '+'}]
+            </span>
+            <span className="faq-question-text">{item.question}</span>
           </button>
           <div className="faq-answer">
-            <p>{item.answer}</p>
+            <p><span>ANSWER</span>{item.answer}</p>
           </div>
         </div>
       ))}
@@ -34,4 +36,3 @@ const FAQ = ({ items }) => {
 }
 
 export default FAQ
-

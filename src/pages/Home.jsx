@@ -332,18 +332,29 @@ const Home = () => {
 
       <section className="faq-section section">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Tens dubtes?</h2>
-            <p className="section-subtitle">Fes clic a cada pregunta per veure'n la resposta</p>
-          </div>
-          <FAQ items={faqs} />
-          <div className="faq-cta">
-            <p>No trobes el que busques?</p>
-            <Link to="/contact" className="cli-join-button faq-cli-button" aria-label="Contacta'ns">
-              <pre aria-hidden="true">{`┌────────────────┐
-│ `}<b>&gt;</b>{` CONTACTA'NS `}<i>█</i>{` │
-└────────────────┘`}</pre>
-            </Link>
+          <div className="faq-manual" aria-label="Preguntes freqüents sobre AESS">
+            <div className="faq-man-intro">
+              <h2>Tens dubtes?</h2>
+              <p>Manual ràpid per resoldre les preguntes més habituals sobre AESS.</p>
+              <p className="about-terminal-command">
+                <span>aess:~$</span> man aess-faq
+              </p>
+            </div>
+
+            <div className="faq-man-page">
+              <section className="faq-man-section" aria-labelledby="faq-man-questions">
+                <h3 id="faq-man-questions">QUESTIONS</h3>
+                <p className="faq-man-hint">Selecciona una entrada per desplegar-ne la resposta.</p>
+                <FAQ items={faqs} />
+              </section>
+
+              <section className="faq-man-section faq-man-see-also" aria-labelledby="faq-man-see-also">
+                <h3 id="faq-man-see-also">SEE ALSO</h3>
+                <Link to="/contact" className="event-cli-link" aria-label="Contacta'ns">
+                  Contacta amb nosaltres <i className="fas fa-arrow-right"></i>
+                </Link>
+              </section>
+            </div>
           </div>
         </div>
       </section>

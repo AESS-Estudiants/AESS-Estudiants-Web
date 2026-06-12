@@ -568,9 +568,9 @@
 
 .events-cli-list {
   display: grid;
-  gap: 1px;
+  gap: 0.85rem;
   padding: 0.9rem;
-  background: var(--border-light);
+  background: transparent;
 }
 
 .events-cli-command,
@@ -589,9 +589,10 @@
   line-height: 1.35;
 }
 
-.events-cli-command::before {
-  content: '> ';
-  color: var(--accent);
+.events-cli-command {
+  padding: 0 0 0.75rem;
+  border-bottom: 1px dashed var(--border-light);
+  background: transparent;
 }
 
 .events-cli-command span,
@@ -600,26 +601,22 @@
 }
 
 .event-card {
-  background:
-    linear-gradient(180deg, rgba(56, 189, 248, 0.07), rgba(2, 8, 23, 0.035)),
-    rgba(2, 8, 23, 0.78);
-  border: 0;
-  border-radius: 0;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
   padding: 0;
   position: relative;
   overflow: hidden;
-  transition: box-shadow var(--transition-base), background-color var(--transition-base);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
   display: grid;
   grid-template-columns: 3.1rem minmax(150px, 210px) minmax(0, 1fr);
   min-height: 0;
-  box-shadow: inset 0 0 36px rgba(56, 189, 248, 0.05);
+  box-shadow: none;
 }
 
 .event-card:hover {
-  background:
-    linear-gradient(180deg, rgba(56, 189, 248, 0.105), rgba(251, 191, 36, 0.035)),
-    rgba(2, 8, 23, 0.82);
-  box-shadow: inset 0 0 38px rgba(56, 189, 248, 0.09), 0 0 22px rgba(56, 189, 248, 0.08);
+  border-color: var(--border);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.08);
 }
 
 .event-cli-tree {
@@ -629,7 +626,7 @@
   padding-top: 1.05rem;
   border-right: 1px dashed var(--border-light);
   color: var(--accent-coral);
-  background: rgba(0, 0, 0, 0.12);
+  background: transparent;
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1;
@@ -638,7 +635,7 @@
 .event-image {
   position: relative;
   overflow: hidden;
-  background: rgba(2, 8, 23, 0.64);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -653,7 +650,7 @@
 }
 
 .event-card:hover .event-image {
-  background: rgba(2, 8, 23, 0.72);
+  background: transparent;
 }
 
 .event-image img {
@@ -837,22 +834,85 @@
   background: transparent;
 }
 
-.faq-cta {
+.faq-manual {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  font-family: var(--font-mono);
+  text-align: left;
+}
+
+.faq-man-intro {
+  padding-bottom: 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.faq-man-intro h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 4.5vw, 4.65rem);
+  line-height: 0.95;
   text-align: center;
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 32px rgba(56, 189, 248, 0.26);
 }
 
-.faq-cta p {
+.faq-man-intro h2::before {
+  content: '// ';
+  color: var(--accent);
+  font-size: 0.38em;
+  vertical-align: 0.42em;
+}
+
+.faq-man-intro > p:last-child {
+  max-width: none;
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  padding-bottom: 0.75rem;
+}
+
+.faq-man-intro > p:nth-child(2) {
+  max-width: 58ch;
+  margin: 0.9rem 0 0;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
-.faq-cli-button {
-  align-self: center;
+.faq-man-page {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.faq-man-section {
+  margin-top: 0;
+}
+
+.faq-man-section + .faq-man-section {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.faq-man-section h3 {
+  margin: 0 0 0.55rem;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.faq-man-section > p {
+  margin: 0;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.faq-man-section .faq-man-hint {
+  color: var(--primary-light);
+}
+
+.faq-man-see-also .event-cli-link {
+  margin-top: 0.25rem;
 }
 
 @media (max-width: 1024px) {
@@ -952,6 +1012,10 @@
     padding: 0.75rem;
   }
 
+  .events-cli-command {
+    padding: 0 0 0.75rem;
+  }
+
   .cards-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -1009,6 +1073,10 @@
 
   .about-cli-output-copy p {
     font-size: 0.84rem;
+  }
+
+  .faq-man-intro h2 {
+    font-size: clamp(1.65rem, 8vw, 2.7rem);
   }
 
 }
