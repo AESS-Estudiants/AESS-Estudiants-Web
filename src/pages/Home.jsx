@@ -7,7 +7,6 @@ import './Home.css'
 
 const Home = () => {
   const [activeAboutIndex, setActiveAboutIndex] = useState(0)
-  const [activeEventIndex, setActiveEventIndex] = useState(0)
 
   const activities = [
     '/images/aess/qui-som/qui-som8.png',
@@ -168,7 +167,6 @@ const Home = () => {
   ]
 
   const activeAbout = aboutRows[activeAboutIndex]
-  const activeEvent = upcomingEvents[activeEventIndex]
 
   return (
     <div className="home">
@@ -292,59 +290,35 @@ const Home = () => {
             </div>
 
             <div className="events-cli-shell">
-              <nav className="events-cli-menu" aria-label="Menú de pròxims esdeveniments">
-                <p className="events-cli-prompt">
-                  <span>aess:~/events$</span> select --event
-                </p>
-                <div className="events-cli-options" role="tablist" aria-label="Llistat de pròxims esdeveniments">
-                  {upcomingEvents.map((event, index) => (
-                    <button
-                      type="button"
-                      className={`events-cli-option ${index === activeEventIndex ? 'is-active' : ''}`}
-                      key={event.file}
-                      onClick={() => setActiveEventIndex(index)}
-                      role="tab"
-                      aria-selected={index === activeEventIndex}
-                      aria-controls="events-cli-output"
-                      id={`events-cli-tab-${index}`}
-                    >
-                      <span className="events-cli-index">{String(index + 1).padStart(2, '0')}</span>
-                      <span className="events-cli-caret">&gt;</span>
-                      <span>{event.title}</span>
-                    </button>
-                  ))}
-                </div>
-              </nav>
-
-              <article
-                className="events-cli-output"
-                id="events-cli-output"
-                role="tabpanel"
-                aria-labelledby={`events-cli-tab-${activeEventIndex}`}
-              >
-                <div className="events-cli-output-command">
-                  <span>aess:~/events$</span> cat {activeEvent.file}
-                </div>
-                <div className="events-cli-output-grid">
-                  <div className="events-cli-output-copy">
-                    <h3>{activeEvent.title}</h3>
-                    <p>{activeEvent.description}</p>
-                    <div className="event-meta-info">
-                      <span className="event-date-badge">{activeEvent.date}</span>
-                      <span className="event-status event-status-ended">{activeEvent.status}</span>
+              <p className="events-cli-command">
+                <span>aess:~/events$</span> ls -la --with-preview
+              </p>
+              <div className="events-list-container">
+                {upcomingEvents.map((event, index) => (
+                  <article
+                    className="event-list-item"
+                    key={event.file}
+                    data-file={event.file}
+                  >
+                    <div className="event-list-meta">
+                      <span className="event-index">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="event-permissions" aria-hidden="true">drwxr-xr-x</span>
+                      <span className="event-list-title">{event.title}</span>
+                      <span className="event-status event-status-ended">{event.status}</span>
                     </div>
-                    <div className="event-actions">
-                      <Link to={activeEvent.to} className="event-cli-link">
-                        cd {activeEvent.file} <i className="fas fa-arrow-right"></i>
+                    <p className="event-list-description">{event.description}</p>
+                    <div className="event-list-details">
+                      <span className="event-date-badge">{event.date}</span>
+                      <Link to={event.to} className="event-cli-link">
+                        cd {event.file} <i className="fas fa-arrow-right"></i>
                       </Link>
                     </div>
-                  </div>
-                  <figure className="events-terminal-media events-cli-media">
-                    <img src={activeEvent.image} alt={activeEvent.alt} loading="lazy" />
-                    <figcaption>preview: {activeEvent.file}</figcaption>
-                  </figure>
-                </div>
-              </article>
+                    <figure className="event-list-image">
+                      <img src={event.image} alt={event.alt} loading="lazy" />
+                    </figure>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
