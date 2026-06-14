@@ -1,0 +1,87 @@
+.terminal-button {
+  --terminal-button-color: var(--primary-light);
+  --terminal-button-font-size: clamp(0.88rem, 1.15vw, 1.02rem);
+  display: inline-flex;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  color: var(--terminal-button-color);
+  font-family: var(--font-mono);
+  font-size: var(--terminal-button-font-size);
+  font-weight: 900;
+  line-height: 1.05;
+  text-decoration: none;
+  white-space: pre;
+  transition: color 80ms ease-out;
+}
+
+.terminal-button--tone-primary {
+  --terminal-button-color: var(--primary-light);
+}
+
+.terminal-button--tone-accent {
+  --terminal-button-color: var(--accent-coral);
+}
+
+.terminal-button--size-sm {
+  --terminal-button-font-size: clamp(0.76rem, 1vw, 0.9rem);
+}
+
+.terminal-button--size-md {
+  --terminal-button-font-size: clamp(0.88rem, 1.15vw, 1.02rem);
+}
+
+.terminal-button--size-lg {
+  --terminal-button-font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+}
+
+.terminal-button pre {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  white-space: pre;
+}
+
+.terminal-button:hover,
+.terminal-button:focus-visible {
+  color: var(--text-primary);
+  outline: none;
+  text-shadow: none;
+}
+
+.terminal-button:hover .terminal-symbol,
+.terminal-button:focus-visible .terminal-symbol {
+  color: var(--accent);
+}
+
+.terminal-button:hover i,
+.terminal-button:focus-visible i {
+  color: var(--accent);
+  animation: blink 0.7s steps(1, end) infinite;
+}
+
+.terminal-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.terminal-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}

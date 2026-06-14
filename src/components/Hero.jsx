@@ -1,10 +1,36 @@
 import { useMemo } from 'react'
 import './Hero.css'
 
-const Hero = ({ badge, title, subtitle, description, image, stats, children, poster = false, terminal = false }) => {
+const Hero = ({
+  badge,
+  title,
+  subtitle,
+  description,
+  image,
+  stats,
+  children,
+  poster = false,
+  terminal = false,
+  asciiArt,
+  asciiImage,
+  asciiEyebrow,
+  asciiTitleArt,
+  asciiMeta = []
+}) => {
   const heroVariant = title
     ? `hero-${title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`
     : ''
+
+  const normalizeAsciiArt = (art) => {
+    const lines = art.replace(/^\n/, '').replace(/\n$/, '').split('\n')
+    const indent = Math.min(
+      ...lines
+        .filter((line) => line.trim().length > 0)
+        .map((line) => line.match(/^ */)?.[0].length ?? 0)
+    )
+
+    return lines.map((line) => line.slice(indent)).join('\n')
+  }
 
   const terminalLogs = [
   { code: '[0x456E]', text: '> boot aess-estudiants.service' },
@@ -44,6 +70,24 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
     })
   }, [])
 
+  const renderTerminalText = (text) => {
+    const trimmed = text.trim()
+    const hasPrompt = trimmed.startsWith('>')
+    const body = hasPrompt ? trimmed.slice(1).trimStart() : trimmed
+    const firstSpaceIndex = body.indexOf(' ')
+    const firstToken = firstSpaceIndex === -1 ? body : body.slice(0, firstSpaceIndex)
+    const remainder = firstSpaceIndex === -1 ? '' : body.slice(firstSpaceIndex)
+
+    return (
+      <>
+        {hasPrompt && <span className="terminal-symbol" aria-hidden="true">&gt;</span>}
+        {hasPrompt && ' '}
+        <span className="terminal-command">{firstToken}</span>
+        {remainder}
+      </>
+    )
+  }
+
   const renderStats = () => (
     stats && (
       <div className={`hero-stats ${poster ? 'hero-stats-poster' : ''}`}>
@@ -82,16 +126,62 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
             {log.code && ' '}
             {log.status && <em>{log.status}</em>}
             {log.status && ' '}
-            {log.text}
+            {renderTerminalText(log.text)}
           </span>
         ))}
       </div>
     </section>
   )
 
+  const renderAsciiHero = () => (
+    <>
+      <div className="ascii-hero-copy">
+        {asciiEyebrow !== null && (
+          <p className="ascii-hero-path">{asciiEyebrow || `./${heroVariant.replace('hero-', '')}.md`}</p>
+        )}
+        {asciiTitleArt ? (
+          <div className="ascii-hero-title-wrap">
+            <h1 className="sr-only">{title}{subtitle ? ` ${subtitle}` : ''}</h1>
+            {normalizeAsciiArt(asciiTitleArt).split(/\n\s*\n/).map((block, index) => (
+              <pre className="ascii-hero-title ascii-hero-title--art" aria-hidden="true" key={index}>{block}</pre>
+            ))}
+          </div>
+        ) : (
+          <h1 className="ascii-hero-title">
+            <span>{title}</span>
+            {subtitle && <strong>{subtitle}</strong>}
+          </h1>
+        )}
+        {description && <p className="ascii-hero-description">{description}</p>}
+        {children && <div className="ascii-hero-actions">{children}</div>}
+        {renderStats()}
+      </div>
+      {asciiImage ? (
+        <figure className="ascii-hero-poster">
+          <img src={asciiImage} alt={`Cartell ${title}`} />
+        </figure>
+      ) : (
+        <div className="ascii-hero-visual" aria-hidden="true">
+          <div className="ascii-hero-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>render --ascii</strong>
+          </div>
+          <pre className="ascii-hero-art">{asciiArt}</pre>
+          {asciiMeta.length > 0 && (
+            <div className="ascii-hero-meta">
+              {asciiMeta.map((item) => <span key={item}>{item}</span>)}
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  )
+
   return (
     <header
-      className={`hero ${heroVariant} ${poster ? 'poster-hero' : ''} ${terminal ? 'terminal-hero' : ''}`}
+      className={`hero ${heroVariant} ${poster ? 'poster-hero' : ''} ${terminal ? 'terminal-hero' : ''} ${asciiArt || asciiImage ? 'ascii-hero' : ''}`}
       data-label={title || ''}
     >
       <div className="hero-background">
@@ -103,7 +193,9 @@ const Hero = ({ badge, title, subtitle, description, image, stats, children, pos
         </div>
       </div>
       <div className="hero-content">
-        {terminal && !poster ? (
+        {asciiArt || asciiImage ? (
+          renderAsciiHero()
+        ) : terminal && !poster ? (
           <>
             {renderTerminal()}
             <div className="terminal-hero-actions">{children}</div>

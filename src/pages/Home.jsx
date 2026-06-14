@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react';
-import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import FAQ from '../components/FAQ'
+import FAQSection from '../components/FAQSection'
+import TerminalButton from '../components/TerminalButton'
 import './Home.css'
 
 const Home = () => {
   const [activeAboutIndex, setActiveAboutIndex] = useState(0)
+  const [activeEventIndex, setActiveEventIndex] = useState(0)
+  const eventsListRef = useRef(null)
+  const eventCardRefs = useRef([])
 
   const activities = [
     '/images/aess/qui-som/qui-som8.png',
@@ -67,11 +70,15 @@ const Home = () => {
     {
       eyebrow: './associacio.md',
       title: 'AESS és aprendre fent',
-      description: 'Associació de robòtica de l\'ETSETB, activa des de 1999 i oberta a gent amb ganes de crear.',
+      description: 'Associació de robòtica de l\'ETSETB, activa des de 1999, on tothom hi pot entrar amb ganes d\'aprendre, construir i proposar idees.',
       image: activities[0],
       alt: 'Membres d\'AESS participant en una activitat de robòtica',
       icon: 'fas fa-terminal',
-      tags: ['Projectes', 'Taller', 'Cursos', 'Competicions'],
+      highlights: [
+        'Projectes reals, des del primer prototip fins a la prova final.',
+        'Un taller obert per venir, tocar materials i començar a construir.',
+        'No cal saber-ne: la idea és entrar, preguntar i aprendre plegats.',
+      ],
       cta: {
         label: 'Vine a conèixer-nos',
         to: '/uneix-te'
@@ -80,10 +87,15 @@ const Home = () => {
     {
       eyebrow: './projectes.md',
       title: 'Robots i invents',
-      description: 'Electrònica, mecànica, codi i proves fins que la idea arrenca.',
+      description: 'Barregem electrònica, mecànica, codi i molta prova-error fins que les idees deixen de ser un esbós i es converteixen en màquines que funcionen.',
       image: activities[1],
       alt: 'Projecte de robòtica desenvolupat per membres d\'AESS',
       icon: 'fas fa-project-diagram',
+      highlights: [
+        'Electrònica, mecànica i codi treballen plegats en cada etapa.',
+        'Iterem ràpid: muntem, provem, detectem errors i millorem.',
+        'Cada robot és una excusa per aprendre una mica més que l\'anterior.',
+      ],
       cta: {
         label: 'Veure projectes',
         to: '/projectes'
@@ -92,26 +104,41 @@ const Home = () => {
     {
       eyebrow: './comunitat.md',
       title: 'Comunitat UPC',
-      description: 'Gent de Telecos, FIB, altres escoles i perfils curiosos.',
+      description: 'Som gent de Telecos, FIB, altres escoles i perfils ben diversos que acaben trobant un punt en comú: les ganes de fer coses amb tecnologia.',
       image: activities[2],
       alt: 'Grup de membres d\'AESS compartint una activitat',
-      icon: 'fas fa-users'
+      icon: 'fas fa-users',
+      highlights: [
+        'Gent de Telecos, FIB i altres escoles sumant en el mateix espai.',
+        'Perfils diferents que es complementen i fan els projectes més rics.',
+        'La curiositat entra per la porta i sovint s\'hi queda una bona estona.',
+      ]
     },
     {
       eyebrow: './taller.md',
       title: 'Taller sense por',
-      description: 'Eines, material i ajuda. No cal venir sabent-ho tot.',
+      description: 'Un espai amb eines, material i ajuda real per provar, equivocar-se i tornar a intentar-ho sense pressa i sense haver de venir amb tot après de casa.',
       image: activities[3],
       alt: 'Espai de taller amb material i eines per a projectes',
-      icon: 'fas fa-tools'
+      icon: 'fas fa-tools',
+      highlights: [
+        'Eines i material compartits, amb gent disposada a donar un cop de mà.',
+        'No cal venir amb cap idea tancada: també serveix venir a explorar.',
+        'És l\'espai ideal per començar a provar coses amb calma.',
+      ]
     },
     {
       eyebrow: './cursos.md',
       title: 'Formació pràctica',
-      description: 'Tallers de robòtica, programació, electrònica i disseny 3D.',
+      description: 'Organitzem tallers de robòtica, programació, electrònica i disseny 3D pensats perquè surtis amb una base útil i coses que puguis aplicar de seguida.',
       image: activities[4],
       alt: 'Sessió formativa organitzada per AESS',
       icon: 'fas fa-graduation-cap',
+      highlights: [
+        'Tallers curts, pràctics i directes al gra, sense teoria de més.',
+        'Electrònica, programació i 3D amb les mans a l\'obra des del principi.',
+        'Tot està pensat perquè després ho puguis portar als projectes reals.',
+      ],
       cta: {
         label: 'Veure cursos',
         to: '/cursos'
@@ -120,10 +147,15 @@ const Home = () => {
     {
       eyebrow: './aessbot.md',
       title: 'AESSBot',
-      description: 'Competició minisumo: dissenya, construeix i programa el robot.',
+      description: 'La nostra competició minisumo: dissenyar, construir i programar un robot que sigui ràpid, robust i prou intel·ligent per plantar cara dins del ring.',
       image: activities[5],
       alt: 'Competició de robots minisumo AESSBot',
       icon: 'fas fa-robot',
+      highlights: [
+        'Minisumo: disseny, construcció i codi treballant com un sol equip.',
+        'La competició és l\'excusa per aprendre més i afinar cada detall.',
+        'T\'enganxa si t\'agraden els reptes concrets, curts i amb molta iteració.',
+      ],
       cta: {
         label: 'Anar a AESSBot',
         to: '/aessbot'
@@ -132,10 +164,15 @@ const Home = () => {
     {
       eyebrow: './vida-associativa.md',
       title: 'Vida associativa',
-      description: 'Els projectes també són una excusa per conèixer gent.',
+      description: 'Els projectes també són una excusa per fer pinya, compartir hores de taller i acabar coneixent gent amb qui després et ve de gust quedar més enllà de l\'associació.',
       image: activities[6],
       alt: 'Vida associativa i activitats amb membres d\'AESS',
       icon: 'fas fa-university',
+      highlights: [
+        'L\'associació també és fer pinya i compartir el dia a dia.',
+        'Hi ha converses, activitats i moments de taller que fan caliu.',
+        'Sovint els projectes acaben sent també amistats i plans nous.',
+      ],
       cta: {
         label: 'Uneix-te',
         to: '/uneix-te'
@@ -148,7 +185,9 @@ const Home = () => {
       file: './aessbot-2026.md',
       title: 'AESSBot 2026',
       description: 'Competició de robots minisumo on cada equip dissenya, construeix i programa el seu robot per competir dins del ring.',
-      date: '18 febrer - 6 maig 2026',
+      startDate: '18 febrer 2026',
+      endDate: '6 maig 2026',
+      location: 'Campus Nord UPC',
       status: 'Finalitzat',
       image: '/images/aessbot/Cartell-original-DIN.png',
       alt: 'Cartell AESSBot 2026',
@@ -158,7 +197,9 @@ const Home = () => {
       file: './cursos-hivern-2026',
       title: 'Cursos',
       description: 'Formacions pràctiques d\'AESS per aprendre robòtica, electrònica, programació i eines aplicades a projectes reals.',
-      date: 'Edició febrer 2026',
+      startDate: 'Febrer 2026',
+      endDate: 'Febrer 2026',
+      location: 'Aula S203, Campus Nord',
       status: 'Finalitzat',
       image: '/images/cursos/cursos-aess-26-febrer-fixed.png',
       alt: 'Cartell cursos AESS',
@@ -167,6 +208,45 @@ const Home = () => {
   ]
 
   const activeAbout = aboutRows[activeAboutIndex]
+  const aboutMenuColumns = 4
+  const aboutMenuFillers = (aboutMenuColumns - (aboutRows.length % aboutMenuColumns)) % aboutMenuColumns
+
+  useEffect(() => {
+    const root = eventsListRef.current
+    const cards = eventCardRefs.current.filter(Boolean)
+
+    if (!root || cards.length <= 1) return undefined
+
+    let animationFrame
+
+    const updateActiveEvent = () => {
+      const rootRect = root.getBoundingClientRect()
+      const rootCenter = rootRect.left + rootRect.width / 2
+      const closestCard = cards.reduce((closest, card, index) => {
+        const cardRect = card.getBoundingClientRect()
+        const distance = Math.abs(cardRect.left + cardRect.width / 2 - rootCenter)
+
+        return distance < closest.distance ? { index, distance } : closest
+      }, { index: 0, distance: Number.POSITIVE_INFINITY })
+
+      setActiveEventIndex(closestCard.index)
+    }
+
+    const handleScroll = () => {
+      window.cancelAnimationFrame(animationFrame)
+      animationFrame = window.requestAnimationFrame(updateActiveEvent)
+    }
+
+    updateActiveEvent()
+    root.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      root.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
 
   return (
     <div className="home">
@@ -178,23 +258,29 @@ const Home = () => {
         terminal
       >
         <div className="home-hero-join">
-          <Link to="/uneix-te" className="cli-join-button" aria-label="Join AESS">
-            <pre aria-hidden="true">{`┌────────────────┐
-│ `}<b>&gt;</b>{` JOIN AESS `}<i>█</i>{` │
-└────────────────┘`}</pre>
-          </Link>
+          <TerminalButton
+            to="/uneix-te"
+            ariaLabel="Join AESS"
+            label="JOIN AESS"
+            tone="primary"
+            size="lg"
+          />
         </div>
       </Hero>
+
+      <div className="home-section-command">
+        <div className="container">
+          <p className="about-terminal-command">
+            <span className="terminal-prompt">aess:~$</span> <span className="terminal-command">ls</span> -la /qui-som
+          </p>
+        </div>
+      </div>
+
+      <div className="home-section-divider" aria-hidden="true"></div>
+
       <section className="que-fem-section section">
         <div className="container">
-          <div className="about-terminal" aria-label="Informació sobre AESS i les seves activitats">
-            <div className="about-terminal-bar" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>cd /qui-som</strong>
-            </div>
-
+          <div className="about-section-content" aria-label="Informació sobre AESS i les seves activitats">
             <div className="about-terminal-intro">
               <div className="about-terminal-copy">
                 <h2>Qui som i què fem?</h2>
@@ -207,9 +293,6 @@ const Home = () => {
 
             <div className="about-cli-shell">
               <nav className="about-cli-menu" aria-label="Menú de seccions sobre AESS">
-                <p className="about-cli-prompt">
-                  <span>aess:~$</span> select --section
-                </p>
                 <div className="about-cli-options" role="tablist" aria-label="Apartats de Qui som i què fem">
                   {aboutRows.map((row, index) => (
                     <button
@@ -227,6 +310,13 @@ const Home = () => {
                       <span>{row.eyebrow}</span>
                     </button>
                   ))}
+                  {Array.from({ length: aboutMenuFillers }).map((_, index) => (
+                    <span
+                      key={`about-cli-spacer-${index}`}
+                      className="about-cli-spacer"
+                      aria-hidden="true"
+                    />
+                  ))}
                 </div>
               </nav>
 
@@ -236,32 +326,35 @@ const Home = () => {
                 role="tabpanel"
                 aria-labelledby={`about-cli-tab-${activeAboutIndex}`}
               >
-                <div className="about-cli-output-command">
-                  <span>aess:~$</span> cat {activeAbout.eyebrow}
-                </div>
                 <div className="about-cli-output-grid">
                   <div className="about-cli-output-copy">
-                    <div className="about-story-icon" aria-hidden="true">
-                      <i className={activeAbout.icon}></i>
+                    <div className="about-cli-copy-panel">
+                      <h3>{activeAbout.title}</h3>
+                      <p>{activeAbout.description}</p>
+                      {activeAbout.highlights && (
+                        <ul className="about-story-notes" aria-label="Punts destacats de la secció">
+                          {activeAbout.highlights.map((note) => (
+                            <li key={note}>
+                              <i className="fas fa-circle about-story-icon" aria-hidden="true"></i>
+                              <span>{note}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {activeAbout.cta && (
+                        <TerminalButton
+                          to={activeAbout.cta.to}
+                          className="about-story-link"
+                          ariaLabel={activeAbout.cta.label}
+                          label={activeAbout.cta.label}
+                          tone="primary"
+                          size="md"
+                        />
+                      )}
                     </div>
-                    <h3>{activeAbout.title}</h3>
-                    <p>{activeAbout.description}</p>
-                    {activeAbout.tags && (
-                      <div className="about-story-tags" aria-label="Àrees principals d'AESS">
-                        {activeAbout.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
-                      </div>
-                    )}
-                    {activeAbout.cta && (
-                      <Link to={activeAbout.cta.to} className="about-story-link">
-                        {activeAbout.cta.label} <i className="fas fa-arrow-right"></i>
-                      </Link>
-                    )}
                   </div>
                   <figure className="about-terminal-media about-cli-media">
                     <img src={activeAbout.image} alt={activeAbout.alt} loading="lazy" />
-                    <figcaption>preview: {activeAbout.eyebrow}</figcaption>
                   </figure>
                 </div>
               </article>
@@ -269,95 +362,129 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <div className="home-section-command">
+        <div className="container">
+          <p className="about-terminal-command">
+            <span className="terminal-prompt">aess:~$</span> <span className="terminal-command">ls</span> -la /events
+          </p>
+        </div>
+      </div>
+
       <section className="esdeveniments-section section">
         <div className="container">
-          <div className="events-terminal" aria-label="Llistat de pròxims esdeveniments d'AESS">
-            <div className="about-terminal-bar" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>cd /events</strong>
-            </div>
+          <div className="events-section-header">
+            <h2>Pròxims esdeveniments</h2>
+            <p>
+              Agenda d'activitats, cursos i competicions: fitxes, estat i preview del
+              cartell en una sola vista.
+            </p>
+          </div>
 
-            <div className="events-terminal-intro">
-              <div className="about-terminal-copy">
-                <h2>Pròxims esdeveniments</h2>
-                <p>
-                  Agenda d'activitats, cursos i competicions en mode directori:
-                  fitxes, estat i preview del cartell en una sola sortida.
-                </p>
-              </div>
-            </div>
-
-            <div className="events-cli-list">
-              <p className="events-cli-command">
-                <span>aess:~/events$</span> ls -la --with-preview
-              </p>
+          <div className="events-section-content" aria-label="Llistat de pròxims esdeveniments d'AESS">
+            <p className="sr-only" id="events-scroll-hint">
+              Desplaça't horitzontalment per veure més esdeveniments.
+            </p>
+            <div
+              ref={eventsListRef}
+              className="events-cli-list"
+              role="region"
+              aria-label="Targetes de pròxims esdeveniments"
+              aria-describedby="events-scroll-hint"
+              tabIndex="0"
+            >
               {upcomingEvents.map((event, index) => (
                 <article
                   className="event-card"
                   key={event.file}
                   data-file={event.file}
+                  data-event-index={index}
+                  ref={(node) => {
+                    eventCardRefs.current[index] = node
+                  }}
                   aria-labelledby={`event-card-title-${index}`}
                 >
-                  <div className="event-cli-tree" aria-hidden="true">
-                    <span>{index === upcomingEvents.length - 1 ? '└──' : '├──'}</span>
-                  </div>
                   <figure className="event-image">
                     <img src={event.image} alt={event.alt} loading="lazy" />
                   </figure>
                   <div className="event-card-content">
                     <div className="event-card-header">
                       <div className="event-meta">
-                        <span className="event-index">{String(index + 1).padStart(2, '0')}</span>
-                        <span className="event-permissions" aria-hidden="true">drwxr-xr-x</span>
-                        <span className="event-badge">{event.title}</span>
-                        <span className="event-status event-status-ended">{event.status}</span>
+                        <span className="event-badge"><span className="event-badge-hash">##</span> {event.title}</span>
                       </div>
                       <p id={`event-card-title-${index}`}>{event.description}</p>
-                      <span className="event-date-badge">{event.date}</span>
+                      <div className="event-details" aria-label="Detalls de l'esdeveniment">
+                        <div className="event-detail">
+                          <i className="fas fa-calendar-day" aria-hidden="true"></i>
+                          <span>Inici: {event.startDate}</span>
+                        </div>
+                        <div className="event-detail">
+                          <i className="fas fa-calendar-check" aria-hidden="true"></i>
+                          <span>Final: {event.endDate}</span>
+                        </div>
+                        <div className="event-detail">
+                          <i className="fas fa-location-dot" aria-hidden="true"></i>
+                          <span>Ubicació: {event.location}</span>
+                        </div>
+                      </div>
                     </div>
                     <div className="event-actions">
-                      <Link to={event.to} className="event-cli-link">
-                        cd {event.file} <i className="fas fa-arrow-right"></i>
-                      </Link>
+                      <TerminalButton
+                        to={event.to}
+                        className="about-story-link"
+                        ariaLabel={event.title}
+                        label={`cd ${event.file}`}
+                        tone="primary"
+                        size="md"
+                        format="command"
+                      />
                     </div>
                   </div>
                 </article>
               ))}
             </div>
+            {upcomingEvents.length > 1 && (
+              <div className="events-pagination" aria-label="Indicadors de desplaçament dels esdeveniments">
+                {upcomingEvents.map((event, index) => (
+                  <button
+                    key={event.file}
+                    type="button"
+                    className={`events-dot ${index === activeEventIndex ? 'is-active' : ''}`}
+                    aria-label={`Veure esdeveniment ${index + 1} de ${upcomingEvents.length}`}
+                    aria-current={index === activeEventIndex ? 'true' : undefined}
+                    onClick={() => {
+                      const root = eventsListRef.current
+                      const card = eventCardRefs.current[index]
+
+                      if (!root || !card) return
+
+                      root.scrollTo({
+                        behavior: 'smooth',
+                        left: card.offsetLeft - root.offsetLeft,
+                      })
+                    }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="faq-section section">
-        <div className="container">
-          <div className="faq-manual" aria-label="Preguntes freqüents sobre AESS">
-            <div className="faq-man-intro">
-              <h2>Tens dubtes?</h2>
-              <p>Manual ràpid per resoldre les preguntes més habituals sobre AESS.</p>
-              <p className="about-terminal-command">
-                <span>aess:~$</span> man aess-faq
-              </p>
-            </div>
-
-            <div className="faq-man-page">
-              <section className="faq-man-section" aria-labelledby="faq-man-questions">
-                <h3 id="faq-man-questions">QUESTIONS</h3>
-                <p className="faq-man-hint">Selecciona una entrada per desplegar-ne la resposta.</p>
-                <FAQ items={faqs} />
-              </section>
-
-              <section className="faq-man-section faq-man-see-also" aria-labelledby="faq-man-see-also">
-                <h3 id="faq-man-see-also">SEE ALSO</h3>
-                <Link to="/contact" className="event-cli-link" aria-label="Contacta'ns">
-                  Contacta amb nosaltres <i className="fas fa-arrow-right"></i>
-                </Link>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        command="man"
+        commandPrefix="aess:~$"
+        title="Tens dubtes?"
+        items={faqs}
+        seeAlso={{
+          label: 'Contacta amb nosaltres',
+          ariaLabel: 'Contacta amb nosaltres',
+          to: '/contact',
+          tone: 'primary',
+          size: 'md',
+        }}
+        variant="home"
+      />
     </div>
   )
 }

@@ -1,0 +1,114 @@
+.faq-section {
+  background: transparent;
+}
+
+.faq-section-command {
+  width: min(100%, 930px);
+  margin-inline: auto;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--border);
+  font-family: var(--font-mono);
+}
+
+.faq-section-command p {
+  max-width: none;
+  margin: 0;
+  color: var(--primary-light);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.faq-manual {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  font-family: var(--font-mono);
+  text-align: left;
+}
+
+.faq-man-intro {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.faq-man-intro h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 4.5vw, 4.65rem);
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 32px rgba(56, 189, 248, 0.26);
+}
+
+.faq-man-intro h2::before {
+  content: '# ';
+  color: var(--accent);
+  font-size: 1em;
+  vertical-align: 0.04em;
+}
+
+.faq-manual-intro {
+  max-width: 62ch;
+  margin: 0.9rem auto 0;
+  color: var(--text-secondary);
+  font-size: clamp(0.92rem, 1.15vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.faq-man-page {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.faq-man-section + .faq-man-section {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.faq-man-section h3 {
+  margin: 0 0 0.55rem;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.faq-man-section > p {
+  margin: 0;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.faq-man-see-also .terminal-button {
+  margin-top: 0.25rem;
+}
+
+.faq-manual-see-also-copy {
+  max-width: 62ch;
+}
+
+.faq-section--aessbot .faq-manual {
+  width: min(100%, 760px);
+}
+
+@media (max-width: 600px) {
+  .faq-section-command {
+    width: min(calc(100% - 1rem), 930px);
+  }
+
+  .faq-manual {
+    width: 100%;
+  }
+
+  .faq-man-intro h2 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .faq-man-section > p,
+  .faq-manual-intro {
+    font-size: 0.84rem;
+  }
+}

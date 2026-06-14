@@ -40,12 +40,12 @@ img {
 }
 
 /* Link hover underline animation */
-a:not(.btn):not(.nav-link) {
+a:not(.btn):not(.nav-link):not(.terminal-button) {
     position: relative;
     display: inline-block;
 }
 
-a:not(.btn):not(.nav-link)::after {
+a:not(.btn):not(.nav-link):not(.terminal-button)::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -56,7 +56,7 @@ a:not(.btn):not(.nav-link)::after {
     transition: width var(--transition-base);
 }
 
-a:not(.btn):not(.nav-link):hover::after {
+a:not(.btn):not(.nav-link):not(.terminal-button):hover::after {
     width: 100%;
 }
 

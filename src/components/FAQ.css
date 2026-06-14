@@ -26,14 +26,13 @@
   line-height: 1.35;
   text-align: left;
   cursor: pointer;
-  transition: color 80ms ease-out, padding-left 80ms ease-out;
+  transition: color 80ms ease-out;
 }
 
 .faq-question:hover,
 .faq-question:focus-visible,
 .faq-item.active .faq-question {
   color: var(--text-primary);
-  padding-left: 0.35rem;
   outline: none;
 }
 
