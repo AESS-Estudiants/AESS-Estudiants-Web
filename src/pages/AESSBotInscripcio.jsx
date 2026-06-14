@@ -1,171 +1,208 @@
-import { Analytics } from '@vercel/analytics/react';
-import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Hero from '../components/Hero'
+import TerminalButton from '../components/TerminalButton'
 import './AESSBotInscripcio.css'
 
-const AESSBotInscripcio = () => {
-  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 })
+const reminders = [
+  {
+    icon: 'fas fa-calendar-times',
+    label: 'DEADLINE',
+    title: "Data límit d'inscripció",
+    text: <>Les inscripcions tanquen l'<strong>11 de febrer de 2026</strong> a les 23:59. No deixis la teva inscripció per l'últim moment!</>,
+  },
+  {
+    icon: 'fas fa-users',
+    label: 'TEAM_LIMIT',
+    title: 'Places limitades',
+    text: <>Només hi ha <strong>16 equips disponibles</strong>. Si s'esgoten les places, se seguiran els criteris de prioritat de la normativa.</>,
+  },
+  {
+    icon: 'fas fa-euro-sign',
+    label: 'DEPOSIT',
+    title: 'Fiança retornable',
+    text: <>Cal abonar una <strong>fiança de 50€ per equip</strong> el primer dia de taller. Consulta el reglament per a les condicions de retorn.</>,
+  },
+  {
+    icon: 'fas fa-user-graduate',
+    label: 'REQUIREMENTS',
+    title: "Requisit d'estudiant",
+    text: <>Tots els participants han de ser <strong>estudiants de grau o màster</strong> de qualsevol universitat.</>,
+  },
+]
 
-  useEffect(() => {
-    const updateCountdown = () => {
-      const countdownDate = new Date('2026-02-11T23:59:59').getTime()
-      const now = new Date().getTime()
-      const distance = countdownDate - now
+const registrationSteps = [
+  {
+    icon: 'fas fa-hourglass-half',
+    title: "Espera al tancament d'inscripcions",
+    text: <>Un cop enviada la teva inscripció, cal esperar fins a l'<strong>11 de febrer de 2026</strong>, quan es tanquen les inscripcions oficials i s'apliquen els criteris de prioritat.</>,
+  },
+  {
+    icon: 'fas fa-check-circle',
+    title: "Validació d'inscripcions",
+    text: <>L'organització revisarà totes les inscripcions i validarà que compleixin els requisits. Recordeu que la fiança es paga al primer taller en metàl·lic i amb l'import exacte.</>,
+  },
+  {
+    icon: 'fas fa-rocket',
+    title: 'Correu de benvinguda i convocatòria',
+    text: <>Rebràs un correu <strong>com a màxim el 13 de febrer de 2026 a les 23:59</strong> confirmant si el teu equip ha estat admès o queda a la llista d'espera.</>,
+  },
+]
 
-      if (distance <= 0) {
-        setCountdown({ days: 0, hours: 0, minutes: 0 })
-        return
-      }
+const renderSectionCommand = (command, argument) => (
+  <>
+    <div className="inscripcio-section-command">
+      <div className="container">
+        <p>
+          <span className="terminal-prompt">aessbot:~$</span>{' '}
+          <span className="terminal-command">{command}</span> {argument}
+        </p>
+      </div>
+    </div>
+    <div className="inscripcio-section-divider" aria-hidden="true"></div>
+  </>
+)
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+const TerminalBar = ({ children }) => (
+  <div className="inscripcio-terminal-bar" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <strong>{children}</strong>
+  </div>
+)
 
-      setCountdown({ days, hours, minutes })
-    }
+const AESSBotInscripcio = () => (
+  <div className="inscripcio-page">
+    <Analytics />
 
-    updateCountdown()
-    const interval = setInterval(updateCountdown, 60000)
-    return () => clearInterval(interval)
-  }, [])
+    <Hero
+      title="AESSBot"
+      subtitle="Inscripció"
+      description="Prepara l'equip, revisa els requisits i completa la inscripció per entrar al ring."
+      asciiImage="/images/aessbot/Cartell-original-DIN.png"
+      asciiEyebrow="./inscripcio-aessbot-2026.md"
+    >
+      <div className="hero-badge-container">
+        <TerminalButton
+          href="#formulari-inscripcio"
+          ariaLabel="Anar al formulari d'inscripció"
+          label="Anar al formulari"
+          tone="primary"
+          size="lg"
+        />
+        <TerminalButton
+          to="/aessbot"
+          ariaLabel="Tornar a la pàgina AESSBot"
+          label="Veure AESSBot"
+          tone="accent"
+          size="sm"
+          symbol="<"
+        />
+      </div>
+    </Hero>
 
-  const isClosed = countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0
-
-  return (
-    <div className="inscripcio-page">
-      <Analytics />
-
-
-      <section className="reminders-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Recordatoris Importants</h2>
-            <p className="section-subtitle">
-              Abans d'inscriure't, assegura't de llegir aquests punts clau
-            </p>
+    {renderSectionCommand('check', '--all ./abans-d-inscriure')}
+    <section className="reminders-section section">
+      <div className="container">
+        <div className="inscripcio-terminal">
+          <TerminalBar>./aessbot --check requirements</TerminalBar>
+          <div className="inscripcio-terminal-header">
+            <p className="inscripcio-command">aessbot:~$ check --all ./abans-d-inscriure</p>
+            <h2>Abans d'inscriure't</h2>
+            <p>Revisa aquests punts clau abans d'enviar les dades del teu equip.</p>
           </div>
           <div className="reminders-grid">
-            <div className="reminder-card">
-              <div className="reminder-icon">
-                <i className="fas fa-calendar-times"></i>
-              </div>
-              <h3>Data Límit d'Inscripció</h3>
-              <p>Les inscripcions tanquen el <strong>11 de febrer de 2026</strong> a les 23:59. No deixis la teva inscripció per l'últim moment!</p>
+            {reminders.map((reminder, index) => (
+              <article className="reminder-card" key={reminder.label}>
+                <div className="reminder-prompt">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <i className={reminder.icon} aria-hidden="true"></i>
+                  <span>{reminder.label}</span>
+                </div>
+                <h3>{reminder.title}</h3>
+                <p>{reminder.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="rules-callout">
+            <div>
+              <span className="rules-callout-icon" aria-hidden="true"><i className="fas fa-book-open"></i></span>
+              <p><strong>Llegeix la normativa oficial</strong> per conèixer totes les especificacions tècniques i condicions de participació.</p>
             </div>
-            <div className="reminder-card">
-              <div className="reminder-icon">
-                <i className="fas fa-users"></i>
-              </div>
-              <h3>Places Limitades</h3>
-              <p>Només hi ha <strong>16 equips disponibles</strong>. Si s'esgoten les places, es seguiran els criteris de prioritat de la normativa.</p>
-            </div>
-            <div className="reminder-card">
-              <div className="reminder-icon">
-                <i className="fas fa-euro-sign"></i>
-              </div>
-              <h3>Fiança Retornable</h3>
-              <p>Cal abonar una <strong>fiança de 50€ per equip</strong> el primer dia de taller. Consulta el reglament per a les condicions de retorn.</p>
-            </div>
-            <div className="reminder-card">
-              <div className="reminder-icon">
-                <i className="fas fa-user-graduate"></i>
-              </div>
-              <h3>Requisit d'Estudiant</h3>
-              <p>Tots els participants han de ser <strong>estudiants de grau o màster</strong> de qualsevol universitat.</p>
-            </div>
-            <div className="reminder-card">
-              <div className="reminder-icon">
-                <i className="fas fa-book-open"></i>
-              </div>
-              <h3>Llegeix la Normativa</h3>
-              <p>Abans d'inscriure't, <strong>llegeix atentament la normativa oficial</strong> per conèixer totes les especificacions tècniques i condicions de participació.{' '}
-                <a href="/documents/Reglament.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
-                  Descarrega aquí
-                </a>
-              </p>
-            </div>
+            <TerminalButton
+              href="/documents/Reglament.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Descarregar normativa oficial"
+              label="Descarregar normativa"
+              tone="primary"
+              size="sm"
+            />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="form-section section" id="formulari-inscripcio">
-        <div className="container">
-          <div className="inscripcio-header">
-            <h2>Inscriu el teu equip a l'AESSBot 2026</h2>
-            <p className="lead-text">
-              Omple el formulari següent per inscriure el teu equip a l'AESSBot 2026.
-              Tots els membres de l'equip han de ser estudiants de grau o màster de qualsevol universitat.
-            </p>
-            {/* Alert removed as per request */}
+    {renderSectionCommand('run', './formulari-inscripcio')}
+    <section className="form-section section" id="formulari-inscripcio">
+      <div className="container">
+        <div className="form-terminal">
+          <TerminalBar>./aessbot --run registration-form</TerminalBar>
+          <div className="inscripcio-terminal-header">
+            <p className="inscripcio-command">aessbot:~$ run ./formulari-inscripcio</p>
+            <h2>Inscriu el teu equip</h2>
+            <p>Omple el formulari per inscriure el teu equip a l'AESSBot 2026.</p>
           </div>
-
-          <div className="google-form-container">
-            <div className="form-embed">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScciiXmQMnUtMhncWi28Q-ktjAPgIQtR8Ay9EgmTJtKJdQCVg/viewform?embedded=true"
-                width="100%"
-                height="1000"
-                style={{ height: '1000px' }}
-                frameBorder="0"
-                marginHeight="0"
-                marginWidth="0"
-                title="Formulari d'inscripció AESSBot"
-              >
-                S'està carregant el formulari...
-              </iframe>
-            </div>
+          <div className="form-embed">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScciiXmQMnUtMhncWi28Q-ktjAPgIQtR8Ay9EgmTJtKJdQCVg/viewform?embedded=true"
+              width="100%"
+              height="1000"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              title="Formulari d'inscripció AESSBot"
+            >
+              S'està carregant el formulari...
+            </iframe>
           </div>
+          <div className="form-terminal-footer"><span>[ READY ]</span> formulari carregat · connexió segura</div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="post-registration-section section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Què passa després d'inscriure't?</h2>
-            <p className="section-subtitle">
-              Un cop hagis enviat el formulari, segueix aquests passos
-            </p>
+    {renderSectionCommand('next', '--after=registration')}
+    <section className="post-registration-section section">
+      <div className="container">
+        <div className="inscripcio-terminal">
+          <TerminalBar>./aessbot --show next-steps</TerminalBar>
+          <div className="inscripcio-terminal-header">
+            <p className="inscripcio-command">aessbot:~$ next --after=registration</p>
+            <h2>Què passa després?</h2>
+            <p>Un cop enviat el formulari, aquest és el procés fins a l'admissió de l'equip.</p>
           </div>
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-marker">
-                <i className="fas fa-hourglass-half"></i>
-              </div>
-              <div className="timeline-content">
-                <h3>1. Espera al Tancament d'Inscripcions</h3>
-                <p>Un cop enviada la teva inscripció, cal esperar fins el <strong>11 de febrer de 2026</strong> quan es tanquin les inscripcions oficials per aplicar els criteris de prioritat en cas que hi hagi més de 16 equips.</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-marker">
-                <i className="fas fa-check-circle"></i>
-              </div>
-              <div className="timeline-content">
-                <h3>2. Validació d'Inscripcions</h3>
-                <p>L'equip de l'organització revisarà totes les inscripcions rebudes i validarà que compleixin els requisits de participació. Recordeu que la fiança es paga al primer taller en metal·lic (exactament).</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-marker">
-                <i className="fas fa-rocket"></i>
-              </div>
-              <div className="timeline-content">
-                <h3>3. Correu de Benvinguda i Convocatòria</h3>
-                <p>Rebràs un correu <strong>com a màxim el 13 de febrer de 2026 a les 23:59</strong> confirmant si el teu equip ha estat admès o si queda a la llista d'espera. Si sou admesos, disposareu de 72 hores per confirmar la vostra participació.</p>
-              </div>
-            </div>
-          </div>
+          <ol className="registration-steps">
+            {registrationSteps.map((step, index) => (
+              <li className="registration-step" key={step.title}>
+                <div className="registration-step-node" aria-hidden="true">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <div className="registration-step-content">
+                  <span className="registration-step-status"><i className={step.icon}></i> STEP_{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
           <div className="post-registration-cta">
             <p>Tens dubtes sobre el procés d'inscripció?</p>
-            <a href="/contact" className="btn btn-secondary">
-              <i className="fas fa-envelope"></i> Contacta'ns
-            </a>
+            <TerminalButton to="/contact" ariaLabel="Contacta amb nosaltres" label="Contacta'ns" tone="accent" size="md" />
           </div>
         </div>
-      </section>
-    </div>
-  )
-}
+      </div>
+    </section>
+  </div>
+)
 
 export default AESSBotInscripcio
-

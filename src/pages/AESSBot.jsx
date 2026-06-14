@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import Hero from '../components/Hero'
 import FAQSection from '../components/FAQSection'
 import TerminalButton from '../components/TerminalButton'
+import AESSBotRegistrationDrawer from '../components/AESSBotRegistrationDrawer'
 import './AESSBot.css'
 
 const AESSBot = () => {
@@ -46,6 +47,7 @@ const AESSBot = () => {
   ]
 
   const [activeEditionIndex, setActiveEditionIndex] = useState(0)
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
   const activeEdition = previousEditions[activeEditionIndex]
 
   const navigateEdition = (direction) => {
@@ -304,7 +306,7 @@ const AESSBot = () => {
       >
         <div className="hero-badge-container">
           <TerminalButton
-            to="/aessbot-inscripcio"
+            onClick={() => setIsRegistrationOpen(true)}
             ariaLabel="Inscriu-te a l'AESSBot"
             label="Inscriu-te"
             tone="primary"
@@ -629,6 +631,10 @@ const AESSBot = () => {
           tone: 'accent',
           size: 'sm',
         }}
+      />
+      <AESSBotRegistrationDrawer
+        isOpen={isRegistrationOpen}
+        onClose={() => setIsRegistrationOpen(false)}
       />
     </div>
   )
